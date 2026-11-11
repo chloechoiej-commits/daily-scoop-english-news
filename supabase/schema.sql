@@ -14,8 +14,12 @@ create table if not exists public.articles (
   summary text not null default '',
   words jsonb not null default '[]'::jsonb,
   grammar jsonb not null default '[]'::jsonb,
+  content_kind text not null default 'manual' check (content_kind in ('manual', 'rss_excerpt', 'ai_generated')),
+  collection_day date,
   created_at timestamptz not null default now()
 );
+
+create unique index if not exists articles_rss_source_url_unique on public.articles (source_url) where collection_day is not null;
 
 alter table public.articles enable row level security;
 create policy "Articles are publicly readable" on public.articles for select to anon, authenticated using (true);
