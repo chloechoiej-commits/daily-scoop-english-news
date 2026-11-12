@@ -1,0 +1,5 @@
+project_id = "daily-scoop"
+
+# The handler verifies the bearer token with Supabase Auth before any work.
+[functions.summary-feedback]
+verify_jwt = false

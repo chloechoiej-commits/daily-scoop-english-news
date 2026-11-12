@@ -11,6 +11,7 @@ create table if not exists public.articles (
   cover_color text not null default 'sage',
   excerpt text not null default '',
   content text not null,
+  translation_ko text not null default '',
   summary text not null default '',
   words jsonb not null default '[]'::jsonb,
   grammar jsonb not null default '[]'::jsonb,
@@ -23,5 +24,5 @@ create unique index if not exists articles_rss_source_url_unique on public.artic
 
 alter table public.articles enable row level security;
 create policy "Articles are publicly readable" on public.articles for select to anon, authenticated using (true);
--- Create teacher accounts in Supabase Auth and keep public sign-ups disabled.
-create policy "Authenticated teachers can add articles" on public.articles for insert to authenticated with check (true);
+-- Anonymous students cannot add articles; create teacher accounts in Supabase Auth.
+create policy "Authenticated teachers can add articles" on public.articles for insert to authenticated with check ((auth.jwt() ->> 'is_anonymous') = 'false');
