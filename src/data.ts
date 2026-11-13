@@ -4,7 +4,7 @@ export type Article = {
   id: string; title: string; title_ko: string; category: string; source: string; source_url: string;
   published_at: string; reading_minutes: number; level: string; cover_color: string;
   excerpt: string; content: string; summary: string; translation_ko?: string; words: Word[]; grammar: Grammar[];
-  content_kind?: 'manual' | 'rss_excerpt' | 'ai_generated'
+  content_kind?: 'manual' | 'rss_excerpt' | 'ai_generated'; collection_day?: string | null; created_at?: string
 }
 
 // Original practice texts based on the linked reporting, not the publishers' original articles.

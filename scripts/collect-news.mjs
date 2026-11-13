@@ -6,7 +6,11 @@ import { pathToFileURL } from 'node:url'
 const feeds = [
   { source: 'TIME for Kids', url: 'https://www.timeforkids.com/feed/', host: 'www.timeforkids.com' },
   { source: 'NewsForKids.net', url: 'https://newsforkids.net/feed/', host: 'newsforkids.net' },
+  // Extra science/nature source so every section has candidates each day.
+  { source: 'Science News Explores', url: 'https://www.snexplores.org/feed', host: 'www.snexplores.org' },
 ]
+// One article per section per day: 5 sections x 1 = DAILY_LIMIT.
+export const CATEGORIES = ['환경', '과학', '생활', '문화', '세상']
 const parser = new Parser({ timeout: 20000 })
 const DAILY_LIMIT = 5
 const MAX_AGE_DAYS = 14
@@ -39,36 +43,68 @@ export function toCandidate(item, feed, now = new Date()) {
   if (date > now || now.getTime() - date.getTime() > MAX_AGE_DAYS * 86400000 || blocked.test(`${title} ${description}`)) return null
   link.hash = ''
   link.search = ''
-  return { title, description, source: feed.source, source_url: link.toString(), date }
+  const feedCategories = (item.categories || []).map(c => typeof c === 'string' ? c : c?._ || '').filter(Boolean)
+  return { title, description, source: feed.source, source_url: link.toString(), date, category: categoryFor(`${title} ${description}`, feedCategories) }
 }
 
-export function chooseCandidates(items, existingUrls = [], existingTitles = [], limit = DAILY_LIMIT) {
+// Picks the newest unseen story for each section not yet filled today, then tops up
+// from the least-covered sections if a section had nothing new.
+export function chooseCandidates(items, existingUrls = [], existingTitles = [], limit = DAILY_LIMIT, filledCategories = []) {
   if (limit <= 0) return []
   const urls = new Set(existingUrls)
   const titles = new Set(existingTitles.map(headlineKey))
-  const chosen = []
+  const pool = []
   for (const item of [...items].sort((a, b) => b.date - a.date)) {
     const key = headlineKey(item.title)
     if (urls.has(item.source_url) || titles.has(key)) continue
-    chosen.push(item); urls.add(item.source_url); titles.add(key)
+    pool.push(item); urls.add(item.source_url); titles.add(key)
+  }
+  const counts = Object.fromEntries(CATEGORIES.map(c => [c, 0]))
+  for (const c of filledCategories) if (c in counts) counts[c]++
+  const chosen = []
+  const take = item => { chosen.push(item); pool.splice(pool.indexOf(item), 1); counts[item.category] = (counts[item.category] || 0) + 1 }
+  for (const category of CATEGORIES) {
     if (chosen.length >= limit) break
+    if (counts[category] > 0) continue
+    const item = pool.find(candidate => candidate.category === category)
+    if (item) take(item)
+  }
+  while (chosen.length < limit && pool.length) {
+    const item = pool.reduce((best, candidate) => (counts[candidate.category] || 0) < (counts[best.category] || 0) ? candidate : best)
+    take(item)
   }
   return chosen
 }
 
-export function categoryFor(text) {
-  if (/environment|climate|wildlife|ocean|animal|plant|garden/i.test(text)) return '환경'
-  if (/science|space|nasa|technology|robot|research/i.test(text)) return '과학'
-  if (/art|music|book|film|movie|museum/i.test(text)) return '문화'
-  if (/school|student|community|health|food/i.test(text)) return '생활'
-  return '세상'
+const categoryKeywords = {
+  환경: ['environment', 'climate', 'wildlife', 'ocean', 'oceans', 'animal', 'animals', 'plant', 'plants', 'garden', 'nature', 'forest', 'recycling', 'pollution', 'weather', 'species', 'endangered', 'bird', 'birds', 'insect', 'insects', 'bees', 'earth', 'energy', 'water', 'conservation', 'zoo'],
+  과학: ['science', 'space', 'nasa', 'technology', 'tech', 'robot', 'robots', 'research', 'scientist', 'scientists', 'study', 'discovery', 'planet', 'moon', 'mars', 'astronaut', 'rocket', 'computer', 'ai', 'engineering', 'invention', 'fossil', 'dinosaur', 'physics', 'chemistry', 'brain', 'math'],
+  생활: ['school', 'schools', 'student', 'students', 'kids', 'family', 'community', 'health', 'food', 'sleep', 'teen', 'teens', 'phone', 'phones', 'volunteer', 'kindness', 'friends', 'money', 'job', 'holiday', 'safety', 'lunch'],
+  문화: ['art', 'arts', 'artist', 'music', 'book', 'books', 'film', 'movie', 'movies', 'museum', 'culture', 'history', 'sports', 'sport', 'olympics', 'game', 'games', 'soccer', 'basketball', 'baseball', 'festival', 'dance', 'author', 'poetry', 'theater', 'team', 'champion'],
+  세상: ['world', 'country', 'countries', 'government', 'president', 'election', 'law', 'laws', 'city', 'nation', 'global', 'leaders', 'vote', 'congress', 'economy', 'united', 'international', 'rule', 'rules'],
 }
+
+// Scores keyword hits (whole words only, so "start" is not "art"). RSS categories count double.
+export function categoryFor(text, feedCategories = []) {
+  const words = (value) => String(value).toLowerCase().match(/[a-z]+/g) || []
+  const body = words(text)
+  const tags = feedCategories.flatMap(words)
+  let best = '세상'; let bestScore = 0
+  for (const category of CATEGORIES) {
+    const keys = new Set(categoryKeywords[category])
+    const score = body.filter(w => keys.has(w)).length + tags.filter(w => keys.has(w)).length * 2
+    if (score > bestScore) { best = category; bestScore = score }
+  }
+  return best
+}
+
+const coverFor = { 환경: 'sage', 과학: 'blue', 생활: 'peach', 문화: 'lilac', 세상: 'coral' }
 
 export function excerptRow(item, day) {
   const chars = Array.from(item.description)
   const excerpt = chars.length > 180 ? chars.slice(0, 177).join('').replace(/\s+\S*$/, '') + '…' : item.description
-  const category = categoryFor(`${item.title} ${item.description}`)
-  return { title: item.title, title_ko: '', source: item.source, source_url: item.source_url, published_at: item.date.toISOString().slice(0, 10), category, level: estimateLevel(excerpt), cover_color: category === '환경' ? 'sage' : category === '과학' ? 'blue' : 'peach', reading_minutes: 1, excerpt, content: excerpt, summary: '', words: [], grammar: [], content_kind: 'rss_excerpt', collection_day: day }
+  const category = item.category || categoryFor(`${item.title} ${item.description}`)
+  return { title: item.title, title_ko: '', source: item.source, source_url: item.source_url, published_at: item.date.toISOString().slice(0, 10), category, level: estimateLevel(excerpt), cover_color: coverFor[category] || 'peach', reading_minutes: 1, excerpt, content: excerpt, summary: '', words: [], grammar: [], content_kind: 'rss_excerpt', collection_day: day }
 }
 
 export async function generateLearning(row, item, apiKey) {
@@ -111,12 +147,13 @@ async function main() {
   for (const result of results) if (result.status === 'rejected') console.error(`Feed unavailable: ${result.reason.message}`)
   if (results.every(result => result.status === 'rejected')) throw new Error('All feeds failed.')
   const candidates = results.flatMap(result => result.status === 'fulfilled' ? result.value : [])
-  let db; let remaining = DAILY_LIMIT; let urls = []; let titles = []
+  let db; let remaining = DAILY_LIMIT; let urls = []; let titles = []; let filled = []
   if (!dryRun) {
     db = createClient(url, serviceKey, { auth: { persistSession: false, autoRefreshToken: false } })
-    const { count, error: countError } = await db.from('articles').select('id', { count: 'exact', head: true }).eq('collection_day', day)
+    const { data: todays, error: countError } = await db.from('articles').select('category').eq('collection_day', day)
     if (countError) throw countError
-    remaining = Math.max(0, DAILY_LIMIT - count)
+    filled = todays.map(row => row.category)
+    remaining = Math.max(0, DAILY_LIMIT - todays.length)
     if (candidates.length) {
       const { data, error } = await db.from('articles').select('source_url,title').in('source_url', candidates.map(item => item.source_url))
       if (error) throw error
@@ -127,12 +164,13 @@ async function main() {
       titles.push(...recent.map(row => row.title))
     }
   }
-  const selected = chooseCandidates(candidates, urls, titles, remaining)
-  console.log(`Eligible: ${candidates.length}; selected: ${selected.length}; daily slots remaining: ${remaining}.`)
+  const selected = chooseCandidates(candidates, urls, titles, remaining, filled)
+  const byCategory = CATEGORIES.map(c => `${c} ${candidates.filter(item => item.category === c).length}`).join(', ')
+  console.log(`Eligible: ${candidates.length} (${byCategory}); selected: ${selected.length} [${selected.map(item => item.category).join(', ')}]; daily slots remaining: ${remaining}.`)
   for (const item of selected) {
     let row = excerptRow(item, day)
     if (!dryRun && process.env.OPENAI_API_KEY) row = await generateLearning(row, item, process.env.OPENAI_API_KEY)
-    if (dryRun) { console.log(`${row.level} | ${row.source} | ${row.published_at} | ${row.title} | ${row.source_url}`); continue }
+    if (dryRun) { console.log(`${row.category} | ${row.level} | ${row.source} | ${row.published_at} | ${row.title} | ${row.source_url}`); continue }
     const { error } = await db.from('articles').insert(row)
     if (error?.code === '23505') { console.log('Already collected; skipping.'); continue }
     if (error) throw error
