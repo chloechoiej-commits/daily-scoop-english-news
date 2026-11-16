@@ -18,6 +18,8 @@ const parser = new Parser({ timeout: 20000 })
 const DAILY_LIMIT = 5
 // Kids' news feeds publish a few stories a week, so look back far enough to fill all 5 sections.
 const MAX_AGE_DAYS = 30
+// If fresh stories run out, older (still unseen) ones fill the day so there are always 5.
+export const FALLBACK_AGE_DAYS = 90
 // Articles kept in the static JSON archive.
 export const KEEP_DAYS = 90
 const blocked = /\b(?:war|killed|killing|murder|suicide|sexual|rape|shooting|terrorism|violent|violence)\b/i
@@ -39,14 +41,14 @@ export function estimateLevel(text) {
   return score < 23 ? 'LEVEL 1' : score < 31 ? 'LEVEL 2' : 'LEVEL 3'
 }
 
-export function toCandidate(item, feed, now = new Date()) {
+export function toCandidate(item, feed, now = new Date(), maxAgeDays = FALLBACK_AGE_DAYS) {
   const title = plainText(item.title)
   const description = plainText(item.contentSnippet || item.content || item.description).replace(/\s*Source\s*$/i, '')
   const date = new Date(item.isoDate || item.pubDate || '')
   let link
   try { link = new URL(item.link) } catch { return null }
   if (link.protocol !== 'https:' || link.hostname !== feed.host || !title || !description || !Number.isFinite(date.getTime())) return null
-  if (date > now || now.getTime() - date.getTime() > MAX_AGE_DAYS * 86400000 || blocked.test(`${title} ${description}`)) return null
+  if (date > now || now.getTime() - date.getTime() > maxAgeDays * 86400000 || blocked.test(`${title} ${description}`)) return null
   link.hash = ''
   link.search = ''
   const feedCategories = (item.categories || []).map(c => typeof c === 'string' ? c : c?._ || '').filter(Boolean)
@@ -137,6 +139,15 @@ export async function generateLearning(row, item, apiKey) {
   return { ...row, title_ko: titleKo, content, translation_ko: translation, summary, words, grammar, level: estimateLevel(content), content_kind: 'ai_generated' }
 }
 
+// Fresh (≤30 days) stories first, one per section; then top up from older unseen stories.
+export function pickDaily(candidates, urls, titles, remaining, filled, now = new Date()) {
+  const fresh = candidates.filter(item => now.getTime() - item.date.getTime() <= MAX_AGE_DAYS * 86400000)
+  const first = chooseCandidates(fresh, urls, titles, remaining, filled)
+  if (first.length >= remaining) return first
+  const more = chooseCandidates(candidates, [...urls, ...first.map(i => i.source_url)], [...titles, ...first.map(i => i.title)], remaining - first.length, [...filled, ...first.map(i => i.category)])
+  return [...first, ...more]
+}
+
 export function seoulDay(now = new Date()) {
   return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now)
 }
@@ -181,7 +192,7 @@ async function collectToJson(path, dryRun) {
   const candidates = await fetchCandidates(now)
   const todays = archive.filter(a => a.collection_day === day)
   const remaining = Math.max(0, DAILY_LIMIT - todays.length)
-  const selected = chooseCandidates(candidates, archive.map(a => a.source_url), archive.map(a => a.title), remaining, todays.map(a => a.category))
+  const selected = pickDaily(candidates, archive.map(a => a.source_url), archive.map(a => a.title), remaining, todays.map(a => a.category), now)
   report(candidates, selected, remaining)
   const rows = await buildRows(selected, day, dryRun)
   for (const row of rows) console.log(`${row.category} | ${row.level} | ${row.source} | ${row.published_at} | ${row.title}`)
@@ -204,11 +215,11 @@ async function collectToSupabase(url, serviceKey) {
     if (error) throw error
     urls = data.map(row => row.source_url); titles = data.map(row => row.title)
     // Catch alternate URLs for the same syndicated title among recent imports.
-    const { data: recent, error: recentError } = await db.from('articles').select('title').not('collection_day', 'is', null).gte('collection_day', new Date(now.getTime() - MAX_AGE_DAYS * 86400000).toISOString().slice(0, 10))
+    const { data: recent, error: recentError } = await db.from('articles').select('title').not('collection_day', 'is', null).gte('collection_day', new Date(now.getTime() - FALLBACK_AGE_DAYS * 86400000).toISOString().slice(0, 10))
     if (recentError) throw recentError
     titles.push(...recent.map(row => row.title))
   }
-  const selected = chooseCandidates(candidates, urls, titles, remaining, todays.map(row => row.category))
+  const selected = pickDaily(candidates, urls, titles, remaining, todays.map(row => row.category), now)
   report(candidates, selected, remaining)
   for (const row of await buildRows(selected, day, false)) {
     const { error } = await db.from('articles').insert(row)

@@ -3,7 +3,8 @@ import { createRoot } from 'react-dom/client'
 import { ArrowLeft, ArrowRight, ArrowUpRight, Bookmark, Check, CheckCircle2, Clock3, FlaskConical, Globe, GraduationCap, Leaf, LogIn, LogOut, Palette, Plus, School, Search, Sparkles, X } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { Article, demoArticles } from './data'
-import { readTeacherArticles, REPO, verifyTeacher, writeTeacherArticles } from './github'
+import { fetchAuthBox, readTeacherArticles, REPO, saveAuthBox, verifyTeacher, writeTeacherArticles } from './github'
+import { AUTH_FILE, MIN_PASSWORD, lockToken, unlockToken, type TokenBox } from './teacher-auth.mjs'
 import { requestSummaryFeedback, type SummaryFeedback } from './summary-feedback'
 import { translationParagraphs } from './translation.mjs'
 import { supabase } from './supabase'
@@ -258,35 +259,59 @@ function FeedbackSection({ number, title, section }: { number: string; title: st
 
 const TOKEN_KEY = 'scoop-teacher-token'
 const coverFor: Record<string, string> = { 환경: 'sage', 과학: 'blue', 생활: 'peach', 문화: 'lilac', 세상: 'coral' }
-const loadToken = () => { try { return sessionStorage.getItem(TOKEN_KEY) || localStorage.getItem(TOKEN_KEY) || '' } catch { return '' } }
+const loadToken = () => { try { localStorage.removeItem(TOKEN_KEY); return sessionStorage.getItem(TOKEN_KEY) || '' } catch { return '' } }
 const seoulToday = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul' }).format(new Date())
 
 function TeacherPage({ published, onSaved }: { published: Article[]; onSaved: (articles: Article[]) => void }) {
   const [token, setToken] = useState(loadToken)
   const [login, setLogin] = useState('')
   const [checking, setChecking] = useState(!!token)
-  const [input, setInput] = useState('')
-  const [remember, setRemember] = useState(false)
+  const [box, setBox] = useState<TokenBox | null | undefined>(undefined)
+  const [setup, setSetup] = useState(false)
   const [message, setMessage] = useState<{ kind: 'ok' | 'error'; text: string } | null>(null)
   const [busy, setBusy] = useState(false)
   const [mine, setMine] = useState<Article[]>(published)
   const formRef = useRef<HTMLFormElement>(null)
 
+  useEffect(() => { fetchAuthBox(import.meta.env.BASE_URL, AUTH_FILE).then(setBox) }, [])
   useEffect(() => {
     if (!token) return
     let live = true
     setChecking(true)
     verifyTeacher(token).then(async name => { if (!live) return; setLogin(name || '선생님'); const { articles } = await readTeacherArticles(token); if (live) setMine(articles) })
-      .catch(error => { if (live) { logout(); setMessage({ kind: 'error', text: error instanceof Error ? error.message : '로그인하지 못했어요.' }) } })
+      .catch(error => { if (live) { logout(); setMessage({ kind: 'error', text: error instanceof Error && /토큰|권한/.test(error.message) ? '저장된 GitHub 토큰이 만료되었거나 권한이 없어요. 관리자가 "로그인 다시 설정하기"로 새 토큰을 등록해 주세요.' : '로그인하지 못했어요.' }) } })
       .finally(() => live && setChecking(false))
     return () => { live = false }
   }, [token])
 
-  function logout() { try { sessionStorage.removeItem(TOKEN_KEY); localStorage.removeItem(TOKEN_KEY) } catch { /* ignore */ } setToken(''); setLogin('') }
-  function signIn(e: React.FormEvent) {
-    e.preventDefault(); const value = input.trim(); if (!value) return
-    try { (remember ? localStorage : sessionStorage).setItem(TOKEN_KEY, value) } catch { /* memory only */ }
-    setMessage(null); setInput(''); setToken(value)
+  function startSession(value: string) { try { sessionStorage.setItem(TOKEN_KEY, value) } catch { /* memory only */ } setMessage(null); setToken(value) }
+  function logout() { try { sessionStorage.removeItem(TOKEN_KEY) } catch { /* ignore */ } setToken(''); setLogin(''); setMessage(null) }
+
+  async function signIn(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault(); const form = e.currentTarget
+    const password = String(new FormData(form).get('password') || '')
+    setBusy(true); setMessage(null)
+    try { startSession(await unlockToken(box, password)); form.reset() }
+    catch (error) { setMessage({ kind: 'error', text: error instanceof Error ? error.message : '로그인하지 못했어요.' }) }
+    finally { setBusy(false) }
+  }
+
+  // First-time setup (or token renewal): checks the token, then stores it encrypted with the new password.
+  async function configure(e: React.FormEvent<HTMLFormElement>, existingToken?: string) {
+    e.preventDefault(); const form = e.currentTarget; const f = new FormData(form)
+    const newToken = existingToken || String(f.get('token') || '').trim()
+    const password = String(f.get('password') || ''); const confirmPassword = String(f.get('confirm') || '')
+    if (password !== confirmPassword) { setMessage({ kind: 'error', text: '비밀번호 확인이 일치하지 않아요.' }); return }
+    setBusy(true); setMessage(null)
+    try {
+      if (!existingToken) await verifyTeacher(newToken)
+      const locked = await lockToken(newToken, password)
+      await saveAuthBox(newToken, AUTH_FILE, locked)
+      setBox(locked); setSetup(false); form.reset()
+      if (!existingToken) startSession(newToken)
+      setMessage({ kind: 'ok', text: existingToken ? '비밀번호를 바꿨어요. 다음 로그인부터 새 비밀번호를 쓰세요.' : '설정을 마쳤어요. 이제 선생님들은 비밀번호로 로그인할 수 있어요.' })
+    } catch (error) { setMessage({ kind: 'error', text: error instanceof Error ? error.message : '설정하지 못했어요.' }) }
+    finally { setBusy(false) }
   }
 
   async function save(next: (current: Article[]) => Article[], commitMessage: string, done: string) {
@@ -321,26 +346,35 @@ function TeacherPage({ published, onSaved }: { published: Article[]; onSaved: (a
   return <section className="teacher">
     <div className="page-head"><span className="kicker">TEACHERS ONLY</span><h1>선생님 전용</h1><p>학생들에게 보여 줄 기사와 학습 자료를 직접 올리고 관리해요.</p></div>
     {message && <p className={`teacher-message ${message.kind}`} role={message.kind === 'error' ? 'alert' : 'status'}>{message.kind === 'ok' ? <CheckCircle2 size={17}/> : <X size={17}/>} {message.text}</p>}
-    {checking ? <div className="empty-state">선생님 권한을 확인하고 있어요...</div> : !token ? <div className="teacher-login">
+    {checking || box === undefined ? <div className="empty-state">확인하고 있어요...</div> : !token ? (box && !setup ? <div className="teacher-login single">
       <form className="modal-form teacher-card" onSubmit={signIn}>
         <h2><LogIn size={20}/> 선생님 로그인</h2>
-        <p className="hint">사이트 저장소({REPO})에 쓰기 권한이 있는 GitHub 계정의 토큰으로 로그인해요. 권한이 없는 계정은 기사를 올릴 수 없어요.</p>
-        <label>GitHub 토큰<input type="password" autoComplete="off" value={input} onChange={e => setInput(e.target.value)} placeholder="github_pat_..." required/></label>
-        <label className="consent"><input type="checkbox" checked={remember} onChange={e => setRemember(e.target.checked)}/><span>이 기기에서 로그인 유지 (개인 기기에서만 선택하세요)</span></label>
-        <button className="primary-button"><LogIn size={16}/> 로그인</button>
+        <p className="hint">선생님 비밀번호를 입력해 주세요.</p>
+        <label>비밀번호<input name="password" type="password" autoComplete="current-password" required autoFocus/></label>
+        <button className="primary-button" disabled={busy}><LogIn size={16}/>{busy ? '확인 중...' : '로그인'}</button>
+        <button type="button" className="logout-link" onClick={() => { setSetup(true); setMessage(null) }}>관리자: 로그인 다시 설정하기 (토큰 만료·비밀번호 분실 시)</button>
+      </form>
+    </div> : <div className="teacher-login">
+      <form className="modal-form teacher-card" onSubmit={e => configure(e)}>
+        <h2><LogIn size={20}/> {box ? '로그인 다시 설정하기' : '처음 한 번만: 선생님 로그인 설정'}</h2>
+        <p className="hint">사이트 관리자가 GitHub 토큰을 한 번 등록하고 선생님 비밀번호를 정해요. 토큰은 비밀번호로 암호화되어 저장되고, 이후에는 비밀번호만으로 로그인해요.</p>
+        <label>GitHub 토큰<input name="token" type="password" autoComplete="off" placeholder="github_pat_..." required/></label>
+        <div className="form-row"><label>선생님 비밀번호 <small>{MIN_PASSWORD}자 이상</small><input name="password" type="password" autoComplete="new-password" minLength={MIN_PASSWORD} required/></label><label>비밀번호 확인<input name="confirm" type="password" autoComplete="new-password" minLength={MIN_PASSWORD} required/></label></div>
+        <button className="primary-button" disabled={busy}>{busy ? '설정하는 중...' : '설정 저장'}</button>
+        {box && <button type="button" className="logout-link" onClick={() => setSetup(false)}>비밀번호 로그인으로 돌아가기</button>}
       </form>
       <div className="teacher-card teacher-guide">
-        <h2>처음이라면: 토큰 만들기</h2>
+        <h2>GitHub 토큰 만들기</h2>
         <ol>
-          <li>GitHub에 로그인한 뒤 <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">새 토큰 만들기 <ArrowUpRight size={12}/></a>를 열어요.</li>
+          <li>저장소 주인 계정으로 GitHub에 로그인한 뒤 <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">새 토큰 만들기 <ArrowUpRight size={12}/></a>를 열어요.</li>
           <li><b>Repository access</b>에서 <b>Only select repositories</b> → <code>{REPO.split('/')[1]}</code>만 선택해요.</li>
           <li><b>Permissions → Contents</b>를 <b>Read and write</b>로 바꿔요.</li>
-          <li>만료일을 정하고 생성한 토큰을 왼쪽에 붙여 넣어요.</li>
+          <li>만료일을 정해 생성하고, 왼쪽에 붙여 넣어요. 만료되면 이 화면에서 다시 설정하면 돼요.</li>
         </ol>
-        <p className="hint">토큰은 비밀번호와 같아요. 학생이나 다른 사람과 공유하지 마세요. 다른 선생님은 저장소 Settings → Collaborators에서 초대해 주세요.</p>
+        <p className="hint">비밀번호는 다른 사람이 추측하기 어렵게 정하고, 선생님들께만 알려 주세요. 비밀번호를 아는 사람은 기사를 올리고 지울 수 있어요.</p>
       </div>
-    </div> : <>
-      <div className="teacher-bar"><span><GraduationCap size={18}/> <b>{login}</b> 선생님으로 로그인했어요</span><button className="text-link" onClick={logout}><LogOut size={16}/> 로그아웃</button></div>
+    </div>) : <>
+      <div className="teacher-bar"><span><GraduationCap size={18}/> 선생님으로 로그인했어요</span><button className="text-link" onClick={logout}><LogOut size={16}/> 로그아웃</button></div>
       <div className="teacher-grid">
         <form ref={formRef} className="modal-form teacher-card" onSubmit={submit}>
           <h2><Plus size={20}/> 새 기사 올리기</h2>
@@ -358,9 +392,17 @@ function TeacherPage({ published, onSaved }: { published: Article[]; onSaved: (a
           <p className="hint">외부 기사는 저작권과 이용 조건을 확인한 뒤 올려 주세요.</p>
           <button className="primary-button" disabled={busy}><Plus size={17}/>{busy ? '올리는 중...' : '기사 올리기'}</button>
         </form>
+        <div className="teacher-side">
         <div className="teacher-card">
           <h2>올린 기사 <span className="nav-count">{mine.length}</span></h2>
           {mine.length === 0 ? <p className="hint">아직 올린 기사가 없어요.</p> : <ul className="teacher-list">{mine.map(a => <li key={a.id} className={`tone-${sectionOf(a.category).tone}`}><div><span className="card-kicker"><span className="section-tag">{a.category}</span><span className="level-tag">{formatDay(a.collection_day || a.published_at)}</span></span><b>{a.title}</b></div><button className="icon-button" disabled={busy} onClick={() => remove(a)} aria-label={`${a.title} 삭제`}><X size={16}/></button></li>)}</ul>}
+        </div>
+        <form className="modal-form teacher-card teacher-password" onSubmit={e => configure(e, token)}>
+          <h2>비밀번호 바꾸기</h2>
+          <label>새 비밀번호 <small>{MIN_PASSWORD}자 이상</small><input name="password" type="password" autoComplete="new-password" minLength={MIN_PASSWORD} required/></label>
+          <label>새 비밀번호 확인<input name="confirm" type="password" autoComplete="new-password" minLength={MIN_PASSWORD} required/></label>
+          <button className="primary-button" disabled={busy}>비밀번호 바꾸기</button>
+        </form>
         </div>
       </div>
     </>}

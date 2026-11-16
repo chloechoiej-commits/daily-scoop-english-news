@@ -3,6 +3,8 @@ name: Daily news & deploy
 on:
   schedule:
     - cron: '7 22 * * *' # ~07:07 Korea time, so the paper is ready before school. GitHub may start late.
+    - cron: '37 0 * * *' # ~09:37 backup run: fills any missing slots if the first run was skipped.
+    - cron: '17 4 * * *' # ~13:17 second backup. Re-runs never add more than 5 per day.
   push:
     branches: [master]
   workflow_dispatch:

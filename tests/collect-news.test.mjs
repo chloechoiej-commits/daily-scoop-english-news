@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { KEEP_DAYS, articleId, mergeIntoArchive, seoulDay, CATEGORIES, categoryFor, chooseCandidates, estimateLevel, excerptRow, generateLearning, headlineKey, toCandidate } from '../scripts/collect-news.mjs'
+import { pickDaily, KEEP_DAYS, articleId, mergeIntoArchive, seoulDay, CATEGORIES, categoryFor, chooseCandidates, estimateLevel, excerptRow, generateLearning, headlineKey, toCandidate } from '../scripts/collect-news.mjs'
 
 const feed = { source: 'Example', host: 'example.org' }
 const now = new Date('2026-11-11T00:00:00Z')
@@ -10,7 +10,7 @@ test('validates dates, domains and unsuitable keywords', () => {
   assert.equal(toCandidate(item, feed, now).source_url, 'https://example.org/news/')
   assert.equal(toCandidate({ ...item, link: 'https://other.org/' }, feed, now), null)
   assert.equal(toCandidate({ ...item, isoDate: '2026-11-12T00:00:00Z' }, feed, now), null)
-  assert.equal(toCandidate({ ...item, isoDate: '2026-09-01T00:00:00Z' }, feed, now), null)
+  assert.equal(toCandidate({ ...item, isoDate: '2026-07-01T00:00:00Z' }, feed, now), null)
   assert.equal(toCandidate({ ...item, title: 'Violence in a city' }, feed, now), null)
 })
 
@@ -85,4 +85,14 @@ test('static archive keeps new rows first and drops old ones', () => {
   assert.equal(merged[0].id, articleId('https://example.org/new'))
   assert.ok(KEEP_DAYS >= 30)
   assert.equal(seoulDay(new Date('2026-11-15T23:30:00Z')), '2026-11-16')
+})
+
+test('fills the day with older unseen stories when fresh ones run out', () => {
+  const now = new Date('2026-11-16T00:00:00Z')
+  const make = (title, category, date) => ({ title, description: title, source: 'Example', source_url: `https://example.org/${title}`, date: new Date(date), category })
+  const items = [make('fresh-sci', '과학', '2026-11-10'), make('fresh-env', '환경', '2026-11-12'), make('old-life', '생활', '2026-09-20'), make('old-art', '문화', '2026-09-10'), make('old-world', '세상', '2026-09-01'), make('old-sci', '과학', '2026-09-02')]
+  const picked = pickDaily(items, [], [], 5, [], now)
+  assert.equal(picked.length, 5)
+  assert.deepEqual(picked.slice(0, 2).map(i => i.title).sort(), ['fresh-env', 'fresh-sci'])
+  assert.deepEqual(picked.map(i => i.category).sort(), ['과학', '문화', '생활', '세상', '환경'].sort())
 })

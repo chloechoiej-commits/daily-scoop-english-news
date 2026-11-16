@@ -1,4 +1,5 @@
 import type { Article } from './data'
+import type { TokenBox } from './teacher-auth.mjs'
 
 // Teacher uploads are committed to this file in the repository; the push redeploys the site.
 export const TEACHER_FILE = 'public/data/teacher-articles.json'
@@ -30,20 +31,39 @@ export async function verifyTeacher(token: string) {
   return user.ok ? String((await user.json()).login || '') : ''
 }
 
-export async function readTeacherArticles(token: string): Promise<{ articles: Article[]; sha?: string }> {
-  const response = await fetch(`${API}/contents/${TEACHER_FILE}?ref=master&t=${Date.now()}`, { headers: headers(token), cache: 'no-store' })
-  if (response.status === 404) return { articles: [] }
-  if (!response.ok) throw await failure(response, '선생님 기사를 불러오지 못했어요.')
+async function readJson<T>(token: string, path: string, fallback: T): Promise<{ data: T; sha?: string }> {
+  const response = await fetch(`${API}/contents/${path}?ref=master&t=${Date.now()}`, { headers: headers(token), cache: 'no-store' })
+  if (response.status === 404) return { data: fallback }
+  if (!response.ok) throw await failure(response, '파일을 불러오지 못했어요.')
   const file = await response.json()
-  const articles = JSON.parse(fromBase64(file.content || '') || '[]')
-  return { articles: Array.isArray(articles) ? articles : [], sha: file.sha }
+  return { data: JSON.parse(fromBase64(file.content || '') || 'null') ?? fallback, sha: file.sha }
 }
 
-export async function writeTeacherArticles(token: string, articles: Article[], sha: string | undefined, message: string) {
-  const response = await fetch(`${API}/contents/${TEACHER_FILE}`, {
+async function writeJson(token: string, path: string, data: unknown, sha: string | undefined, message: string) {
+  const response = await fetch(`${API}/contents/${path}`, {
     method: 'PUT', headers: { ...headers(token), 'Content-Type': 'application/json' },
-    body: JSON.stringify({ message, content: toBase64(JSON.stringify(articles, null, 1) + '\n'), sha, branch: 'master' }),
+    body: JSON.stringify({ message, content: toBase64(JSON.stringify(data, null, 1) + '\n'), sha, branch: 'master' }),
   })
   if (!response.ok) throw await failure(response, '저장하지 못했어요.')
   return (await response.json()).content?.sha as string
+}
+
+export async function readTeacherArticles(token: string): Promise<{ articles: Article[]; sha?: string }> {
+  const { data, sha } = await readJson<Article[]>(token, TEACHER_FILE, [])
+  return { articles: Array.isArray(data) ? data : [], sha }
+}
+
+export const writeTeacherArticles = (token: string, articles: Article[], sha: string | undefined, message: string) => writeJson(token, TEACHER_FILE, articles, sha, message)
+
+/** Public read of the encrypted login box (no token needed). Raw GitHub is fresher than the deployed copy. */
+export async function fetchAuthBox(siteBase: string, path: string): Promise<TokenBox | null> {
+  for (const url of [`https://raw.githubusercontent.com/${REPO}/master/${path}?t=${Date.now()}`, `${siteBase}${path.replace(/^public\//, '')}?t=${Date.now()}`]) {
+    try { const r = await fetch(url, { cache: 'no-store' }); if (r.ok) { const box = await r.json(); if (box?.v === 1) return box } } catch { /* try next */ }
+  }
+  return null
+}
+
+export async function saveAuthBox(token: string, path: string, box: TokenBox) {
+  const { sha } = await readJson<unknown>(token, path, null)
+  await writeJson(token, path, box, sha, 'Update teacher login')
 }
