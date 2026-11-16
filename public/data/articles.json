@@ -13,8 +13,53 @@
   "excerpt": "Step outside. What is it like? The day might be sunny and dry. It might be damp and cool. That is the weather. Here are some ways to talk about the weather.",
   "content": "Step outside. What is it like? The day might be sunny and dry. It might be damp and cool. That is the weather. Here are some ways to talk about the weather.\n\nTemperature\n\nThis is how hot or cold the air is. We measure it in degrees Fahrenheit (ºF). At or below 32ºF is freezing. Above 85ºF is hot.\n\nWind\n\nThe movement of air is called wind. It can be a gentle breeze. It can be a strong gust. Wind is measured in miles per hour.\n\nPrecipitation\n\nPrecipitation is water that falls from the sky. Rain is one type. When it is cold, there might be snow. Precipitation is measured in inches.\n\nHumidity\n\nThis is how much water is in the air. The water is not falling. People say humid days feel damp or muggy.",
   "summary": "",
-  "words": [],
-  "grammar": [],
+  "words": [
+   {
+    "word": "precipitation",
+    "meaning": "강수(량)",
+    "example": "Precipitation is water that falls from the sky."
+   },
+   {
+    "word": "weather",
+    "meaning": "날씨",
+    "example": "That is the weather."
+   },
+   {
+    "word": "measure",
+    "meaning": "측정하다",
+    "example": "We measure it in degrees Fahrenheit (ºF)."
+   },
+   {
+    "word": "damp",
+    "meaning": "축축한",
+    "example": "It might be damp and cool."
+   },
+   {
+    "word": "wind",
+    "meaning": "바람",
+    "example": "The movement of air is called wind."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "The movement of air is called wind.",
+    "focus": "is called"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "The day might be sunny and dry.",
+    "focus": "might be"
+   },
+   {
+    "title": "접속사 because / when / if",
+    "explanation": "because는 이유(~ 때문에), when은 때(~할 때), if는 조건(만약 ~라면)을 나타내며 두 문장을 이어 줘요.",
+    "example": "When it is cold, there might be snow.",
+    "focus": "When it"
+   }
+  ],
   "content_kind": "rss_full",
   "collection_day": "2026-11-16",
   "created_at": "2026-11-16T00:21:11.189Z"
@@ -33,8 +78,53 @@
   "excerpt": "Naegleria amoebas are dogged explorers, especially in tight spaces. These behaviors might help these brain-eating microbes crawl into our heads.",
   "content": "Some deadly amoebas may be primed to invade your brain.\n\nNaegleria fowleri (Neg-LAIR-ee-ah FOW-ler-eye) is sometimes called the brain-eating amoeba. Normally, it lives in ponds, where it dines on bacteria. But the way it seeks out meals might also make it good at crawling up our noses — and into our brains.\n\nNaegleria amoebas are intrepid explorers. In lab studies, they probe nooks and crannies with dogged persistence. When creeping down narrow passageways, the amoebas charge relentlessly forward, almost never turning back. “They’re like robots,” says Lillian Fritz-Laylin. “They just go and go and go.”\n\nThat’s what Fritz-Laylin’s team reported on September 10 in the Proceedings of the National Academy of Sciences. A cell biologist, she works at the University of Massachusetts Amherst. She’s also an investigator at the Howard Hughes Medical Institute.\n\nTheir persistence might help these tiny, single-celled creatures make long journeys. That includes the trek from someone’s nostrils all the way to their brain. The new work offers more insight into their behavior. “We know almost nothing about the basic biology of these organisms,” Fritz-Laylin says.\n\nN. fowleri amoebas are typically harmless to people. They usually dwell in warm bodies of fresh water. There, they squirm through mud, hunt prey and mind their own business. But on rare occasions, one can wash up a swimmer’s nose. From there, it can migrate through the nasal cavity and into the brain. Along the way, it destroys and eats tissue.\n\nOnce in the brain, it starts to reproduce, usually with lethal consequences. The United States sees fewer than 10 Naegleria infections most years. Many occur at summer swimming spots. Nearly all are fatal.\n\nIn the lab, Fritz-Laylin’s team tested how Naegleria amoebas move through different environments. Rather than N. fowleri, they used N. gruberi. This amoeba shares behaviors with its brain-eating relative but is harmless. “It’s a lot safer to work with something that can’t kill you,” Fritz-Laylin points out.\n\nHer team placed the amoebas on glass-bottom dishes. Through a microscope, they watched the critters move around. The amoebas seemed to be interested in exploring.\n\nThe dishes held narrow microchannels. Once the amoebas bumped into a channel opening, they very rarely left it, Fritz-Laylin reports. They squeezed through channels smaller than themselves. And those tight spaces sometimes sped them up. Inside the largest channels tested, the amoebas zipped along twice as fast as cells on the outside.\n\nNaegleria’s persistence and need for speed may make it unique. The team didn’t observe the same behaviors in a different type of amoeba that they tested. Such skills probably make Naegleria good at hunting bacteria in pond sediments, says Fritz-Laylin.\n\nThose same behaviors, however, could also explain N. fowleri’s dark side. Put one at “the wrong place at the wrong time,” she says, “and it can cause devastating infection.”",
   "summary": "",
-  "words": [],
-  "grammar": [],
+  "words": [
+   {
+    "word": "persistence",
+    "meaning": "끈기",
+    "example": "In lab studies, they probe nooks and crannies with dogged persistence."
+   },
+   {
+    "word": "infection",
+    "meaning": "감염",
+    "example": "The United States sees fewer than 10 Naegleria infections most years."
+   },
+   {
+    "word": "bacteria",
+    "meaning": "세균, 박테리아",
+    "example": "Normally, it lives in ponds, where it dines on bacteria."
+   },
+   {
+    "word": "behavior",
+    "meaning": "행동",
+    "example": "The new work offers more insight into their behavior."
+   },
+   {
+    "word": "report",
+    "meaning": "보고하다; 보고서",
+    "example": "That’s what Fritz-Laylin’s team reported on September 10 in the Proceedings of the National Academy of Sciences."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "Some deadly amoebas may be primed to invade your brain.",
+    "focus": "be primed"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "But the way it seeks out meals might also make it good at crawling up our noses — and into our brains.",
+    "focus": "might also make"
+   },
+   {
+    "title": "비교급 (-er / more + than)",
+    "explanation": "두 대상을 비교할 때 \"~보다 더 …한\"이라는 뜻이에요. 짧은 형용사는 -er, 긴 형용사는 more를 붙이고 than 뒤에 비교 대상이 와요.",
+    "example": "The United States sees fewer than 10 Naegleria infections most years.",
+    "focus": "fewer than"
+   }
+  ],
   "content_kind": "rss_full",
   "collection_day": "2026-11-16",
   "created_at": "2026-11-16T00:21:11.189Z"
@@ -53,8 +143,53 @@
   "excerpt": "Sophia Parekh loves books. Her family’s basement is full of them.",
   "content": "Sophia Parekh loves books. Her family’s basement is full of them. There are thousands of books for kids of all ages, from babies and toddlers to elementary schoolers and teens, on neatly organized shelves. It’s like a secret library. Since age 7, Sophia has been giving books out for free through a program she started. It’s called Sophia’s Book Stand.\n\n“My initial goal was to send about 1,000 books a year to kids in need,” Sophia, now 13, told TIME for Kids. To date, the New Jersey seventh grader has managed to give away more than 8,000 books. In September, she was awarded a Gloria Barron Prize for Young Heroes. These are given out every year to young people who are making a positive impact on the world.\n\nSharing Stories To request free books from Sophia’s Book Stand, teachers and families fill out an online form. It asks for kids’ ages and interests. Sophia uses the information to scan the shelves in search of a perfect match. “I try to think of what books I was into” at different ages, Sophia says. “And I try to make sure that whoever gets these books, they definitely like them.”\n\nTo develop a love of reading, she adds, “you have to find a book that you’re into and that you can connect to.” Requests come from all over. Sophia has mailed books to a 4-year-old in Pennsylvania who loves princesses. She’s mailed them to a fifth-grade teacher in Arizona and a sister and brother in New York who are obsessed with dinosaurs and unicorns.\n\nAs Sophia’s collection has grown, so has the number of books she’s able to give. “At first, I was just sending each child two to three books,” she says. “Now I try to send between eight and 10 books each so they can build their libraries at home.” In June, Sophia gave 288 books to 36 students in Linden, New Jersey.\n\nShe wanted them to have books to read over the summer. “I’m very, very grateful to Sophia for the opportunity that she has given to my students,” teacher Elizabeth Nardone says. “To help other kids and spread the happiness of reading is just something special.” Big Dreams Many of the books Sophia gives away are supplied by people in the publishing business.\n\nRecently, she reached out to Mary Pope Osborne, author of the Magic Tree House series. “Kids love, love, love those books,” Sophia’s mom says. Osborne’s’s publisher promised to send multiple copies. Donations come from friends, too. “Books are just so important in all our lives, but especially in children’s lives,” Lindsay Gordon Bezalel says. She and her family live across the street from Sophia.\n\n“I’m happy to support her. She does the legwork that’s needed to make sure books are getting into the right hands.” This spring, Sophia’s Book Stand turns six. “I definitely want to expand,” Sophia says. Her goals include getting more bilingual books and books with diverse characters. She also hopes to ship books to kids in other countries. That way, she says, “everyone can get a chance to get books, no matter where they live.” Inspired? Let Sophia’s story inspire you to promote literacy in your community. Click below for ideas on how you can make a positive difference.",
   "summary": "",
-  "words": [],
-  "grammar": [],
+  "words": [
+   {
+    "word": "positive",
+    "meaning": "긍정적인",
+    "example": "These are given out every year to young people who are making a positive impact on the world."
+   },
+   {
+    "word": "library",
+    "meaning": "도서관",
+    "example": "It’s like a secret library."
+   },
+   {
+    "word": "request",
+    "meaning": "요청; 요청하다",
+    "example": "Sharing Stories To request free books from Sophia’s Book Stand, teachers and families fill out an online form."
+   },
+   {
+    "word": "inspire",
+    "meaning": "영감을 주다",
+    "example": "Let Sophia’s story inspire you to promote literacy in your community."
+   },
+   {
+    "word": "goal",
+    "meaning": "목표",
+    "example": "“My initial goal was to send about 1,000 books a year to kids in need,” Sophia, now 13, told TIME for Kids."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "To date, the New Jersey seventh grader has managed to give away more than 8,000 books.",
+    "focus": "has managed"
+   },
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "In September, she was awarded a Gloria Barron Prize for Young Heroes.",
+    "focus": "was awarded"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "These are given out every year to young people who are making a positive impact on the world.",
+    "focus": "people who are"
+   }
+  ],
   "content_kind": "rss_full",
   "collection_day": "2026-11-16",
   "created_at": "2026-11-16T00:21:11.189Z"
@@ -73,8 +208,47 @@
   "excerpt": "Take a look at the stars. Create your own comic. Learn about stealthy fighters. These books will keep you turning pages all winter break.",
   "content": "Take a look at the stars. Create your own comic. Learn about stealthy fighters. These books will keep you turning pages all winter break. A Kid’s Guide to Backyard Stargazing\n\nStargazing is as easy as looking up at the night sky. This guide will help. You’ll learn about stars, planets, and other celestial objects. Then you’ll get out there and see for yourself. This book will give you all the information you’ll need.\n\nFox River Comics Camp\n\nThis graphic novel takes place at a kids’ comics camp. Campers learn how to draw. They bring their ideas to life. They learn to accept their mistakes. Readers get to be involved, too. Sketch, scribble, and get silly along with the characters. The book is filled with activities created by an award-winning cartoonist. It’s part story, part interactive guide. Ninjas vs. Cats: The Ultimate Challenge Ninjas are quick and stealthy. So are cats. Cats are smart and agile. So are ninjas. This book puts the two head-to-head. Learn the history of the two opponents. Learn facts and myths about them, too. Read how they would fare in different challenges. Who will come out on top?",
   "summary": "",
-  "words": [],
-  "grammar": [],
+  "words": [
+   {
+    "word": "challenge",
+    "meaning": "도전; 도전하다",
+    "example": "Cats: The Ultimate Challenge Ninjas are quick and stealthy."
+   },
+   {
+    "word": "create",
+    "meaning": "창조하다, 만들다",
+    "example": "Create your own comic."
+   },
+   {
+    "word": "comic",
+    "meaning": "만화",
+    "example": "Create your own comic."
+   },
+   {
+    "word": "guide",
+    "meaning": "안내서; 안내하다",
+    "example": "This guide will help."
+   },
+   {
+    "word": "information",
+    "meaning": "정보",
+    "example": "This book will give you all the information you’ll need."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "Readers get to be involved, too.",
+    "focus": "be involved"
+   },
+   {
+    "title": "to부정사 (동사 + to + 동사원형)",
+    "explanation": "want, need, hope, plan, try 같은 동사 뒤에 to + 동사원형이 와서 \"~하기를, ~하는 것을\"이라는 뜻이 돼요.",
+    "example": "They learn to accept their mistakes.",
+    "focus": "learn to accept"
+   }
+  ],
   "content_kind": "rss_full",
   "collection_day": "2026-11-16",
   "created_at": "2026-11-16T00:21:11.189Z"
@@ -93,8 +267,53 @@
   "excerpt": "The United States has a new national park. Chiricahua National Park is in southeastern Arizona. The historic place became a national park on October 20. Chiricahua was formed 27 million years ago.",
   "content": "The United States has a new national park. Chiricahua National Park is in southeastern Arizona. The historic place became a national park on October 20.\n\nChiricahua was formed 27 million years ago. Volcanoes erupted. The volcanic ash cooled. It hardened into rock. Erosion created rock formations called hoodoos. Visitors can hike around these strange pillars.\n\nThe park contains varied ecosystems. There’s desert. There are forested areas and grasslands. Many animals call the park home. Bears, mountain lions, and birds can be seen there.\n\nThe park has a rich history. It’s the homeland of the Chiricahua Apache Native Americans. It was first protected as a national monument in 1924. Now it has been upgraded to a national park. The title recognizes the site’s importance.\n\nDoug Burgum is the U.S. Secretary of the Interior. In a statement, he spoke about the area’s “towering rock spires.” He noted its Apache heritage and its biodiversity. Burgum called it “one of America’s most extraordinary landscapes.”",
   "summary": "",
-  "words": [],
-  "grammar": [],
+  "words": [
+   {
+    "word": "national",
+    "meaning": "국가의",
+    "example": "The United States has a new national park."
+   },
+   {
+    "word": "area",
+    "meaning": "지역, 분야",
+    "example": "There are forested areas and grasslands."
+   },
+   {
+    "word": "extraordinary",
+    "meaning": "놀라운, 특별한",
+    "example": "Burgum called it “one of America’s most extraordinary landscapes.”"
+   },
+   {
+    "word": "biodiversity",
+    "meaning": "생물 다양성",
+    "example": "He noted its Apache heritage and its biodiversity."
+   },
+   {
+    "word": "importance",
+    "meaning": "중요성",
+    "example": "The title recognizes the site’s importance."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "Now it has been upgraded to a national park.",
+    "focus": "has been"
+   },
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "Chiricahua was formed 27 million years ago.",
+    "focus": "was formed"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "Visitors can hike around these strange pillars.",
+    "focus": "can hike"
+   }
+  ],
   "content_kind": "rss_full",
   "collection_day": "2026-11-16",
   "created_at": "2026-11-16T00:21:11.189Z"

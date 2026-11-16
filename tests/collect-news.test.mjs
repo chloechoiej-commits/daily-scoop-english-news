@@ -57,7 +57,6 @@ test('keeps the whole summary when the feed has no full article', () => {
   assert.equal(row.content_kind, 'rss_excerpt')
   assert.equal(row.source, 'Example')
   assert.equal(row.collection_day, '2026-11-11')
-  assert.deepEqual(row.words, [])
   assert.equal(estimateLevel('A cat can run. A dog can run.'), 'LEVEL 1')
 })
 
@@ -74,6 +73,7 @@ test('AI collection saves a full translation rather than a summary', async t => 
   assert.match(prompt, /translation_ko/)
   assert.equal(saved.translation_ko, result.translation_ko)
   assert.notEqual(saved.translation_ko, saved.summary)
+  assert.equal(saved.content, row.content, 'AI must not rewrite the article')
   delete result.translation_ko
   await assert.rejects(() => generateLearning(row, candidate, 'test-key'), /missing required learning fields/)
 })

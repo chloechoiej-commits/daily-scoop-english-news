@@ -317,3 +317,22 @@ button:hover > .cover .cover-icon { transform: rotate(-6deg) scale(1.06) }
 .source-cta:hover { background: var(--tone-soft) }
 .article-subhead { font-family: var(--serif-en); font-size: 23px; margin: 1.4em 0 .5em; color: var(--tone) }
 .article-copy p:first-of-type::first-letter { font-family: var(--serif-en); font-weight: 700; float: left; font-size: 3.3em; line-height: .85; padding: 6px 10px 0 0; color: var(--tone) }
+
+/* Key words in the article */
+.vocab-hint { font-size: 13.5px; color: var(--muted); margin: -10px 0 18px }
+.vocab-mark-sample, .vocab-mark { text-decoration: underline; text-decoration-color: var(--tone); text-decoration-thickness: 2px; text-underline-offset: 4px }
+.vocab-mark { position: relative; font: inherit; color: inherit; background: color-mix(in srgb, var(--tone-soft) 70%, transparent); border-radius: 4px; padding: 0 2px; cursor: pointer }
+.vocab-mark.open { background: var(--tone-soft) }
+.vocab-pop { position: absolute; left: 50%; bottom: calc(100% + 8px); transform: translateX(-50%); z-index: 4; white-space: nowrap; background: var(--ink); color: var(--paper); font-family: var(--sans); font-size: 14px; line-height: 1.4; padding: 7px 12px; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,.18); text-decoration: none }
+.vocab-pop b { margin-right: 6px }
+.study-box { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 28px; padding: 22px; border-radius: 16px; background: var(--tone-soft) }
+.study-box h3 { margin: 0 0 10px; font-size: 16px }
+.study-box ul { list-style: none; margin: 0 0 10px; padding: 0; display: grid; gap: 8px }
+.study-words li { display: flex; gap: 10px; align-items: baseline; font-size: 14.5px }
+.study-words b { font-family: var(--serif-en); font-size: 17px; min-width: 96px }
+.study-grammar li { display: grid; font-size: 14.5px }
+.study-grammar span { font-family: var(--body-en); font-style: italic; color: var(--ink-2) }
+mark { background: color-mix(in srgb, var(--tone) 22%, transparent); color: inherit; border-radius: 3px; padding: 0 2px }
+.autofill { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 13px; color: var(--muted); padding: 10px 12px; background: var(--paper-2); border-radius: 10px }
+.autofill .chip { display: inline-flex; align-items: center; gap: 6px }
+@media (max-width: 720px) { .study-box { grid-template-columns: 1fr } .vocab-pop { white-space: normal; width: max-content; max-width: 220px } }

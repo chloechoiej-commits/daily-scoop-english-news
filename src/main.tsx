@@ -2,11 +2,12 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ArrowLeft, ArrowRight, ArrowUpRight, Bookmark, Check, CheckCircle2, Clock3, FlaskConical, Globe, GraduationCap, Leaf, LogIn, LogOut, Palette, Plus, School, Search, Sparkles, X } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
-import { Article, demoArticles } from './data'
+import { Article, demoArticles, type Word } from './data'
 import { fetchAuthBox, readTeacherArticles, REPO, saveAuthBox, verifyTeacher, writeTeacherArticles } from './github'
 import { AUTH_FILE, MIN_PASSWORD, lockToken, unlockToken, type TokenBox } from './teacher-auth.mjs'
 import { requestSummaryFeedback, type SummaryFeedback } from './summary-feedback'
 import { translationParagraphs } from './translation.mjs'
+import { extractGrammar, extractWords, withLearning, wordPattern } from './learning.mjs'
 import { supabase } from './supabase'
 import './style.css'
 
@@ -29,6 +30,21 @@ const levelShort = (level: string) => ({ 'LEVEL 1': '기초', 'LEVEL 2': '보통
 const steps: [Tab, string, string][] = [['article', '읽기', 'Read'], ['summary', '요약', 'Summarize'], ['words', '단어', 'Words'], ['grammar', '문법', 'Grammar'], ['translation', '번역', 'Korean']]
 // Short lines without an ending period are section subheadings inside an article.
 const isSubhead = (line: string) => line.split(/\s+/).length <= 6 && !/[.!?"”’:)]$/.test(line) && !line.startsWith('•')
+// Wraps the key words of an article (any inflection) so they can be highlighted and tapped.
+function markWords(text: string, words: Word[], render: (match: string, word: Word, key: number) => React.ReactNode) {
+  if (!words.length) return [text]
+  const combined = new RegExp(`(${words.map(w => wordPattern(w.word).source).join('|')})`, 'gi')
+  return text.split(combined).map((part, i) => {
+    if (i % 2 === 0) return part
+    const word = words.find(w => wordPattern(w.word).test(part))
+    return word ? render(part, word, i) : part
+  })
+}
+// Highlights one phrase inside an example sentence.
+function highlight(sentence: string, phrase?: string) {
+  const at = phrase ? sentence.toLowerCase().indexOf(phrase.toLowerCase()) : -1
+  return at < 0 ? sentence : <>{sentence.slice(0, at)}<mark>{sentence.slice(at, at + phrase!.length)}</mark>{sentence.slice(at + phrase!.length)}</>
+}
 const editionDay = (a: Article) => a.collection_day || a.published_at
 const isTeacherPick = (a: Article) => a.id.startsWith('teacher-') ? 1 : 0
 // Newest paper day first; on the same day a teacher's pick leads its section.
@@ -62,6 +78,7 @@ function App() {
   const [feedbackConsent, setFeedbackConsent] = useState(false)
   const feedbackRequest = useRef(0)
   const [revealed, setRevealed] = useState<number[]>([])
+  const [openWord, setOpenWord] = useState('')
 
   useEffect(() => { writeStorage('scoop-saved', saved) }, [saved])
   useEffect(() => { writeStorage('scoop-completed', completed) }, [completed])
@@ -84,9 +101,9 @@ function App() {
       if (fetchError) setError('일부 기사를 불러오지 못했어요.')
       else remote = (data || []) as Article[]
     }
-    const all = [...teacher, ...daily, ...remote]
+    const all = [...teacher, ...daily, ...remote].map(withLearning)
     setDemo(all.length === 0)
-    setArticles(all.length ? all : demoArticles)
+    setArticles(all.length ? all : demoArticles.map(withLearning))
     setLoading(false)
   }
 
@@ -143,7 +160,7 @@ function App() {
     </header>
 
     <main className="main">
-      {view === 'teacher' ? <TeacherPage published={articles.filter(a => a.id.startsWith('teacher-'))} onSaved={next => setArticles(prev => [...next, ...prev.filter(a => !a.id.startsWith('teacher-'))])}/> : selected ? Reader() : view === 'home' ? Home() : Archive()}
+      {view === 'teacher' ? <TeacherPage published={articles.filter(a => a.id.startsWith('teacher-'))} onSaved={next => setArticles(prev => [...next.map(withLearning), ...prev.filter(a => !a.id.startsWith('teacher-'))])}/> : selected ? Reader() : view === 'home' ? Home() : Archive()}
     </main>
 
     <footer className="footer"><span className="footer-mark">The Daily Scoop</span><p>기사는 공개 RSS에서 매일 수집되며 원문 저작권은 각 출처에 있어요. 학습 완료와 요약은 이 브라우저에만 저장돼요.</p></footer>
@@ -238,10 +255,10 @@ function App() {
       </header>
       <nav className="reader-steps" aria-label="학습 단계">{steps.map(([id, ko], i) => <button key={id} className={`${tab === id ? 'active' : ''} ${i < stepIndex ? 'past' : ''}`} aria-current={tab === id ? 'step' : undefined} onClick={() => goTab(id)}><span>{i + 1}</span>{ko}</button>)}</nav>
       <div className="reader-body">
-        {tab === 'article' && <><StepHead no={1} title="차근차근 읽어 볼까요?" help="모르는 단어가 나와도 괜찮아요. 전체 흐름을 먼저 잡아 보세요."/><div className="article-copy">{a.content.split(/\n+/).filter(Boolean).map((paragraph, i) => isSubhead(paragraph) ? <h3 key={i} className="article-subhead">{paragraph}</h3> : <p key={i}>{paragraph}</p>)}</div>{a.content_kind === 'rss_excerpt' && a.source_url && <a className="source-cta" href={a.source_url} target="_blank" rel="noopener noreferrer">{a.source}에서 전체 기사 읽기 <ArrowUpRight size={16}/></a>}<NextBar text="다 읽었다면 내 말로 정리해 봐요." label="요약하기" onClick={() => goTab('summary')}/></>}
+        {tab === 'article' && <><StepHead no={1} title="차근차근 읽어 볼까요?" help="모르는 단어가 나와도 괜찮아요. 전체 흐름을 먼저 잡아 보세요."/><p className="vocab-hint"><span className="vocab-mark-sample">밑줄 친 단어</span>를 누르면 뜻을 볼 수 있어요.</p><div className="article-copy" onClick={e => { if (!(e.target as HTMLElement).closest('.vocab-mark')) setOpenWord('') }}>{a.content.split(/\n+/).filter(Boolean).map((paragraph, i) => isSubhead(paragraph) ? <h3 key={i} className="article-subhead">{paragraph}</h3> : <p key={i}>{markWords(paragraph, a.words || [], (match, word, k) => { const id = `${i}-${k}`; return <button key={k} type="button" className={`vocab-mark ${openWord === id ? 'open' : ''}`} aria-expanded={openWord === id} onClick={() => setOpenWord(openWord === id ? '' : id)}>{match}{openWord === id && <span className="vocab-pop" role="tooltip"><b>{word.word}</b> {word.meaning}</span>}</button> })}</p>)}</div>{(a.words?.length || a.grammar?.length) ? <aside className="study-box"><div><h3>이 기사의 주요 단어</h3><ul className="study-words">{a.words.map(w => <li key={w.word}><b>{w.word}</b><span>{w.meaning}</span></li>)}</ul><button className="text-link" onClick={() => goTab('words')}>단어 카드로 익히기 <ArrowRight size={15}/></button></div><div><h3>문법 포인트</h3><ul className="study-grammar">{a.grammar.map(g => <li key={g.title}><b>{g.title}</b>{g.focus && <span>“{g.focus}”</span>}</li>)}</ul><button className="text-link" onClick={() => goTab('grammar')}>문법 설명 보기 <ArrowRight size={15}/></button></div></aside> : null}{a.content_kind === 'rss_excerpt' && a.source_url && <a className="source-cta" href={a.source_url} target="_blank" rel="noopener noreferrer">{a.source}에서 전체 기사 읽기 <ArrowUpRight size={16}/></a>}<NextBar text="다 읽었다면 내 말로 정리해 봐요." label="요약하기" onClick={() => goTab('summary')}/></>}
         {tab === 'summary' && <><StepHead no={2} title="나만의 문장으로 요약해요" help="가장 중요한 내용을 영어 또는 한국어로 자유롭게 적어 보세요."/><label className="field-label" htmlFor="summary-note">내가 정리한 내용</label><textarea id="summary-note" className="note-area" maxLength={3000} placeholder="이 기사는 어떤 이야기인가요?" value={notes[a.id] || ''} onChange={e => { setNotes({ ...notes, [a.id]: e.target.value }); resetFeedback() }}/><p className="hint">요약은 이 브라우저에 자동 저장돼요. 5자 이상 작성해 주세요.</p><label className="consent"><input type="checkbox" checked={feedbackConsent} onChange={e => setFeedbackConsent(e.target.checked)}/><span>AI 피드백을 위해 요약과 기사 내용이 OpenAI에 전송되는 것에 동의해요. 이름 등 개인정보는 입력하지 마세요.</span></label><button className="primary-button" disabled={!feedbackConsent || (notes[a.id] || '').trim().length < 5 || feedbackBusy} onClick={() => checkSummary(a)}><Check size={17}/> {feedbackBusy ? '피드백을 분석하고 있어요...' : '요약 확인하기'}</button>{feedbackError && <p className="form-error" role="alert">{feedbackError}</p>}{summaryFeedback && <section className="summary-feedback" aria-live="polite" aria-label="요약 피드백"><div className="feedback-heading"><Sparkles size={19}/><div><h3>나의 요약 피드백</h3><p>AI 분석 결과는 틀릴 수 있어요. 기사 원문과 함께 확인하고 필요하면 선생님께 질문해 보세요.</p></div></div><p className="feedback-overall">{summaryFeedback.overall}</p><div className="feedback-list"><FeedbackSection number="01" title="어휘의 적절성" section={summaryFeedback.vocabulary}/><FeedbackSection number="02" title="문법과 문장" section={summaryFeedback.grammar}/><FeedbackSection number="03" title="의미와 핵심 내용" section={summaryFeedback.meaning}/></div>{summaryFeedback.revised_summary && <div className="feedback-revision"><h4>이렇게 다듬어 볼 수 있어요</h4><p>{summaryFeedback.revised_summary}</p></div>}</section>}<NextBar text="핵심 단어를 익혀 볼까요?" label="단어 학습" onClick={() => goTab('words')}/></>}
-        {tab === 'words' && <><StepHead no={3} title="오늘의 단어" help="카드를 눌러 뜻과 예문을 확인해 보세요."/><div className="word-grid">{a.words?.length ? a.words.map((word, i) => <button className={`word-card ${revealed.includes(i) ? 'revealed' : ''}`} key={i} aria-expanded={revealed.includes(i)} onClick={() => setRevealed(revealed.includes(i) ? revealed.filter(n => n !== i) : [...revealed, i])}><span className="word-no">{String(i + 1).padStart(2, '0')}</span><strong>{word.word}</strong>{revealed.includes(i) ? <><b>{word.meaning}</b><em>{word.example}</em></> : <small>눌러서 뜻 보기</small>}</button>) : <p className="empty-state">아직 등록된 단어가 없어요.</p>}</div><NextBar text="문장 속 문법도 살펴봐요." label="문법 보기" onClick={() => goTab('grammar')}/></>}
-        {tab === 'grammar' && <><StepHead no={4} title="문장 속 문법" help="기사에서 만난 표현을 하나씩 알아볼까요?"/><div className="grammar-list">{a.grammar?.length ? a.grammar.map((item, i) => <div className="grammar-card" key={i}><span className="grammar-number">{String(i + 1).padStart(2, '0')}</span><div><h3>{item.title}</h3><p>{item.explanation}</p><blockquote>{item.example}</blockquote></div></div>) : <p className="empty-state">아직 등록된 문법 설명이 없어요.</p>}</div><div className="complete-box"><div><b>{completed.includes(a.id) ? '학습을 완료했어요!' : '여기까지 왔다면 거의 끝!'}</b><span>완료 표시하면 오늘의 진행률에 반영돼요.</span></div><button className={`primary-button ${completed.includes(a.id) ? 'is-done' : ''}`} onClick={() => markDone(a.id)}><Check size={17}/> {completed.includes(a.id) ? '완료됨' : '학습 완료'}</button></div><NextBar text="마지막으로 한국어로 확인해요." label="번역 보기" onClick={() => goTab('translation')}/></>}
+        {tab === 'words' && <><StepHead no={3} title="오늘의 단어" help="카드를 눌러 뜻과 예문을 확인해 보세요."/><div className="word-grid">{a.words?.length ? a.words.map((word, i) => <button className={`word-card ${revealed.includes(i) ? 'revealed' : ''}`} key={i} aria-expanded={revealed.includes(i)} onClick={() => setRevealed(revealed.includes(i) ? revealed.filter(n => n !== i) : [...revealed, i])}><span className="word-no">{String(i + 1).padStart(2, '0')}</span><strong>{word.word}</strong>{revealed.includes(i) ? <><b>{word.meaning}</b><em>{markWords(word.example, [word], (m, _w, k) => <mark key={k}>{m}</mark>)}</em></> : <small>눌러서 뜻 보기</small>}</button>) : <p className="empty-state">아직 등록된 단어가 없어요.</p>}</div><NextBar text="문장 속 문법도 살펴봐요." label="문법 보기" onClick={() => goTab('grammar')}/></>}
+        {tab === 'grammar' && <><StepHead no={4} title="문장 속 문법" help="기사에서 만난 표현을 하나씩 알아볼까요?"/><div className="grammar-list">{a.grammar?.length ? a.grammar.map((item, i) => <div className="grammar-card" key={i}><span className="grammar-number">{String(i + 1).padStart(2, '0')}</span><div><h3>{item.title}</h3><p>{item.explanation}</p><blockquote>{highlight(item.example, item.focus)}</blockquote></div></div>) : <p className="empty-state">아직 등록된 문법 설명이 없어요.</p>}</div><div className="complete-box"><div><b>{completed.includes(a.id) ? '학습을 완료했어요!' : '여기까지 왔다면 거의 끝!'}</b><span>완료 표시하면 오늘의 진행률에 반영돼요.</span></div><button className={`primary-button ${completed.includes(a.id) ? 'is-done' : ''}`} onClick={() => markDone(a.id)}><Check size={17}/> {completed.includes(a.id) ? '완료됨' : '학습 완료'}</button></div><NextBar text="마지막으로 한국어로 확인해요." label="번역 보기" onClick={() => goTab('translation')}/></>}
         {tab === 'translation' && <><StepHead no={5} title="한국어로 확인해요" help={`읽기와 학습을 마친 뒤 내용을 확인해 보세요.${a.content_kind === 'ai_generated' ? ' AI 번역은 틀릴 수 있으니 원문과 비교해 주세요.' : ''}`}/>{translationParagraphs(a.translation_ko).length ? <div className="translation-copy">{translationParagraphs(a.translation_ko).map((paragraph, i) => <p key={i}>{paragraph}</p>)}</div> : <div className="empty-state">아직 이 지문의 한국어 번역이 등록되지 않았어요.</div>}<div className="next-bar"><button className="text-link" onClick={() => goTab('article')}><ArrowLeft size={16}/> 영어 지문 다시 읽기</button><button className="primary-button" onClick={() => navigate('home')}>오늘의 신문으로 <ArrowRight size={17}/></button></div></>}
       </div>
     </article>
@@ -341,7 +358,19 @@ function TeacherPage({ published, onSaved }: { published: Article[]; onSaved: (a
     if (words.some(w => !w.meaning) || grammar.some(g => !g.explanation)) { setMessage({ kind: 'error', text: '단어와 문법은 안내된 형식대로 | 로 구분해 주세요.' }); return }
     const content = get('content'); const category = get('category')
     const article: Article = { id: `teacher-${Date.now().toString(36)}`, title: get('title'), title_ko: get('title_ko'), category, source: get('source'), source_url: get('source_url'), published_at: get('published_at'), collection_day: get('collection_day'), reading_minutes: Number(get('reading_minutes')) || 3, level: get('level'), cover_color: coverFor[category] || 'peach', excerpt: get('excerpt') || content.split(/(?<=[.!?])\s/)[0].slice(0, 160), content, translation_ko: get('translation_ko'), summary: get('summary'), words, grammar, content_kind: 'manual', created_at: new Date().toISOString() }
-    if (await save(current => [article, ...current], `Teacher article: ${article.title}`, `'${article.title}' 기사를 올렸어요. 1~2분 뒤 학생 화면에 반영돼요.`)) formRef.current?.reset()
+    const filled = withLearning(article)
+    if (await save(current => [filled, ...current], `Teacher article: ${article.title}`, `'${article.title}' 기사를 올렸어요. 1~2분 뒤 학생 화면에 반영돼요.`)) formRef.current?.reset()
+  }
+
+  // Fills the word/grammar boxes from the article text so the teacher can review and edit them.
+  function autofill() {
+    const form = formRef.current; if (!form) return
+    const field = (name: string) => form.elements.namedItem(name) as HTMLTextAreaElement
+    const content = field('content').value
+    if (!content.trim()) { setMessage({ kind: 'error', text: '먼저 영어 본문을 입력해 주세요.' }); return }
+    field('words').value = extractWords(content).map(w => `${w.word} | ${w.meaning} | ${w.example}`).join('\n')
+    field('grammar').value = extractGrammar(content).map(g => `${g.title} | ${g.explanation} | ${g.example}`).join('\n')
+    setMessage({ kind: 'ok', text: '본문에서 단어와 문법을 골랐어요. 확인하고 필요하면 고쳐 주세요.' })
   }
 
   const remove = (article: Article) => { if (confirm(`'${article.title}' 기사를 삭제할까요?`)) save(current => current.filter(a => a.id !== article.id), `Remove teacher article: ${article.title}`, '삭제했어요. 1~2분 뒤 학생 화면에서도 사라져요.') }
@@ -390,6 +419,7 @@ function TeacherPage({ published, onSaved }: { published: Article[]; onSaved: (a
           <label>영어 본문<textarea name="content" required rows={8} placeholder="문단은 줄을 바꿔 구분해요."/></label>
           <label>한국어 번역 <small>번역 단계에서 보여요</small><textarea name="translation_ko" rows={5}/></label>
           <label>핵심 요약 <small>선택</small><textarea name="summary" rows={2}/></label>
+          <div className="autofill"><span>단어·문법을 비워 두면 본문에서 자동으로 골라요. 미리 보고 고치려면:</span><button type="button" className="chip" onClick={autofill}><Sparkles size={14}/> 본문에서 자동 채우기</button></div>
           <label>단어 <small>한 줄에 하나: 단어 | 뜻 | 예문</small><textarea name="words" rows={3} placeholder="inspire | 영감을 주다 | The story inspired me."/></label>
           <label>문법 <small>한 줄에 하나: 제목 | 설명 | 예문</small><textarea name="grammar" rows={3} placeholder="관계대명사 that | 앞의 명사를 꾸며 줘요. | The book that I read."/></label>
           <p className="hint">외부 기사는 저작권과 이용 조건을 확인한 뒤 올려 주세요.</p>
