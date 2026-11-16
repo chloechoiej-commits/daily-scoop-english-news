@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { pickDaily, KEEP_DAYS, articleId, mergeIntoArchive, seoulDay, CATEGORIES, categoryFor, chooseCandidates, estimateLevel, excerptRow, generateLearning, headlineKey, toCandidate } from '../scripts/collect-news.mjs'
+import { articleText, teaser, upgradeArchive, READABLE_WORDS, pickDaily, KEEP_DAYS, articleId, mergeIntoArchive, seoulDay, CATEGORIES, categoryFor, chooseCandidates, estimateLevel, excerptRow, generateLearning, headlineKey, toCandidate } from '../scripts/collect-news.mjs'
 
 const feed = { source: 'Example', host: 'example.org' }
 const now = new Date('2026-11-11T00:00:00Z')
@@ -48,10 +48,12 @@ test('picks one story per section before doubling up', () => {
   assert.deepEqual(chooseCandidates(items, [], [], 2, ['환경', '과학', '생활']).map(i => i.category).sort(), ['문화', '세상'].sort())
 })
 
-test('stores a short attributed excerpt, not the full article', () => {
-  const candidate = toCandidate({ ...item, contentSnippet: 'A '.repeat(200) }, feed, now)
+test('keeps the whole summary when the feed has no full article', () => {
+  const long = 'Students plant a garden. '.repeat(20).trim()
+  const candidate = toCandidate({ ...item, contentSnippet: long }, feed, now)
   const row = excerptRow(candidate, '2026-11-11')
-  assert.ok(Array.from(row.content).length <= 180)
+  assert.equal(row.content, long)
+  assert.ok(!row.content.includes('…') && !row.excerpt.includes('…'))
   assert.equal(row.content_kind, 'rss_excerpt')
   assert.equal(row.source, 'Example')
   assert.equal(row.collection_day, '2026-11-11')
@@ -95,4 +97,46 @@ test('fills the day with older unseen stories when fresh ones run out', () => {
   assert.equal(picked.length, 5)
   assert.deepEqual(picked.slice(0, 2).map(i => i.title).sort(), ['fresh-env', 'fresh-sci'])
   assert.deepEqual(picked.map(i => i.category).sort(), ['과학', '문화', '생활', '세상', '환경'].sort())
+})
+
+test('uses the full article from content:encoded, without title or promos', () => {
+  const body = Array.from({ length: 8 }, (_, i) => `<p>Paragraph ${i} tells students about the new park and its many plants.</p>`).join('')
+  const html = `<h2>A Garden Grows</h2>${body}<p>Do you have a science question? We can help!</p><figure><img src="x.jpg"><figcaption>Photo</figcaption></figure>`
+  const candidate = toCandidate({ ...item, 'content:encoded': html }, feed, now)
+  const row = excerptRow(candidate, '2026-11-11')
+  assert.equal(row.content_kind, 'rss_full')
+  assert.equal(row.content.split('\n\n').length, 8)
+  assert.ok(row.content.startsWith('Paragraph 0'))
+  assert.ok(!/science question|Photo|A Garden Grows/.test(row.content))
+  assert.ok(row.reading_minutes >= 1)
+  assert.equal(articleText('<p>A Garden Grows</p><p>Body.</p>', 'A Garden Grows'), 'Body.')
+})
+
+test('teasers end on a full sentence', () => {
+  assert.equal(teaser('One. Two. ' + 'Long sentence goes here. '.repeat(20)), 'One. Two. Long sentence goes here. Long sentence goes here. Long sentence goes here. Long sentence goes here. Long sentence goes here. Long sentence goes here. Long sentence goes here.')
+})
+
+test('prefers a readable-length story within a section', () => {
+  const make = (title, words, d) => ({ title, source_url: `https://example.org/${title}`, date: new Date(d), category: '과학', words })
+  const picked = chooseCandidates([make('long-new', READABLE_WORDS + 500, '2026-11-12'), make('short-old', 300, '2026-11-10')], [], [], 1)
+  assert.equal(picked[0].title, 'short-old')
+})
+
+test('upgrades earlier cut-off excerpts to full text', () => {
+  const html = Array.from({ length: 8 }, () => '<p>The new park has many plants and animals for students to see.</p>').join('')
+  const candidate = toCandidate({ ...item, 'content:encoded': html }, feed, now)
+  const old = { ...excerptRow({ ...candidate, content: candidate.description, fullText: false }, '2026-11-10'), content: 'Students grow…' }
+  const { archive, changed } = upgradeArchive([old], [candidate])
+  assert.equal(changed, 1)
+  assert.equal(archive[0].content_kind, 'rss_full')
+  assert.equal(archive[0].collection_day, '2026-11-10')
+})
+
+test('restores paragraphs and subheadings from flattened feed text', () => {
+  const flat = '<p>Weather<br />Step outside. It might be sunny. That is the weather. Temperature<br />This is how hot the air is. Wind<br />Air moves.</p>'
+  assert.deepEqual(articleText(flat, 'Weather').split('\n\n'), ['Step outside. It might be sunny. That is the weather.', 'Temperature', 'This is how hot the air is.', 'Wind', 'Air moves.'])
+  const long = '<p>' + 'Sophia gives away many books to kids. '.repeat(40) + '</p>'
+  const parts = articleText(long).split('\n\n')
+  assert.ok(parts.length >= 4)
+  assert.equal(parts.join(' '), ('Sophia gives away many books to kids. '.repeat(40)).trim())
 })

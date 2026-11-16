@@ -99,7 +99,7 @@ button:hover > .cover .cover-icon { transform: rotate(-6deg) scale(1.06) }
 .story-cover { display: block; margin-bottom: 16px }
 .story > .cover { margin-bottom: 16px }
 .story-title { text-align: left; font-family: var(--serif-en); font-weight: 700; font-size: 21px; line-height: 1.2; letter-spacing: -.01em; margin: 0 0 8px }
-.story-excerpt { font-family: var(--body-en); font-size: 15.5px; line-height: 1.5; color: var(--ink-2); margin: 0 0 14px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden }
+.story-excerpt { font-family: var(--body-en); font-size: 15.5px; line-height: 1.5; color: var(--ink-2); margin: 0 0 14px }
 .story-foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 8px }
 .story-empty { opacity: .75 }
 .story-empty .story-title { font-family: var(--serif-ko); font-size: 17px }
@@ -180,7 +180,7 @@ button:hover > .cover .cover-icon { transform: rotate(-6deg) scale(1.06) }
 .step-head h2 { font-family: var(--serif-ko); font-size: 26px; margin: 0 0 6px; letter-spacing: -.02em }
 .step-head p { margin: 0 0 24px; color: var(--ink-2); font-size: 15px }
 .article-copy p { font-family: var(--body-en); font-size: 21px; line-height: 1.75; margin: 0 0 1.1em }
-.article-copy p:first-child::first-letter { font-family: var(--serif-en); font-weight: 700; float: left; font-size: 3.3em; line-height: .85; padding: 6px 10px 0 0; color: var(--tone) }
+.article-copy p:first-child::first-letter-unused { font-family: var(--serif-en); font-weight: 700; float: left; font-size: 3.3em; line-height: .85; padding: 6px 10px 0 0; color: var(--tone) }
 .translation-copy p { font-family: var(--serif-ko); font-size: 18px; line-height: 1.9; margin: 0 0 1em }
 .next-bar { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 15px }
 .field-label { display: block; font-weight: 700; font-size: 14px; margin-bottom: 8px }
@@ -273,7 +273,7 @@ button:hover > .cover .cover-icon { transform: rotate(-6deg) scale(1.06) }
   .story .cover-en { display: none }
   .story .cover-icon { width: 48px; height: 48px }
   .story-title { font-size: 19px }
-  .story-excerpt { -webkit-line-clamp: 2; font-size: 15px }
+  .story-excerpt { font-size: 15px }
   .routine { padding: 22px 18px }
   .routine ol { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px }
   .routine li button { padding: 10px 6px; text-align: center }
@@ -313,3 +313,7 @@ button:hover > .cover .cover-icon { transform: rotate(-6deg) scale(1.06) }
 .teacher-login.single { grid-template-columns: minmax(0, 440px); justify-content: center }
 .teacher-side { display: grid; gap: 20px; align-content: start }
 .modal-form .logout-link { justify-self: center }
+.source-cta { display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; padding: 10px 16px; border-radius: 999px; border: 1.5px solid var(--tone); color: var(--tone); font-weight: 700; font-size: 14.5px; text-decoration: none }
+.source-cta:hover { background: var(--tone-soft) }
+.article-subhead { font-family: var(--serif-en); font-size: 23px; margin: 1.4em 0 .5em; color: var(--tone) }
+.article-copy p:first-of-type::first-letter { font-family: var(--serif-en); font-weight: 700; float: left; font-size: 3.3em; line-height: .85; padding: 6px 10px 0 0; color: var(--tone) }

@@ -15,7 +15,7 @@ create table if not exists public.articles (
   summary text not null default '',
   words jsonb not null default '[]'::jsonb,
   grammar jsonb not null default '[]'::jsonb,
-  content_kind text not null default 'manual' check (content_kind in ('manual', 'rss_excerpt', 'ai_generated')),
+  content_kind text not null default 'manual' check (content_kind in ('manual', 'rss_excerpt', 'rss_full', 'ai_generated')),
   collection_day date,
   created_at timestamptz not null default now()
 );
