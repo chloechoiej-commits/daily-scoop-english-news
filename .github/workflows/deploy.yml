@@ -1,12 +1,14 @@
-name: Deploy to GitHub Pages
+name: Daily news & deploy
 
 on:
+  schedule:
+    - cron: '7 22 * * *' # ~07:07 Korea time, so the paper is ready before school. GitHub may start late.
   push:
     branches: [master]
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -17,6 +19,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -24,10 +27,27 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Collect today's 5 articles
+        if: ${{ github.event_name != 'push' }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+        run: npm run collect -- --json public/data/articles.json
+      - name: Save collected articles
+        if: ${{ github.event_name != 'push' }}
+        run: |
+          git config user.name "daily-scoop-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/articles.json
+          if git diff --cached --quiet; then echo "No new articles."; exit 0; fi
+          git commit -m "Daily articles $(TZ=Asia/Seoul date +%F)"
+          for i in 1 2 3; do git pull --rebase origin master && git push origin HEAD:master && exit 0; sleep 5; done
+          exit 1
       - run: npm run build -- --mode github-pages
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_GITHUB_REPO: ${{ github.repository }}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

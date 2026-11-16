@@ -33,17 +33,21 @@ Supabase 설정 후에는 데이터베이스에 등록된 기사만 표시됩니
 4. Supabase Edge Functions의 비밀값에 `OPENAI_API_KEY`를 설정하고 `supabase link --project-ref <프로젝트 ID>` 후 `supabase functions deploy summary-feedback`으로 배포합니다. 기본 모델은 `gpt-4o-mini`, 선택적 Edge Function secret `SUMMARY_FEEDBACK_MODEL`로 변경할 수 있습니다. 서비스 역할 키와 OpenAI 키는 클라이언트 코드나 GitHub Pages에 넣지 마세요. 게이트웨이 JWT 검사는 꺼져 있지만 함수가 모든 요청의 토큰을 Supabase Auth로 검증합니다.
 5. 프런트엔드의 Supabase URL과 anon key를 설정하고 Pages를 다시 배포하세요. Supabase에 실제 기사가 등록되어 있어야 합니다. 학생당 1시간 10회, 전체 24시간 250회의 서버 측 제한이 있으며 실패한 AI 호출도 한도에 포함됩니다. 추가로 OpenAI 예산 한도와 알림을 설정하세요.
 
-## 매일 자동 수집
+## 매일 자동 수집 (설정 불필요)
 
-GitHub Actions가 한국 시간 매일 오전 8시경 TIME for Kids, NewsForKids.net, Science News Explores의 공개 RSS를 확인합니다. 최근 14일 이내 미등록 기사를 하루 5건 가져오며, **환경·과학·생활·문화(스포츠 포함)·세상 5개 분야에서 한 편씩** 고릅니다. 분야는 제목·설명·RSS 카테고리의 키워드로 자동 분류합니다. 어떤 분야에 새 기사가 없으면 가장 적게 뽑힌 분야에서 채우고, 같은 날 다시 실행하면 이미 채운 분야는 건너뜁니다. 피드 전체에 새 기사가 부족하면 5건보다 적을 수 있습니다. 홈 화면은 분야별 최신 기사 1편씩을 '오늘의 신문'으로 보여 주고, 지난 기사는 날짜별로 모아 볼 수 있습니다. 발행일과 출처 링크를 보존하고 제목과 URL을 기준으로 중복을 줄입니다. GitHub 예약 작업은 지연될 수 있습니다. 단순 키워드 차단은 모든 부적절한 내용을 걸러내지 못하므로 교사의 검토가 필요합니다.
+`Daily news & deploy` 워크플로가 한국 시간 매일 아침 7시경 TIME for Kids, NewsForKids.net, Science News Explores의 공개 RSS를 확인합니다. **환경·과학·생활·문화(스포츠 포함)·세상 5개 분야에서 한 편씩**, 오늘 날짜(`collection_day`)로 `public/data/articles.json`에 저장·커밋한 뒤 사이트를 다시 배포합니다. 별도 데이터베이스나 비밀값이 필요 없습니다.
 
-1. 기존 데이터베이스는 `supabase/migrations/20261111_daily_collection.sql`을 실행합니다. 새 데이터베이스는 `supabase/schema.sql`을 실행합니다.
-2. GitHub Actions secrets에 `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`를 설정합니다. 서비스 역할 키는 서버 전용이며 절대 `VITE_` 변수나 소스 코드에 넣지 마세요. 프런트엔드는 별도로 `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`가 필요합니다.
-3. `Collect daily news` 워크플로를 수동 실행해 확인한 뒤 예약 실행을 사용합니다. 외부 출처의 RSS 이용 조건과 발췌·재작성에 대한 권리를 검토하세요.
+- 최근 30일 이내 아직 싣지 않은 기사 중에서 고릅니다. 어떤 분야에 새 기사가 없으면 가장 적게 뽑힌 분야에서 채웁니다. 피드 전체에 새 기사가 부족하면 5편보다 적을 수 있습니다.
+- 90일이 지난 수집 기사는 파일에서 정리됩니다.
+- GitHub 예약 작업은 늦게 시작될 수 있습니다. Actions 탭에서 `Daily news & deploy`를 수동 실행하면 바로 수집합니다.
+- 기본 모드는 짧은 RSS 발췌문만 저장합니다. `OPENAI_API_KEY` Actions secret을 설정하면 학습용 재작성·번역·단어·문법을 AI로 생성합니다(비용 발생, 교사 검토 필요).
+- 단순 키워드 차단은 모든 부적절한 내용을 걸러내지 못하므로 교사의 검토가 필요합니다. 외부 출처의 RSS 이용 조건을 확인하세요.
 
-기본 모드에서는 짧은 RSS 발췌문만 저장하고 전체 기사는 원문 링크로 읽습니다. 난이도는 단순 자동 추정이며 한국어 요약·단어·문법은 제공되지 않습니다. 선택적으로 `OPENAI_API_KEY`를 Actions secret으로 설정하면 RSS 설명을 외부 OpenAI API에 전달해 학습용 재작성·한국어 요약·단어·문법을 생성합니다. 별도 비용이 발생할 수 있고 AI가 틀릴 수 있으므로 원문과 대조하고 교사가 검토해야 합니다. 기본 모델은 `gpt-4o-mini`이며 저장소 변수 `OPENAI_MODEL`로 변경할 수 있습니다. 키가 설정된 상태에서 생성 실패 시 작업이 실패하며, 다음 실행에서 다시 시도합니다.
+`npm run collect -- --dry-run`으로 저장 없이 수집 결과를 확인하고, `npm test`로 수집 로직을 검사합니다. Supabase를 쓰는 경우 `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`를 설정하고 `npm run collect`로 DB에 저장할 수도 있습니다.
 
-`npm run collect -- --dry-run`으로 데이터베이스에 쓰지 않고 피드 수집을 확인할 수 있으며 `npm test`로 수집 로직을 검사합니다.
+## 선생님 전용 화면
+
+사이트 오른쪽 위 **선생님 전용** 버튼(또는 주소 끝 `#teacher`)으로 들어갑니다. 저장소에 쓰기 권한이 있는 GitHub 계정의 fine-grained 토큰(이 저장소만, Contents: Read and write)으로 로그인하면 기사를 올리고 삭제할 수 있습니다. 올린 기사는 `public/data/teacher-articles.json`에 커밋되고 1~2분 뒤 사이트에 반영됩니다. 같은 날 같은 분야에서는 선생님 기사가 자동 수집 기사보다 먼저 실립니다. 다른 선생님은 저장소 Settings → Collaborators에 초대한 뒤 각자 토큰을 만들면 됩니다. 토큰은 브라우저에만 저장되며 공유하지 마세요.
 
 ## GitHub Pages 배포
 

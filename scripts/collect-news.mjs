@@ -2,6 +2,9 @@ import Parser from 'rss-parser'
 import { convert } from 'html-to-text'
 import { createClient } from '@supabase/supabase-js'
 import { pathToFileURL } from 'node:url'
+import { createHash } from 'node:crypto'
+import { readFile, writeFile, mkdir } from 'node:fs/promises'
+import { dirname } from 'node:path'
 
 const feeds = [
   { source: 'TIME for Kids', url: 'https://www.timeforkids.com/feed/', host: 'www.timeforkids.com' },
@@ -13,7 +16,10 @@ const feeds = [
 export const CATEGORIES = ['환경', '과학', '생활', '문화', '세상']
 const parser = new Parser({ timeout: 20000 })
 const DAILY_LIMIT = 5
-const MAX_AGE_DAYS = 14
+// Kids' news feeds publish a few stories a week, so look back far enough to fill all 5 sections.
+const MAX_AGE_DAYS = 30
+// Articles kept in the static JSON archive.
+export const KEEP_DAYS = 90
 const blocked = /\b(?:war|killed|killing|murder|suicide|sexual|rape|shooting|terrorism|violent|violence)\b/i
 
 export function plainText(value) {
@@ -131,13 +137,20 @@ export async function generateLearning(row, item, apiKey) {
   return { ...row, title_ko: titleKo, content, translation_ko: translation, summary, words, grammar, level: estimateLevel(content), content_kind: 'ai_generated' }
 }
 
-async function main() {
-  const dryRun = process.argv.includes('--dry-run')
-  const url = process.env.SUPABASE_URL
-  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
-  if (!dryRun && (!url || !serviceKey)) throw new Error('Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY before collecting.')
-  const now = new Date()
-  const day = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now)
+export function seoulDay(now = new Date()) {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now)
+}
+
+export const articleId = (url) => 'rss-' + createHash('sha1').update(url).digest('hex').slice(0, 12)
+
+// Static-site mode: today's picks are appended to a JSON file that the site loads.
+export function mergeIntoArchive(archive, rows, day, now = new Date()) {
+  const cutoff = new Date(now.getTime() - KEEP_DAYS * 86400000).toISOString().slice(0, 10)
+  const added = rows.map(row => ({ id: articleId(row.source_url), ...row, created_at: now.toISOString() }))
+  return [...added, ...archive].filter(a => (a.collection_day || a.published_at) >= cutoff)
+}
+
+async function fetchCandidates(now) {
   const results = await Promise.allSettled(feeds.map(async feed => {
     const response = await fetch(feed.url, { signal: AbortSignal.timeout(20000), headers: { 'User-Agent': 'DailyScoop/1.0 (educational RSS reader)' } })
     if (!response.ok) throw new Error(`${feed.source}: HTTP ${response.status}`)
@@ -146,36 +159,74 @@ async function main() {
   }))
   for (const result of results) if (result.status === 'rejected') console.error(`Feed unavailable: ${result.reason.message}`)
   if (results.every(result => result.status === 'rejected')) throw new Error('All feeds failed.')
-  const candidates = results.flatMap(result => result.status === 'fulfilled' ? result.value : [])
-  let db; let remaining = DAILY_LIMIT; let urls = []; let titles = []; let filled = []
-  if (!dryRun) {
-    db = createClient(url, serviceKey, { auth: { persistSession: false, autoRefreshToken: false } })
-    const { data: todays, error: countError } = await db.from('articles').select('category').eq('collection_day', day)
-    if (countError) throw countError
-    filled = todays.map(row => row.category)
-    remaining = Math.max(0, DAILY_LIMIT - todays.length)
-    if (candidates.length) {
-      const { data, error } = await db.from('articles').select('source_url,title').in('source_url', candidates.map(item => item.source_url))
-      if (error) throw error
-      urls = data.map(row => row.source_url); titles = data.map(row => row.title)
-      // Catch alternate URLs for the same syndicated title among recent imports.
-      const { data: recent, error: recentError } = await db.from('articles').select('title').not('collection_day', 'is', null).gte('collection_day', new Date(now.getTime() - MAX_AGE_DAYS * 86400000).toISOString().slice(0, 10))
-      if (recentError) throw recentError
-      titles.push(...recent.map(row => row.title))
-    }
-  }
-  const selected = chooseCandidates(candidates, urls, titles, remaining, filled)
-  const byCategory = CATEGORIES.map(c => `${c} ${candidates.filter(item => item.category === c).length}`).join(', ')
-  console.log(`Eligible: ${candidates.length} (${byCategory}); selected: ${selected.length} [${selected.map(item => item.category).join(', ')}]; daily slots remaining: ${remaining}.`)
+  return results.flatMap(result => result.status === 'fulfilled' ? result.value : [])
+}
+
+async function buildRows(selected, day, dryRun) {
+  const rows = []
   for (const item of selected) {
     let row = excerptRow(item, day)
     if (!dryRun && process.env.OPENAI_API_KEY) row = await generateLearning(row, item, process.env.OPENAI_API_KEY)
-    if (dryRun) { console.log(`${row.category} | ${row.level} | ${row.source} | ${row.published_at} | ${row.title} | ${row.source_url}`); continue }
+    rows.push(row)
+  }
+  return rows
+}
+
+const report = (candidates, selected, remaining) => console.log(`Eligible: ${candidates.length} (${CATEGORIES.map(c => `${c} ${candidates.filter(item => item.category === c).length}`).join(', ')}); selected: ${selected.length} [${selected.map(item => item.category).join(', ')}]; daily slots remaining: ${remaining}.`)
+
+async function collectToJson(path, dryRun) {
+  const now = new Date(); const day = seoulDay(now)
+  let archive = []
+  try { archive = JSON.parse(await readFile(path, 'utf8')) } catch (error) { if (error.code !== 'ENOENT') throw error }
+  const candidates = await fetchCandidates(now)
+  const todays = archive.filter(a => a.collection_day === day)
+  const remaining = Math.max(0, DAILY_LIMIT - todays.length)
+  const selected = chooseCandidates(candidates, archive.map(a => a.source_url), archive.map(a => a.title), remaining, todays.map(a => a.category))
+  report(candidates, selected, remaining)
+  const rows = await buildRows(selected, day, dryRun)
+  for (const row of rows) console.log(`${row.category} | ${row.level} | ${row.source} | ${row.published_at} | ${row.title}`)
+  if (dryRun || !rows.length) return
+  await mkdir(dirname(path), { recursive: true })
+  await writeFile(path, JSON.stringify(mergeIntoArchive(archive, rows, day, now), null, 1) + '\n')
+  console.log(`Saved ${rows.length} article(s) for ${day} to ${path}.`)
+}
+
+async function collectToSupabase(url, serviceKey) {
+  const now = new Date(); const day = seoulDay(now)
+  const candidates = await fetchCandidates(now)
+  const db = createClient(url, serviceKey, { auth: { persistSession: false, autoRefreshToken: false } })
+  const { data: todays, error: countError } = await db.from('articles').select('category').eq('collection_day', day)
+  if (countError) throw countError
+  const remaining = Math.max(0, DAILY_LIMIT - todays.length)
+  let urls = []; let titles = []
+  if (candidates.length) {
+    const { data, error } = await db.from('articles').select('source_url,title').in('source_url', candidates.map(item => item.source_url))
+    if (error) throw error
+    urls = data.map(row => row.source_url); titles = data.map(row => row.title)
+    // Catch alternate URLs for the same syndicated title among recent imports.
+    const { data: recent, error: recentError } = await db.from('articles').select('title').not('collection_day', 'is', null).gte('collection_day', new Date(now.getTime() - MAX_AGE_DAYS * 86400000).toISOString().slice(0, 10))
+    if (recentError) throw recentError
+    titles.push(...recent.map(row => row.title))
+  }
+  const selected = chooseCandidates(candidates, urls, titles, remaining, todays.map(row => row.category))
+  report(candidates, selected, remaining)
+  for (const row of await buildRows(selected, day, false)) {
     const { error } = await db.from('articles').insert(row)
     if (error?.code === '23505') { console.log('Already collected; skipping.'); continue }
     if (error) throw error
-    console.log(`Collected: ${row.title} (${row.content_kind})`)
+    console.log(`Collected: ${row.category} | ${row.title} (${row.content_kind})`)
   }
+}
+
+async function main() {
+  const dryRun = process.argv.includes('--dry-run')
+  const jsonIndex = process.argv.indexOf('--json')
+  const url = process.env.SUPABASE_URL
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+  if (jsonIndex > -1) return collectToJson(process.argv[jsonIndex + 1] || 'public/data/articles.json', dryRun)
+  if (dryRun) return collectToJson('public/data/articles.json', true)
+  if (!url || !serviceKey) throw new Error('Use --json <path>, or set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.')
+  return collectToSupabase(url, serviceKey)
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main().catch(error => { console.error(error.message); process.exitCode = 1 })

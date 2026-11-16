@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { CATEGORIES, categoryFor, chooseCandidates, estimateLevel, excerptRow, generateLearning, headlineKey, toCandidate } from '../scripts/collect-news.mjs'
+import { KEEP_DAYS, articleId, mergeIntoArchive, seoulDay, CATEGORIES, categoryFor, chooseCandidates, estimateLevel, excerptRow, generateLearning, headlineKey, toCandidate } from '../scripts/collect-news.mjs'
 
 const feed = { source: 'Example', host: 'example.org' }
 const now = new Date('2026-11-11T00:00:00Z')
@@ -10,7 +10,7 @@ test('validates dates, domains and unsuitable keywords', () => {
   assert.equal(toCandidate(item, feed, now).source_url, 'https://example.org/news/')
   assert.equal(toCandidate({ ...item, link: 'https://other.org/' }, feed, now), null)
   assert.equal(toCandidate({ ...item, isoDate: '2026-11-12T00:00:00Z' }, feed, now), null)
-  assert.equal(toCandidate({ ...item, isoDate: '2026-10-01T00:00:00Z' }, feed, now), null)
+  assert.equal(toCandidate({ ...item, isoDate: '2026-09-01T00:00:00Z' }, feed, now), null)
   assert.equal(toCandidate({ ...item, title: 'Violence in a city' }, feed, now), null)
 })
 
@@ -74,4 +74,15 @@ test('AI collection saves a full translation rather than a summary', async t => 
   assert.notEqual(saved.translation_ko, saved.summary)
   delete result.translation_ko
   await assert.rejects(() => generateLearning(row, candidate, 'test-key'), /missing required learning fields/)
+})
+
+test('static archive keeps new rows first and drops old ones', () => {
+  const now = new Date('2026-11-16T00:00:00Z')
+  const old = { id: 'old', title: 'Old', source_url: 'https://example.org/old', collection_day: '2026-01-01' }
+  const recent = { id: 'recent', title: 'Recent', source_url: 'https://example.org/recent', collection_day: '2026-11-15' }
+  const merged = mergeIntoArchive([recent, old], [{ title: 'New', source_url: 'https://example.org/new', collection_day: '2026-11-16' }], '2026-11-16', now)
+  assert.deepEqual(merged.map(a => a.title), ['New', 'Recent'])
+  assert.equal(merged[0].id, articleId('https://example.org/new'))
+  assert.ok(KEEP_DAYS >= 30)
+  assert.equal(seoulDay(new Date('2026-11-15T23:30:00Z')), '2026-11-16')
 })
