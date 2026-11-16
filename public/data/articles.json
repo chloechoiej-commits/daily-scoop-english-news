@@ -15,11 +15,6 @@
   "summary": "",
   "words": [
    {
-    "word": "precipitation",
-    "meaning": "강수(량)",
-    "example": "Precipitation is water that falls from the sky."
-   },
-   {
     "word": "weather",
     "meaning": "날씨",
     "example": "That is the weather."
@@ -38,6 +33,11 @@
     "word": "wind",
     "meaning": "바람",
     "example": "The movement of air is called wind."
+   },
+   {
+    "word": "freezing",
+    "meaning": "몹시 추운, 영하의",
+    "example": "At or below 32ºF is freezing."
    }
   ],
   "grammar": [
@@ -62,7 +62,24 @@
   ],
   "content_kind": "rss_full",
   "collection_day": "2026-11-16",
-  "created_at": "2026-11-16T00:21:11.189Z"
+  "created_at": "2026-11-16T00:21:11.189Z",
+  "terms": [
+   {
+    "term": "Fahrenheit",
+    "ko": "화씨(°F)",
+    "note": "미국에서 쓰는 온도 단위예요. 물은 32°F에서 얼고 212°F에서 끓어요. (0°C = 32°F)"
+   },
+   {
+    "term": "precipitation",
+    "ko": "강수",
+    "note": "비·눈·우박처럼 하늘에서 떨어지는 물을 모두 이르는 말이에요."
+   },
+   {
+    "term": "humidity",
+    "ko": "습도",
+    "note": "공기 중에 수증기가 얼마나 들어 있는지를 나타내는 정도예요."
+   }
+  ]
  },
  {
   "id": "rss-8864dd39b92c",
@@ -85,16 +102,6 @@
     "example": "In lab studies, they probe nooks and crannies with dogged persistence."
    },
    {
-    "word": "infection",
-    "meaning": "감염",
-    "example": "The United States sees fewer than 10 Naegleria infections most years."
-   },
-   {
-    "word": "bacteria",
-    "meaning": "세균, 박테리아",
-    "example": "Normally, it lives in ponds, where it dines on bacteria."
-   },
-   {
     "word": "behavior",
     "meaning": "행동",
     "example": "The new work offers more insight into their behavior."
@@ -103,6 +110,16 @@
     "word": "report",
     "meaning": "보고하다; 보고서",
     "example": "That’s what Fritz-Laylin’s team reported on September 10 in the Proceedings of the National Academy of Sciences."
+   },
+   {
+    "word": "brain",
+    "meaning": "뇌",
+    "example": "Some deadly amoebas may be primed to invade your brain."
+   },
+   {
+    "word": "hunt",
+    "meaning": "사냥하다",
+    "example": "There, they squirm through mud, hunt prey and mind their own business."
    }
   ],
   "grammar": [
@@ -127,7 +144,59 @@
   ],
   "content_kind": "rss_full",
   "collection_day": "2026-11-16",
-  "created_at": "2026-11-16T00:21:11.189Z"
+  "created_at": "2026-11-16T00:21:11.189Z",
+  "terms": [
+   {
+    "term": "amoeba",
+    "ko": "아메바",
+    "note": "모양이 계속 바뀌는, 눈에 보이지 않을 만큼 작은 단세포 생물이에요."
+   },
+   {
+    "term": "bacteria",
+    "ko": "세균(박테리아)",
+    "note": "아주 작은 단세포 생물이에요. 병을 일으키는 것도 있지만 우리 몸에 이로운 것도 많아요."
+   },
+   {
+    "term": "Proceedings of the National Academy of Sciences",
+    "ko": "미국국립과학원회보(PNAS)",
+    "note": "과학자들이 새 연구 결과를 발표하는 유명한 과학 학술지예요."
+   },
+   {
+    "term": "cell biologist",
+    "ko": "세포생물학자",
+    "note": "생물의 기본 단위인 세포가 어떻게 움직이고 일하는지 연구하는 과학자예요."
+   },
+   {
+    "term": "Howard Hughes Medical Institute",
+    "ko": "하워드 휴스 의학연구소",
+    "note": "생명과학과 의학 연구를 지원하는 미국의 큰 연구 기관이에요."
+   },
+   {
+    "term": "single-celled",
+    "ko": "단세포의",
+    "note": "몸 전체가 세포 하나로 이루어진 생물을 말해요."
+   },
+   {
+    "term": "nostril",
+    "ko": "콧구멍",
+    "note": "코에 있는 두 개의 구멍이에요."
+   },
+   {
+    "term": "organism",
+    "ko": "생물체",
+    "note": "스스로 살아가는 하나하나의 생물(동물, 식물, 미생물)을 말해요."
+   },
+   {
+    "term": "infection",
+    "ko": "감염",
+    "note": "세균이나 바이러스가 몸에 들어와 병을 일으키는 것이에요."
+   },
+   {
+    "term": "sediment",
+    "ko": "퇴적물",
+    "note": "물이나 바람에 실려 와 바닥에 쌓인 모래·흙·진흙이에요."
+   }
+  ]
  },
  {
   "id": "rss-58f8a9aac2e2",
@@ -192,7 +261,24 @@
   ],
   "content_kind": "rss_full",
   "collection_day": "2026-11-16",
-  "created_at": "2026-11-16T00:21:11.189Z"
+  "created_at": "2026-11-16T00:21:11.189Z",
+  "terms": [
+   {
+    "term": "Gloria Barron Prize for Young Heroes",
+    "ko": "글로리아 배런 청소년 영웅상",
+    "note": "사회와 환경을 위해 좋은 일을 한 미국과 캐나다의 청소년에게 주는 상이에요."
+   },
+   {
+    "term": "bilingual",
+    "ko": "2개 국어의",
+    "note": "두 가지 언어로 쓰였거나 두 언어를 할 줄 아는 것이에요."
+   },
+   {
+    "term": "literacy",
+    "ko": "문해력",
+    "note": "글을 읽고 쓰고 이해하는 능력이에요."
+   }
+  ]
  },
  {
   "id": "rss-eea7f7309f7a",
@@ -251,7 +337,24 @@
   ],
   "content_kind": "rss_full",
   "collection_day": "2026-11-16",
-  "created_at": "2026-11-16T00:21:11.189Z"
+  "created_at": "2026-11-16T00:21:11.189Z",
+  "terms": [
+   {
+    "term": "stargazing",
+    "ko": "별 관찰",
+    "note": "밤하늘의 별과 별자리를 바라보며 관찰하는 활동이에요."
+   },
+   {
+    "term": "graphic novel",
+    "ko": "그래픽 노블",
+    "note": "그림과 글로 긴 이야기를 들려주는 만화 형식의 책이에요."
+   },
+   {
+    "term": "ninja",
+    "ko": "닌자",
+    "note": "옛날 일본에서 몰래 정보를 모으거나 임무를 수행하던 사람이에요."
+   }
+  ]
  },
  {
   "id": "rss-4dbe8be3c65e",
@@ -269,11 +372,6 @@
   "summary": "",
   "words": [
    {
-    "word": "national",
-    "meaning": "국가의",
-    "example": "The United States has a new national park."
-   },
-   {
     "word": "area",
     "meaning": "지역, 분야",
     "example": "There are forested areas and grasslands."
@@ -284,13 +382,18 @@
     "example": "Burgum called it “one of America’s most extraordinary landscapes.”"
    },
    {
-    "word": "biodiversity",
-    "meaning": "생물 다양성",
-    "example": "He noted its Apache heritage and its biodiversity."
-   },
-   {
     "word": "importance",
     "meaning": "중요성",
+    "example": "The title recognizes the site’s importance."
+   },
+   {
+    "word": "formation",
+    "meaning": "형성물, 대형",
+    "example": "Erosion created rock formations called hoodoos."
+   },
+   {
+    "word": "recognize",
+    "meaning": "인정하다, 알아보다",
     "example": "The title recognizes the site’s importance."
    }
   ],
@@ -316,6 +419,58 @@
   ],
   "content_kind": "rss_full",
   "collection_day": "2026-11-16",
-  "created_at": "2026-11-16T00:21:11.189Z"
+  "created_at": "2026-11-16T00:21:11.189Z",
+  "terms": [
+   {
+    "term": "national park",
+    "ko": "국립공원",
+    "note": "자연과 역사를 보호하기 위해 나라에서 지정해 관리하는 공원이에요."
+   },
+   {
+    "term": "volcanic ash",
+    "ko": "화산재",
+    "note": "화산이 폭발할 때 뿜어져 나오는 아주 고운 돌가루예요."
+   },
+   {
+    "term": "erosion",
+    "ko": "침식",
+    "note": "바람·물·얼음이 오랜 시간 땅이나 바위를 조금씩 깎아 내는 현상이에요."
+   },
+   {
+    "term": "hoodoo",
+    "ko": "후두(돌기둥 지형)",
+    "note": "침식으로 깎여 만들어진, 위가 버섯처럼 생긴 가늘고 높은 바위 기둥이에요."
+   },
+   {
+    "term": "ecosystem",
+    "ko": "생태계",
+    "note": "한 지역의 생물과 물·흙·공기 같은 환경이 서로 영향을 주고받는 하나의 체계예요."
+   },
+   {
+    "term": "homeland",
+    "ko": "고향 땅",
+    "note": "한 민족이나 집단이 대대로 살아온 땅이에요."
+   },
+   {
+    "term": "Apache",
+    "ko": "아파치족",
+    "note": "미국 남서부에 사는 아메리카 원주민 부족이에요."
+   },
+   {
+    "term": "Native American",
+    "ko": "아메리카 원주민",
+    "note": "유럽인이 오기 전부터 아메리카 대륙에 살던 사람들과 그 후손이에요."
+   },
+   {
+    "term": "national monument",
+    "ko": "국가 기념물",
+    "note": "역사적·자연적 가치가 있어 나라가 보호하도록 지정한 장소예요. 국립공원보다 지정이 간단해요."
+   },
+   {
+    "term": "Secretary of the Interior",
+    "ko": "미국 내무부 장관",
+    "note": "국립공원·자연 자원·원주민 관련 일을 맡는 미국 정부 부처의 장관이에요."
+   }
+  ]
  }
 ]

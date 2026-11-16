@@ -181,7 +181,7 @@ export function upgradeArchive(archive, candidates) {
     changed++
     return withLearning({ ...row, content: fresh.content, excerpt: fresh.excerpt, level: fresh.level, reading_minutes: fresh.reading_minutes, content_kind: fresh.content_kind, words: [], grammar: [] })
   }).map(row => {
-    if (row.words?.length && row.grammar?.length) return row
+    if (row.words?.length && row.grammar?.length && row.terms) return row
     const filled = withLearning(row)
     if (filled.words.length || filled.grammar.length) changed++
     return filled

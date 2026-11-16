@@ -1,5 +1,9 @@
 // Rule-based learning materials (no API key needed): key words and grammar points found in an article.
 // Shared by the daily collector and the teacher upload page.
+import { TERMS, extractTerms } from './glossary.mjs'
+
+// Technical terms get their own *notes, so they are left out of the key-word list.
+const TERM_WORDS = new Set(TERMS.filter(t => !t.term.includes(' ')).map(t => t.term.toLowerCase()))
 
 // Middle-school / news vocabulary with Korean meanings. Base forms; inflected forms are matched automatically.
 const VOCAB_TEXT = `
@@ -604,12 +608,14 @@ export function wordPattern(base) {
 const shortSentence = (sentences, test) => sentences.filter(test).sort((a, b) => (a.length > 220) - (b.length > 220) || 0)[0]
 
 /** Up to `limit` key words found in the text, with Korean meaning and the article sentence they appear in. */
-export function extractWords(text, limit = 5) {
+export function extractWords(text, limit = 5, terms = extractTerms(text)) {
+  // Words already explained as part of a technical term (e.g. "national" in "national park").
+  const inTerms = new Set(terms.flatMap(t => t.term.toLowerCase().split(/[\s-]+/)))
   const sentences = splitSentences(text)
   const counts = new Map()
   for (const token of String(text).match(/[A-Za-z][A-Za-z’'-]+/g) || []) {
     if (/^[A-Z]/.test(token) && !/^[A-Z][a-z]/.test(token)) continue
-    const base = baseForms(token).find(form => VOCAB[form])
+    const base = baseForms(token).find(form => VOCAB[form] && !TERM_WORDS.has(form) && !inTerms.has(form))
     if (base) counts.set(base, (counts.get(base) || 0) + 1)
   }
   // Words that repeat are central to the story; among those, longer words are usually harder.
@@ -657,12 +663,14 @@ export function extractGrammar(text, limit = 3) {
   return out
 }
 
-/** Fills empty word/grammar lists; keeps anything a teacher or AI already wrote. */
+/** Fills empty word/grammar/term lists; keeps anything a teacher or AI already wrote. */
 export function withLearning(article) {
   const text = article.content || ''
+  const terms = article.terms?.length ? article.terms : extractTerms(text)
   return {
     ...article,
-    words: article.words?.length ? article.words : extractWords(text),
+    words: article.words?.length ? article.words : extractWords(text, 5, terms),
     grammar: article.grammar?.length ? article.grammar : extractGrammar(text),
+    terms,
   }
 }

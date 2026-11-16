@@ -1,9 +1,10 @@
 export type Word = { word: string; meaning: string; example: string }
+export type Term = { term: string; ko: string; note: string }
 export type Grammar = { title: string; explanation: string; example: string; focus?: string }
 export type Article = {
   id: string; title: string; title_ko: string; category: string; source: string; source_url: string;
   published_at: string; reading_minutes: number; level: string; cover_color: string;
-  excerpt: string; content: string; summary: string; translation_ko?: string; words: Word[]; grammar: Grammar[];
+  excerpt: string; content: string; summary: string; translation_ko?: string; words: Word[]; grammar: Grammar[]; terms?: Term[];
   content_kind?: 'manual' | 'rss_excerpt' | 'rss_full' | 'ai_generated'; collection_day?: string | null; created_at?: string
 }
 

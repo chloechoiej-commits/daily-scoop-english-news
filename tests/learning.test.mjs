@@ -16,7 +16,8 @@ test('finds key words with Korean meanings and an example from the article', () 
     assert.ok(article.includes(w.example), `${w.word} example is from the article`)
     assert.match(w.example, wordPattern(w.word))
   }
-  assert.ok(words.some(w => w.word === 'biodiversity'))
+  assert.ok(words.some(w => w.word === 'extraordinary'))
+  assert.ok(!words.some(w => w.word === 'biodiversity'), 'technical terms are annotated separately')
 })
 
 test('handles inflected forms', () => {

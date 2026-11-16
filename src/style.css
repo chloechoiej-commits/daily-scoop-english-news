@@ -335,4 +335,22 @@ button:hover > .cover .cover-icon { transform: rotate(-6deg) scale(1.06) }
 mark { background: color-mix(in srgb, var(--tone) 22%, transparent); color: inherit; border-radius: 3px; padding: 0 2px }
 .autofill { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 13px; color: var(--muted); padding: 10px 12px; background: var(--paper-2); border-radius: 10px }
 .autofill .chip { display: inline-flex; align-items: center; gap: 6px }
-@media (max-width: 720px) { .study-box { grid-template-columns: 1fr } .vocab-pop { white-space: normal; width: max-content; max-width: 220px } }
+@media (max-width: 720px) { .study-box { grid-template-columns: 1fr } .vocab-pop, .term-pop { position: fixed; left: 16px; right: 16px; bottom: 16px; top: auto; transform: none; width: auto; max-width: none; white-space: normal; padding: 12px 16px; font-size: 15px } }
+
+/* Technical-term notes (*n) */
+.term { position: relative }
+.term-star { display: inline-block; font-family: var(--sans); font-size: .62em; font-weight: 700; color: var(--tone); vertical-align: .6em; line-height: 1; padding: 2px 3px; margin-left: 1px; border-radius: 4px; cursor: pointer }
+.term-star:not(.sample):hover { background: var(--tone-soft) }
+.term-star.sample { font-size: 1em; vertical-align: baseline }
+.term-star:hover, .term.open .term-star { text-decoration: underline }
+.term-pop { white-space: normal; width: max-content; max-width: min(320px, 80vw); text-align: left }
+.term-pop b { display: block; margin: 0 0 3px }
+.term-notes { margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--line) }
+.term-notes h3 { margin: 0 0 10px; font-size: 16px }
+.term-notes ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px }
+.term-notes li { display: grid; grid-template-columns: 34px 1fr; gap: 6px; font-size: 14.5px }
+.term-no { font-weight: 700; color: var(--tone) }
+.term-notes b { font-family: var(--serif-en); font-size: 16px }
+.term-ko { color: var(--ink-2); font-weight: 600 }
+.term-notes p { margin: 2px 0 0; color: var(--ink-2); line-height: 1.6 }
+.term-tail { white-space: nowrap }
