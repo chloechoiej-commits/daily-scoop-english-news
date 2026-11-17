@@ -1,5 +1,356 @@
 [
  {
+  "id": "rss-6eb803798215",
+  "title": "Scientists Say: Abyssal Zone",
+  "title_ko": "",
+  "source": "Science News Explores",
+  "source_url": "https://www.snexplores.org/article/scientists-say-abyssal-zone-definition-pronunciation",
+  "published_at": "2026-11-16",
+  "category": "환경",
+  "level": "LEVEL 2",
+  "cover_color": "sage",
+  "reading_minutes": 5,
+  "excerpt": "This layer of the ocean lies far out of reach of sunlight. Yet, life still thrives.",
+  "content": "Abyssal Zone, (noun, “ab-IZ-sell ZONE”)\n\nThe abyssal zone is the second-deepest zone of the ocean.\n\nScientists describe the ocean’s depths in five layers. The abyssal zone is the fourth layer. The abyssal zone includes both the water itself and the seafloor. The National Oceanic and Atmospheric Administration, or NOAA, says this zone begins at a depth of 4,000 meters (13,100 feet). Other experts say it starts at a depth of 2,000 meters (6,600 feet). Everyone agrees, however, that it extends to a depth of 6,000 meters (19,700 feet).\n\nLight usually shines through the ocean’s top layer. That’s why scientists call this layer the sunlight zone. The sunlight zone ends at a depth of 200 meters (660 feet). That’s where the twilight zone begins. As you descend through the twilight zone, sunlight fades. By the time you reach the third layer — the midnight zone — all surface light is gone. This layer begins at a depth of 1,000 meters (3,300 feet). Descending below the midnight zone brings you to the abyssal zone. Below the abyssal zone lies the hadal zone.\n\nThe abyssal zone is cold, dark and under massive pressure from the water above. Temperatures remain near-freezing. Sunlight never penetrates to these depths. The only light there comes from life forms. Some living things here are bioluminescent. That means they produce light. These species often use that light to draw in prey or mates.\n\nAnimals and microbes live in the abyssal zone. One type of life you will not find there, however, is plants. They get their energy through photosynthesis, which relies on sunlight. In the sunless abyssal zone, they could not survive.\n\nWith no plants to support the food chain directly, life in the abyssal zone must rely on other food sources. Organic material drifts down from the surface. Microbes or animals may eat that material. That organic material may be tiny particles. Or it could be the body of a dead whale. Chemicals arising from deep below the Earth — such as from hydrothermal vents — may also support deep sea life.\n\nOnly a few parts of Earth’s oceans go deep enough to include all five ocean layers. The Mariana Trench is one example. This deep ocean trench lies in the Western Pacific Ocean. It descends to a depth of almost 11,000 meters (36,000 feet). Descending into this trench would take you through all five major zones of the ocean, including the abyssal zone.\n\nIn a sentence\n\nIn 2026, scientists found glowing giant sea spiders in our ocean’s abyssal zone.\n\nCheck out the full list of Scientists Say.",
+  "summary": "",
+  "words": [
+   {
+    "word": "scientist",
+    "meaning": "과학자",
+    "example": "Scientists describe the ocean’s depths in five layers."
+   },
+   {
+    "word": "material",
+    "meaning": "재료, 자료",
+    "example": "Organic material drifts down from the surface."
+   },
+   {
+    "word": "include",
+    "meaning": "포함하다",
+    "example": "The abyssal zone includes both the water itself and the seafloor."
+   },
+   {
+    "word": "surface",
+    "meaning": "표면",
+    "example": "By the time you reach the third layer — the midnight zone — all surface light is gone."
+   },
+   {
+    "word": "support",
+    "meaning": "지지하다; 지원",
+    "example": "With no plants to support the food chain directly, life in the abyssal zone must rely on other food sources."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "By the time you reach the third layer — the midnight zone — all surface light is gone.",
+    "focus": "is gone"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "They get their energy through photosynthesis, which relies on sunlight.",
+    "focus": "photosynthesis, which relies"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "In the sunless abyssal zone, they could not survive.",
+    "focus": "could not survive"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-17",
+  "terms": [
+   {
+    "term": "species",
+    "ko": "종",
+    "note": "생물을 나누는 기본 단위예요. 같은 종끼리는 서로 짝을 지어 새끼를 낳을 수 있어요."
+   },
+   {
+    "term": "microbe",
+    "ko": "미생물",
+    "note": "현미경으로만 보이는 아주 작은 생물(세균, 곰팡이 등)을 통틀어 부르는 말이에요."
+   },
+   {
+    "term": "photosynthesis",
+    "ko": "광합성",
+    "note": "식물이 햇빛을 이용해 물과 이산화탄소로 양분과 산소를 만드는 과정이에요."
+   }
+  ],
+  "created_at": "2026-11-17T04:26:54.156Z"
+ },
+ {
+  "id": "rss-65075fd5e1b6",
+  "title": "Several types of black holes exist. Here’s how they differ",
+  "title_ko": "",
+  "source": "Science News Explores",
+  "source_url": "https://www.snexplores.org/article/types-of-black-holes",
+  "published_at": "2026-11-16",
+  "category": "과학",
+  "level": "LEVEL 3",
+  "cover_color": "blue",
+  "reading_minutes": 1,
+  "excerpt": "These mysterious objects, which scientists have sorted into four different varieties, continue to challenge our understanding of the universe.",
+  "content": "These mysterious objects, which scientists have sorted into four different varieties, continue to challenge our understanding of the universe.",
+  "summary": "",
+  "words": [
+   {
+    "word": "scientist",
+    "meaning": "과학자",
+    "example": "These mysterious objects, which scientists have sorted into four different varieties, continue to challenge our understanding of the universe."
+   },
+   {
+    "word": "challenge",
+    "meaning": "도전; 도전하다",
+    "example": "These mysterious objects, which scientists have sorted into four different varieties, continue to challenge our understanding of the universe."
+   },
+   {
+    "word": "continue",
+    "meaning": "계속하다",
+    "example": "These mysterious objects, which scientists have sorted into four different varieties, continue to challenge our understanding of the universe."
+   },
+   {
+    "word": "universe",
+    "meaning": "우주",
+    "example": "These mysterious objects, which scientists have sorted into four different varieties, continue to challenge our understanding of the universe."
+   },
+   {
+    "word": "variety",
+    "meaning": "다양성",
+    "example": "These mysterious objects, which scientists have sorted into four different varieties, continue to challenge our understanding of the universe."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "These mysterious objects, which scientists have sorted into four different varieties, continue to challenge our understanding of the universe.",
+    "focus": "have sorted"
+   }
+  ],
+  "content_kind": "rss_excerpt",
+  "collection_day": "2026-11-17",
+  "terms": [],
+  "created_at": "2026-11-17T04:26:54.156Z"
+ },
+ {
+  "id": "rss-45e97c36a7ba",
+  "title": "Mission: Boost Literacy",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g34/service-stars-boost-literacy/",
+  "published_at": "2026-11-12",
+  "category": "생활",
+  "level": "LEVEL 2",
+  "cover_color": "peach",
+  "reading_minutes": 3,
+  "excerpt": "Join a community of kids who are making the world a better and brighter place. TFK Service Stars know that even the smallest actions can make a big impact.",
+  "content": "Join a community of kids who are making the world a better and brighter place. TFK Service Stars know that even the smallest actions can make a big impact. Mission of the Month Reading, writing, and speaking are important skills. Without access to literacy materials, such as books, people miss out on a chance to improve their communication with words. Specialized kinds of literacy, such as digital and financial literacy, give people an understanding of how the world works. All around the country, kids are aiding the spread of literacy. From organizing book drives to tutoring, every effort matters. Need Inspiration? Start a book drive at your school. What types of books will you collect? Where will you donate them?\n\nIf you have a friend or schoolmate who’s struggling with reading and writing, ask how you can help.\n\nResearch ways to promote different kinds of literacy in your community. What groups or events need more attention and support?\n\nAsk a school or public librarian for information about the library’s literacy programs. Is there a way you can support these efforts?\n\nKnow multiple languages? Read a book with someone who wants to learn one of them.\n\nStars Shine Brighter Together Reading to young children helps them develop strong literacy skills. Plus, it’s fun! Ask a teacher for permission to visit a classroom of younger students. Have your classmates help you select fun books that you can read aloud. It’s story time! Need help getting started? Talk to an adult or pair up with a friend to find an idea that feels right for you. Tell Us About It! We want to hear all about your efforts to boost literacy. Share your story with us at tfkeditors@time.com for a chance to be featured in TIME for Kids.",
+  "summary": "",
+  "words": [
+   {
+    "word": "community",
+    "meaning": "지역 사회, 공동체",
+    "example": "Join a community of kids who are making the world a better and brighter place."
+   },
+   {
+    "word": "support",
+    "meaning": "지지하다; 지원",
+    "example": "What groups or events need more attention and support?"
+   },
+   {
+    "word": "effort",
+    "meaning": "노력",
+    "example": "From organizing book drives to tutoring, every effort matters."
+   },
+   {
+    "word": "skill",
+    "meaning": "기술, 능력",
+    "example": "Mission of the Month Reading, writing, and speaking are important skills."
+   },
+   {
+    "word": "information",
+    "meaning": "정보",
+    "example": "Ask a school or public librarian for information about the library’s literacy programs."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "com for a chance to be featured in TIME for Kids.",
+    "focus": "be featured"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "Join a community of kids who are making the world a better and brighter place.",
+    "focus": "kids who are"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "TFK Service Stars know that even the smallest actions can make a big impact.",
+    "focus": "can make"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-17",
+  "terms": [
+   {
+    "term": "literacy",
+    "ko": "문해력",
+    "note": "글을 읽고 쓰고 이해하는 능력이에요."
+   }
+  ],
+  "created_at": "2026-11-17T04:26:54.156Z"
+ },
+ {
+  "id": "rss-91f113e51db8",
+  "title": "Braving the Storm",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g34/braving-the-storm-g3/",
+  "published_at": "2026-10-28",
+  "category": "문화",
+  "level": "LEVEL 2",
+  "cover_color": "lilac",
+  "reading_minutes": 2,
+  "excerpt": "Sisters Alone, which was published in September, is a tale of bravery and sisterhood.",
+  "content": "Sisters Alone, which was published in September, is a tale of bravery and sisterhood. The book is about “two sisters who have had a crack in their relationship ever since their mother died,” author SHIFA SALTAGI SAFADI told TIME for Kids. “When they get stuck home alone in a blizzard, they have to figure out what that crack is, and heal it. They lean on each other in order to survive the storm.”\n\nThe book is written in verse, as poetry. It has rhythm. Safadi enjoys writing in verse because of the “many beautiful things” it can do: “I love the way that verse tells a complete story with so [few] words,” she says. “I think about every single word on the page and how it makes the reader feel, how it sounds musically, how it looks on the page visually.”",
+  "summary": "",
+  "words": [
+   {
+    "word": "complete",
+    "meaning": "완료하다; 완전한",
+    "example": "Safadi enjoys writing in verse because of the “many beautiful things” it can do: “I love the way that verse tells a complete story with so [few] words,” she says."
+   },
+   {
+    "word": "publish",
+    "meaning": "출판하다",
+    "example": "Sisters Alone, which was published in September, is a tale of bravery and sisterhood."
+   },
+   {
+    "word": "survive",
+    "meaning": "살아남다",
+    "example": "They lean on each other in order to survive the storm.”"
+   },
+   {
+    "word": "author",
+    "meaning": "작가",
+    "example": "The book is about “two sisters who have had a crack in their relationship ever since their mother died,” author SHIFA SALTAGI SAFADI told TIME for Kids."
+   },
+   {
+    "word": "figure",
+    "meaning": "인물, 수치",
+    "example": "“When they get stuck home alone in a blizzard, they have to figure out what that crack is, and heal it."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "Sisters Alone, which was published in September, is a tale of bravery and sisterhood.",
+    "focus": "was published"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "The book is about “two sisters who have had a crack in their relationship ever since their mother died,” author SHIFA SALTAGI SAFADI told TIME for Kids.",
+    "focus": "sisters who have"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "Safadi enjoys writing in verse because of the “many beautiful things” it can do: “I love the way that verse tells a complete story with so [few] words,” she says.",
+    "focus": "can do"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-17",
+  "terms": [],
+  "created_at": "2026-11-17T04:26:54.156Z"
+ },
+ {
+  "id": "rss-52099595db01",
+  "title": "TFK at New York Comic Con",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g34/tfk-at-new-york-comic-con/",
+  "published_at": "2026-11-16",
+  "category": "세상",
+  "level": "LEVEL 2",
+  "cover_color": "coral",
+  "reading_minutes": 9,
+  "excerpt": "TFK Kid Reporter Shaiyar Dhillon attended New York Comic Con in October. In this article, he shares his experience with TIME for Kids readers.",
+  "content": "TFK Kid Reporter Shaiyar Dhillon attended New York Comic Con in October. In this article, he shares his experience with TIME for Kids readers. Every year since 2006, thousands gather at New York City’s Javits Center to take part in one of the world’s largest comic and pop culture events. My family and I have been going to New York Comic Con (NYCC) since I was about seven months old: I wore a Superman onesie.\n\nWe love to read comics and books, cosplay, and watch our favorite superhero shows and movies. For us, NYCC is an annual family celebration. Over the years, I’ve cosplayed some of my favorite characters, such as Dipper from Gravity Falls, Hunter from The Owl House, and Miles Morales from Spider-Man. I’ve also cosplayed Percy Jackson from Rick Riordan’s best-selling Percy Jackson series.\n\nAt this year’s NYCC, I got to meet Riordan, and other authors, as well. Authors Abound Randy Ribay is a National Book Award finalist who writes the Avatar: Last Airbender books. When I met him, Ribay told me he got the gig because he was both a writer and a fan. In 2020, he watched the whole series on Netflix and “did one of those long Twitter threads where I watched an episode and then would type up my reactions, my analysis of the episode.\n\nAnd I did that for the entire series. Somebody [saw] that at some point, and they’re like, ‘Oh yeah, this writer is a fan. Let’s ask him.’” Pretty cool. Next up from Ribay is his third Avatar book, about Avatar Sonam. The book was announced at Comic Con. My family and I spent some time strolling through NYCC’s Artist Alley.\n\nI got to meet Kami Garcia, who writes the Teen Titans series. I also met Zeno Robinson, who voices Goh in Pokémon Journeys and Hunter in The Owl House. He signed my Owl House graphic novel. On Sunday, the last day of Comic Con, I spoke with one of my favorite writers, Rick Riordan. You know him as the creator of the Percy Jackson universe.\n\nRiordan was at Comic Con to chat about his new book, The Wild Zone, which came out in September. It’s the first book of the Camp Half-Blood Chronicles. Riordan was joined on a panel by series coauthors Annabelle Oh, Kyle Lukoff, Pablo Cartaya, and Jade Adia. Oh cowrote the first book in the series. During the panel, she said that main character Katie Kim is “a daughter of Aries, and she’s an underwhelming daughter of Aries.\n\n.  She’s kind of in everyone’s shadow.” Oh added that Katie is “trying to make her way and prove herself”—just like most of us. Time to Chat After the panel, I got to sit down with Riordan and Oh and ask them questions about Camp Half-Blood: The Wild Zone. Here’s part of our conversation. Shaiyar: Can you tell me about the origins of the Camp Half-Blood series, and how you met the collaborators?\n\nRiordan: I was on set with the Percy Jackson TV show, and we were having conversations about what we could do with the sets between seasons. That got me thinking about if there were stories that we could tell that happened between The Lightning Thief and The Sea of Monsters. I started brainstorming, and I came up with this idea: What if we had four new heroes?\n\nAnd what if I could find four great other authors who could each take one of their voices and bring them to life? Shaiyar: How does it feel to write in a universe like Percy Jackson? Were you a fan? Oh: I was. I read them a long time ago, when the first book came out. Rick has such a conversational and approachable voice for readers.\n\nIt’s like you’re hanging out with a friend and the friend is just telling you a fun story. So I liked his writing style, and I enjoyed his books. When I got the opportunity to work on this, it was an honor. But it was also intimidating, because I know how beloved that world and those characters are. I had to make sure I worked very, very hard to do all of my research on the past material and to make sure I knew enough about the world that I would not let the fans down.\n\nShaiyar: What do you like better, working on TV or writing books? Riordan: Writing books. I mean, that’s where I live. No offense to the television industry: They do amazing work. But it’s not my world. I’m lucky that they invited me in and I got to learn more about it. But I am first and foremost always a novelist.\n\nShaiyar: Is there a scoop you can give us about Season 3 of the show? Riordan: All I can tell you is that I think it’s the best one yet. You should totally watch it. I think you’ll like it! This interview has been edited for length and clarity.",
+  "summary": "",
+  "words": [
+   {
+    "word": "character",
+    "meaning": "등장인물, 성격",
+    "example": "Over the years, I’ve cosplayed some of my favorite characters, such as Dipper from Gravity Falls, Hunter from The Owl House, and Miles Morales from Spider-Man."
+   },
+   {
+    "word": "universe",
+    "meaning": "우주",
+    "example": "You know him as the creator of the Percy Jackson universe."
+   },
+   {
+    "word": "series",
+    "meaning": "시리즈, 연속",
+    "example": "I’ve also cosplayed Percy Jackson from Rick Riordan’s best-selling Percy Jackson series."
+   },
+   {
+    "word": "author",
+    "meaning": "작가",
+    "example": "At this year’s NYCC, I got to meet Riordan, and other authors, as well."
+   },
+   {
+    "word": "season",
+    "meaning": "계절",
+    "example": "Riordan: I was on set with the Percy Jackson TV show, and we were having conversations about what we could do with the sets between seasons."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "This interview has been edited for length and clarity.",
+    "focus": "has been"
+   },
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "The book was announced at Comic Con.",
+    "focus": "was announced"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "Authors Abound Randy Ribay is a National Book Award finalist who writes the Avatar: Last Airbender books.",
+    "focus": "finalist who writes"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-17",
+  "terms": [
+   {
+    "term": "gravity",
+    "ko": "중력",
+    "note": "물체를 서로 끌어당기는 힘이에요. 우리가 땅에 붙어 있는 이유예요."
+   },
+   {
+    "term": "graphic novel",
+    "ko": "그래픽 노블",
+    "note": "그림과 글로 긴 이야기를 들려주는 만화 형식의 책이에요."
+   }
+  ],
+  "created_at": "2026-11-17T04:26:54.156Z"
+ },
+ {
   "id": "rss-24eee8a624bd",
   "title": "What is the Weather?",
   "title_ko": "",
