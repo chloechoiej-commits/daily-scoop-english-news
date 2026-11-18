@@ -1,5 +1,292 @@
 [
  {
+  "id": "rss-2a02f42e3449",
+  "title": "Measuring Weather",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/k1/measuring-weather-k1/",
+  "published_at": "2026-11-12",
+  "category": "환경",
+  "level": "LEVEL 1",
+  "cover_color": "sage",
+  "reading_minutes": 1,
+  "excerpt": "Handy tools help us measure weather. They give us numbers to describe it. Have you seen any of these tools? Thermometer This tool (above) measures temperature.",
+  "content": "Handy tools help us measure weather. They give us numbers to describe it. Have you seen any of these tools?\n\nThermometer This tool (above) measures temperature. The red line goes higher as the temperature gets hotter.\n\nAnemometer\n\nThis tool measures wind speed. Cups catch the wind. They turn a dial. The dial shows wind speed.\n\nRain Gauge\n\nThis tool measures rainfall. Rain collects in the gauge. This shows you how much has fallen. Hygrometer This tool measures humidity. Above 70% feels very wet and humid. Below 40% is fairly dry.",
+  "summary": "",
+  "words": [
+   {
+    "word": "temperature",
+    "meaning": "온도",
+    "example": "Thermometer This tool (above) measures temperature."
+   },
+   {
+    "word": "measure",
+    "meaning": "측정하다",
+    "example": "Handy tools help us measure weather."
+   },
+   {
+    "word": "tool",
+    "meaning": "도구",
+    "example": "Handy tools help us measure weather."
+   },
+   {
+    "word": "wind",
+    "meaning": "바람",
+    "example": "This tool measures wind speed."
+   },
+   {
+    "word": "describe",
+    "meaning": "묘사하다",
+    "example": "They give us numbers to describe it."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "This shows you how much has fallen.",
+    "focus": "has fallen"
+   },
+   {
+    "title": "과거시제",
+    "explanation": "이미 끝난 과거의 일을 말할 때 동사의 과거형을 써요. 규칙 동사는 -ed를 붙이고, 불규칙 동사는 형태가 바뀌어요.",
+    "example": "The red line goes higher as the temperature gets hotter.",
+    "focus": "The red"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-18",
+  "terms": [
+   {
+    "term": "humidity",
+    "ko": "습도",
+    "note": "공기 중에 수증기가 얼마나 들어 있는지를 나타내는 정도예요."
+   }
+  ],
+  "created_at": "2026-11-18T03:39:55.442Z"
+ },
+ {
+  "id": "rss-ca3dfd7bec01",
+  "title": "Tech Failures Cause Worldwide Problems",
+  "title_ko": "",
+  "source": "NewsForKids.net",
+  "source_url": "https://newsforkids.net/articles/2026/11/17/tech-failures-cause-worldwide-problems/",
+  "published_at": "2026-11-17",
+  "category": "과학",
+  "level": "LEVEL 2",
+  "cover_color": "blue",
+  "reading_minutes": 1,
+  "excerpt": "Modern life runs on technology. From the methods we use to communicate to keeping planes in the sky safe, digital networks keep the world moving.",
+  "content": "Modern life runs on technology. From the methods we use to communicate to keeping planes in the sky safe, digital networks keep the world moving. But, when these systems break, they can cause huge problems for millions of people. Recent big tech failures are showing how much the world depends on these networks.",
+  "summary": "",
+  "words": [
+   {
+    "word": "communicate",
+    "meaning": "의사소통하다",
+    "example": "From the methods we use to communicate to keeping planes in the sky safe, digital networks keep the world moving."
+   },
+   {
+    "word": "technology",
+    "meaning": "기술",
+    "example": "Modern life runs on technology."
+   },
+   {
+    "word": "million",
+    "meaning": "100만",
+    "example": "But, when these systems break, they can cause huge problems for millions of people."
+   },
+   {
+    "word": "failure",
+    "meaning": "실패",
+    "example": "Recent big tech failures are showing how much the world depends on these networks."
+   },
+   {
+    "word": "modern",
+    "meaning": "현대의",
+    "example": "Modern life runs on technology."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "But, when these systems break, they can cause huge problems for millions of people.",
+    "focus": "can cause"
+   }
+  ],
+  "content_kind": "rss_excerpt",
+  "collection_day": "2026-11-18",
+  "terms": [],
+  "created_at": "2026-11-18T03:39:55.442Z"
+ },
+ {
+  "id": "rss-b2284008d5e4",
+  "title": "TIME’s Kid of the Year: Ledger!",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g34/times-kid-of-the-year-ledger/",
+  "published_at": "2026-11-10",
+  "category": "생활",
+  "level": "LEVEL 2",
+  "cover_color": "peach",
+  "reading_minutes": 1,
+  "excerpt": "Remember Ledger Mann, the 9-year-old who helps first responders care for kids with autism? We featured him in our October 23 issue, as that month’s Shining Star.",
+  "content": "Remember Ledger Mann, the 9-year-old who helps first responders care for kids with autism? We featured him in our October 23 issue, as that month’s Shining Star. Now he’s being featured in TIME magazine, too! Ledger was recently named TIME’s 2026 Kid of the Year. Jeffrey Kluger, a TIME editor at large, spoke with Ledger for the story. Ledger’s ability to “learn to thrive in school, in his social group, in the noisy world at large” is admirable, Kluger says. “For Ledger, this means, in part, helping other neurodivergent kids.”",
+  "summary": "",
+  "words": [
+   {
+    "word": "feature",
+    "meaning": "특징; 특별히 포함하다",
+    "example": "We featured him in our October 23 issue, as that month’s Shining Star."
+   },
+   {
+    "word": "ability",
+    "meaning": "능력",
+    "example": "Ledger’s ability to “learn to thrive in school, in his social group, in the noisy world at large” is admirable, Kluger says."
+   },
+   {
+    "word": "issue",
+    "meaning": "문제, 쟁점",
+    "example": "We featured him in our October 23 issue, as that month’s Shining Star."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "Now he’s being featured in TIME magazine, too!",
+    "focus": "being featured"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "Remember Ledger Mann, the 9-year-old who helps first responders care for kids with autism?",
+    "focus": "old who helps"
+   },
+   {
+    "title": "to부정사 (동사 + to + 동사원형)",
+    "explanation": "want, need, hope, plan, try 같은 동사 뒤에 to + 동사원형이 와서 \"~하기를, ~하는 것을\"이라는 뜻이 돼요.",
+    "example": "Ledger’s ability to “learn to thrive in school, in his social group, in the noisy world at large” is admirable, Kluger says.",
+    "focus": "learn to thrive"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-18",
+  "terms": [],
+  "created_at": "2026-11-18T03:39:55.442Z"
+ },
+ {
+  "id": "rss-c1514e11873f",
+  "title": "The Cat’s Back",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g56/the-cats-back-g5/",
+  "published_at": "2026-10-28",
+  "category": "문화",
+  "level": "LEVEL 2",
+  "cover_color": "lilac",
+  "reading_minutes": 2,
+  "excerpt": "Things get way out of hand in The Cat in the Hat, in theaters November 6. The Cat and his Things are back, in a new time-traveling adventure based on the beloved Dr. Seuss books.",
+  "content": "Things get way out of hand in The Cat in the Hat, in theaters November 6. The Cat and his Things are back, in a new time-traveling adventure based on the beloved Dr. Seuss books.\n\nSiblings Gabby and Sebastian have moved to a new town with their mom. Sebastian is a “very positive, energetic kid,” TIAGO MARTINEZ (left), who voices him, told TFK Kid Reporter Adam Sadi. He’s always trying to cheer up Gabby, who’s “not so positive.” Gabby has a hard time embracing their new home. XOCHITL GOMEZ, who voices Gabby, told TFK Kid Reporter Bevy Lustig that she was “very excited” to draw inspiration from the classic Cat in the Hat books. She wanted to make Gabby fun, she says, “but also add a little attitude.”\n\nAs the kids adjust to their move, the Cat steps in, bringing his signature mayhem. The result is a thrilling twist on a classic. With new characters and an expanded world, “it has moments for everyone,” Tiago says.",
+  "summary": "",
+  "words": [
+   {
+    "word": "positive",
+    "meaning": "긍정적인",
+    "example": "Sebastian is a “very positive, energetic kid,” TIAGO MARTINEZ (left), who voices him, told TFK Kid Reporter Adam Sadi."
+   },
+   {
+    "word": "adventure",
+    "meaning": "모험",
+    "example": "The Cat and his Things are back, in a new time-traveling adventure based on the beloved Dr."
+   },
+   {
+    "word": "character",
+    "meaning": "등장인물, 성격",
+    "example": "With new characters and an expanded world, “it has moments for everyone,” Tiago says."
+   },
+   {
+    "word": "result",
+    "meaning": "결과",
+    "example": "The result is a thrilling twist on a classic."
+   },
+   {
+    "word": "expand",
+    "meaning": "확장하다",
+    "example": "With new characters and an expanded world, “it has moments for everyone,” Tiago says."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "Siblings Gabby and Sebastian have moved to a new town with their mom.",
+    "focus": "have moved"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "XOCHITL GOMEZ, who voices Gabby, told TFK Kid Reporter Bevy Lustig that she was “very excited” to draw inspiration from the classic Cat in the Hat books.",
+    "focus": "GOMEZ, who voices"
+   },
+   {
+    "title": "to부정사 (동사 + to + 동사원형)",
+    "explanation": "want, need, hope, plan, try 같은 동사 뒤에 to + 동사원형이 와서 \"~하기를, ~하는 것을\"이라는 뜻이 돼요.",
+    "example": "She wanted to make Gabby fun, she says, “but also add a little attitude.”",
+    "focus": "wanted to make"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-18",
+  "terms": [],
+  "created_at": "2026-11-18T03:39:55.442Z"
+ },
+ {
+  "id": "rss-2ee16d34e30e",
+  "title": "50 Years Running",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g2/50-years-running-g2/",
+  "published_at": "2026-11-12",
+  "category": "세상",
+  "level": "LEVEL 1",
+  "cover_color": "coral",
+  "reading_minutes": 2,
+  "excerpt": "The New York City Marathon was held on November 1. A record number of runners took part in the 26.2-mile race.",
+  "content": "The New York City Marathon was held on November 1. A record number of runners took part in the 26.2-mile race. They ran through New York City’s five boroughs: Staten Island, Brooklyn, Queens, the Bronx, and Manhattan. This marks the 50th anniversary of the five-borough course.\n\nMore than 60,000 runners finished. They came from more than 140 countries. Sheila Chepkirui of Kenya won the women’s division. She finished in two hours, 24 minutes, and 36 seconds. Andreas Almgren, from Sweden, was the winning man. He finished in two hours, six minutes, and one second. “This marathon thing, it’s quite fun,” he said on a broadcast.",
+  "summary": "",
+  "words": [
+   {
+    "word": "record",
+    "meaning": "기록; 기록하다",
+    "example": "A record number of runners took part in the 26."
+   },
+   {
+    "word": "island",
+    "meaning": "섬",
+    "example": "They ran through New York City’s five boroughs: Staten Island, Brooklyn, Queens, the Bronx, and Manhattan."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "The New York City Marathon was held on November 1.",
+    "focus": "was held"
+   },
+   {
+    "title": "과거시제",
+    "explanation": "이미 끝난 과거의 일을 말할 때 동사의 과거형을 써요. 규칙 동사는 -ed를 붙이고, 불규칙 동사는 형태가 바뀌어요.",
+    "example": "Sheila Chepkirui of Kenya won the women’s division.",
+    "focus": "Kenya won"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-18",
+  "terms": [],
+  "created_at": "2026-11-18T03:39:55.442Z"
+ },
+ {
   "id": "rss-6eb803798215",
   "title": "Scientists Say: Abyssal Zone",
   "title_ko": "",
