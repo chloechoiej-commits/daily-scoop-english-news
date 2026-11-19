@@ -1,5 +1,293 @@
 [
  {
+  "id": "rss-cbeb21e72e96",
+  "title": "Healthy Corals Can Help Save Bleached Corals",
+  "title_ko": "",
+  "source": "NewsForKids.net",
+  "source_url": "https://newsforkids.net/articles/2026/11/11/healthy-corals-can-help-save-bleached-corals/",
+  "published_at": "2026-11-11",
+  "category": "환경",
+  "level": "LEVEL 3",
+  "cover_color": "sage",
+  "reading_minutes": 1,
+  "excerpt": "Scientists have found a way to help bleached corals heal faster than ever before.",
+  "content": "Scientists have found a way to help bleached corals heal faster than ever before. In a recent study, researchers discovered that healthy corals can share life-saving algae and energy with sick ones simply by touching.",
+  "summary": "",
+  "words": [
+   {
+    "word": "coral",
+    "meaning": "산호",
+    "example": "Scientists have found a way to help bleached corals heal faster than ever before."
+   },
+   {
+    "word": "researcher",
+    "meaning": "연구원",
+    "example": "In a recent study, researchers discovered that healthy corals can share life-saving algae and energy with sick ones simply by touching."
+   },
+   {
+    "word": "scientist",
+    "meaning": "과학자",
+    "example": "Scientists have found a way to help bleached corals heal faster than ever before."
+   },
+   {
+    "word": "discover",
+    "meaning": "발견하다",
+    "example": "In a recent study, researchers discovered that healthy corals can share life-saving algae and energy with sick ones simply by touching."
+   },
+   {
+    "word": "healthy",
+    "meaning": "건강한",
+    "example": "In a recent study, researchers discovered that healthy corals can share life-saving algae and energy with sick ones simply by touching."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "Scientists have found a way to help bleached corals heal faster than ever before.",
+    "focus": "have found"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "In a recent study, researchers discovered that healthy corals can share life-saving algae and energy with sick ones simply by touching.",
+    "focus": "can share"
+   }
+  ],
+  "content_kind": "rss_excerpt",
+  "collection_day": "2026-11-19",
+  "terms": [
+   {
+    "term": "bleached",
+    "ko": "백화된",
+    "note": "산호가 바닷물 온도 상승 등으로 색을 잃고 하얗게 변한 상태예요."
+   },
+   {
+    "term": "algae",
+    "ko": "조류(해조류)",
+    "note": "물속에서 광합성을 하는 작은 생물이에요. 바다 생태계의 먹이가 돼요."
+   }
+  ],
+  "created_at": "2026-11-19T03:18:01.187Z"
+ },
+ {
+  "id": "rss-560324272942",
+  "title": "NASA Crew Completes 1 Year in Fake Mars Base",
+  "title_ko": "",
+  "source": "NewsForKids.net",
+  "source_url": "https://newsforkids.net/articles/2026/11/18/nasa-crew-completes-1-year-in-fake-mars-base/",
+  "published_at": "2026-11-18",
+  "category": "과학",
+  "level": "LEVEL 3",
+  "cover_color": "blue",
+  "reading_minutes": 1,
+  "excerpt": "For 378 days, four members of a NASA crew lived in a small, 3D-printed building that was designed to feel exactly like a base on Mars.",
+  "content": "For 378 days, four members of a NASA crew lived in a small, 3D-printed building that was designed to feel exactly like a base on Mars. The project was meant to test what it would be like for humans to live alone on a distant planet.",
+  "summary": "",
+  "words": [
+   {
+    "word": "exactly",
+    "meaning": "정확히",
+    "example": "For 378 days, four members of a NASA crew lived in a small, 3D-printed building that was designed to feel exactly like a base on Mars."
+   },
+   {
+    "word": "project",
+    "meaning": "프로젝트, 과제",
+    "example": "The project was meant to test what it would be like for humans to live alone on a distant planet."
+   },
+   {
+    "word": "design",
+    "meaning": "설계하다; 디자인",
+    "example": "For 378 days, four members of a NASA crew lived in a small, 3D-printed building that was designed to feel exactly like a base on Mars."
+   },
+   {
+    "word": "planet",
+    "meaning": "행성",
+    "example": "The project was meant to test what it would be like for humans to live alone on a distant planet."
+   },
+   {
+    "word": "human",
+    "meaning": "인간",
+    "example": "The project was meant to test what it would be like for humans to live alone on a distant planet."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "For 378 days, four members of a NASA crew lived in a small, 3D-printed building that was designed to feel exactly like a base on Mars.",
+    "focus": "was designed"
+   }
+  ],
+  "content_kind": "rss_excerpt",
+  "collection_day": "2026-11-19",
+  "terms": [
+   {
+    "term": "NASA",
+    "ko": "미국 항공우주국",
+    "note": "미국 정부의 우주 탐사 기관이에요."
+   }
+  ],
+  "created_at": "2026-11-19T03:18:01.187Z"
+ },
+ {
+  "id": "rss-e19b78944af0",
+  "title": "Do You Need It?",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/k1/do-you-need-it-k1/",
+  "published_at": "2026-11-06",
+  "category": "생활",
+  "level": "LEVEL 1",
+  "cover_color": "peach",
+  "reading_minutes": 2,
+  "excerpt": "A need is something you cannot live without. A want is something you enjoy. Knowing the difference can help you be money-smart. Food NEEDS Food is something people need each day.",
+  "content": "A need is something you cannot live without. A want is something you enjoy. Knowing the difference can help you be money-smart. Food NEEDS Food is something people need each day. Some kids buy school lunch. Adults buy groceries. Food gives us energy. WANTS Treats are yummy to eat. But people do not need them every day. Save up some money.\n\nYou can treat yourself once in a while. Clothes NEEDS People get dressed every day. They need clothes to wear. Shirts and pants are necessary. Shoes are too. Some kids need school uniforms. WANTS It is nice to have a lot of clothes to choose from. But you do not need too many. See what you have before buying something new.\n\nTravel NEEDS Everyone needs to get from place to place. Kids get rides to school. Adults travel to work. Travel costs money. But travel to school and work is necessary. WANTS Travel for fun is called a vacation. People might fly on a plane. They can stay in a hotel. Vacations are special. They are not always needed.",
+  "summary": "",
+  "words": [
+   {
+    "word": "necessary",
+    "meaning": "필요한",
+    "example": "Shirts and pants are necessary."
+   },
+   {
+    "word": "travel",
+    "meaning": "여행하다",
+    "example": "Travel NEEDS Everyone needs to get from place to place."
+   },
+   {
+    "word": "adult",
+    "meaning": "어른, 성인",
+    "example": "Adults travel to work."
+   },
+   {
+    "word": "treat",
+    "meaning": "치료하다, 대하다",
+    "example": "WANTS Treats are yummy to eat."
+   },
+   {
+    "word": "difference",
+    "meaning": "차이",
+    "example": "Knowing the difference can help you be money-smart."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "WANTS Travel for fun is called a vacation.",
+    "focus": "is called"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "Knowing the difference can help you be money-smart.",
+    "focus": "can help"
+   },
+   {
+    "title": "to부정사 (동사 + to + 동사원형)",
+    "explanation": "want, need, hope, plan, try 같은 동사 뒤에 to + 동사원형이 와서 \"~하기를, ~하는 것을\"이라는 뜻이 돼요.",
+    "example": "Travel NEEDS Everyone needs to get from place to place.",
+    "focus": "needs to get"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-19",
+  "terms": [],
+  "created_at": "2026-11-19T03:18:01.187Z"
+ },
+ {
+  "id": "rss-c9a6b84c2b50",
+  "title": "Senegal Lights the Way for First African Olympic Event",
+  "title_ko": "",
+  "source": "NewsForKids.net",
+  "source_url": "https://newsforkids.net/articles/2026/10/28/senegal-lights-the-way-for-first-african-olympic-event/",
+  "published_at": "2026-10-28",
+  "category": "문화",
+  "level": "LEVEL 2",
+  "cover_color": "lilac",
+  "reading_minutes": 1,
+  "excerpt": "Senegal has been preparing for its moment in history. For the first time ever, an Olympic event will take place on the continent of Africa.",
+  "content": "Senegal has been preparing for its moment in history. For the first time ever, an Olympic event will take place on the continent of Africa. The Dakar 2026 Youth Olympic Games will bring thousands of young athletes to the country for a massive celebration of sports and culture.",
+  "summary": "",
+  "words": [
+   {
+    "word": "celebration",
+    "meaning": "축하 행사",
+    "example": "The Dakar 2026 Youth Olympic Games will bring thousands of young athletes to the country for a massive celebration of sports and culture."
+   },
+   {
+    "word": "prepare",
+    "meaning": "준비하다",
+    "example": "Senegal has been preparing for its moment in history."
+   },
+   {
+    "word": "history",
+    "meaning": "역사",
+    "example": "Senegal has been preparing for its moment in history."
+   },
+   {
+    "word": "athlete",
+    "meaning": "운동선수",
+    "example": "The Dakar 2026 Youth Olympic Games will bring thousands of young athletes to the country for a massive celebration of sports and culture."
+   },
+   {
+    "word": "culture",
+    "meaning": "문화",
+    "example": "The Dakar 2026 Youth Olympic Games will bring thousands of young athletes to the country for a massive celebration of sports and culture."
+   }
+  ],
+  "grammar": [],
+  "content_kind": "rss_excerpt",
+  "collection_day": "2026-11-19",
+  "terms": [],
+  "created_at": "2026-11-19T03:18:01.187Z"
+ },
+ {
+  "id": "rss-77d8df7f56f9",
+  "title": "Karl Bushby Walks the World",
+  "title_ko": "",
+  "source": "NewsForKids.net",
+  "source_url": "https://newsforkids.net/articles/2026/11/12/karl-bushby-walks-the-world/",
+  "published_at": "2026-11-12",
+  "category": "세상",
+  "level": "LEVEL 2",
+  "cover_color": "coral",
+  "reading_minutes": 1,
+  "excerpt": "On November 2, Karl Bushby finally arrived back home - after walking 31,000 miles (50,000 kilometers) and crossing through 30 different countries.",
+  "content": "On November 2, Karl Bushby finally arrived back home - after walking 31,000 miles (50,000 kilometers) and crossing through 30 different countries. He had completed the challenge of walking all the way from South America to Hull, England. It took him 28 years.",
+  "summary": "",
+  "words": [
+   {
+    "word": "challenge",
+    "meaning": "도전; 도전하다",
+    "example": "He had completed the challenge of walking all the way from South America to Hull, England."
+   },
+   {
+    "word": "complete",
+    "meaning": "완료하다; 완전한",
+    "example": "He had completed the challenge of walking all the way from South America to Hull, England."
+   },
+   {
+    "word": "arrive",
+    "meaning": "도착하다",
+    "example": "On November 2, Karl Bushby finally arrived back home - after walking 31,000 miles (50,000 kilometers) and crossing through 30 different countries."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "과거시제",
+    "explanation": "이미 끝난 과거의 일을 말할 때 동사의 과거형을 써요. 규칙 동사는 -ed를 붙이고, 불규칙 동사는 형태가 바뀌어요.",
+    "example": "He had completed the challenge of walking all the way from South America to Hull, England.",
+    "focus": "He had"
+   }
+  ],
+  "content_kind": "rss_excerpt",
+  "collection_day": "2026-11-19",
+  "terms": [],
+  "created_at": "2026-11-19T03:18:01.187Z"
+ },
+ {
   "id": "rss-2a02f42e3449",
   "title": "Measuring Weather",
   "title_ko": "",
