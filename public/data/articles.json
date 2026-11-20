@@ -1,5 +1,307 @@
 [
  {
+  "id": "rss-5bc943e4ca1e",
+  "title": "Ship Sunk to Create Giant Artificial Reef",
+  "title_ko": "",
+  "source": "NewsForKids.net",
+  "source_url": "https://newsforkids.net/articles/2026/11/19/ship-sunk-to-create-giant-artificial-reef/",
+  "published_at": "2026-11-19",
+  "category": "환경",
+  "level": "LEVEL 2",
+  "cover_color": "sage",
+  "reading_minutes": 1,
+  "excerpt": "The SS United States was once the world's fastest ship. It carried famous movie stars and US presidents across the Atlantic Ocean.",
+  "content": "The SS United States was once the world's fastest ship. It carried famous movie stars and US presidents across the Atlantic Ocean. But on November 11, the ship found a new home - at the bottom of the sea, where it has become the world's largest artificial reef.",
+  "summary": "",
+  "words": [
+   {
+    "word": "artificial",
+    "meaning": "인공의",
+    "example": "But on November 11, the ship found a new home - at the bottom of the sea, where it has become the world's largest artificial reef."
+   },
+   {
+    "word": "president",
+    "meaning": "대통령",
+    "example": "It carried famous movie stars and US presidents across the Atlantic Ocean."
+   },
+   {
+    "word": "famous",
+    "meaning": "유명한",
+    "example": "It carried famous movie stars and US presidents across the Atlantic Ocean."
+   },
+   {
+    "word": "ocean",
+    "meaning": "바다",
+    "example": "It carried famous movie stars and US presidents across the Atlantic Ocean."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "But on November 11, the ship found a new home - at the bottom of the sea, where it has become the world's largest artificial reef.",
+    "focus": "has become"
+   },
+   {
+    "title": "과거시제",
+    "explanation": "이미 끝난 과거의 일을 말할 때 동사의 과거형을 써요. 규칙 동사는 -ed를 붙이고, 불규칙 동사는 형태가 바뀌어요.",
+    "example": "The SS United States was once the world's fastest ship.",
+    "focus": "States was"
+   }
+  ],
+  "content_kind": "rss_excerpt",
+  "collection_day": "2026-11-20",
+  "terms": [],
+  "created_at": "2026-11-20T03:04:27.952Z"
+ },
+ {
+  "id": "rss-9671a5ad69c7",
+  "title": "New Dino Discovered",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g2/new-dino-discovered-g2/",
+  "published_at": "2026-11-12",
+  "category": "과학",
+  "level": "LEVEL 1",
+  "cover_color": "blue",
+  "reading_minutes": 2,
+  "excerpt": "This illustration shows a newly identified dinosaur enjoying a meal. The dinosaur is called Invictibellatrix amberina. It was introduced in an October 14 study. It was identified from a fossil.",
+  "content": "This illustration shows a newly identified dinosaur enjoying a meal. The dinosaur is called Invictibellatrix amberina. It was introduced in an October 14 study. It was identified from a fossil.\n\nThe fossil was found long ago on England’s Isle of Wight. It has been in a museum since 1924. But experts recently took another look. They realized this was no ordinary fossil. It belonged to an unknown species. The dinosaur was a meat eater. It had long claws.\n\nCassius Morrison is a paleontologist. That’s a fossil expert. He led the study. “It is a real mystery that this fossil was overlooked for so long,” Morrison said in a press release.",
+  "summary": "",
+  "words": [
+   {
+    "word": "identify",
+    "meaning": "확인하다, 알아보다",
+    "example": "This illustration shows a newly identified dinosaur enjoying a meal."
+   },
+   {
+    "word": "dinosaur",
+    "meaning": "공룡",
+    "example": "This illustration shows a newly identified dinosaur enjoying a meal."
+   },
+   {
+    "word": "expert",
+    "meaning": "전문가",
+    "example": "But experts recently took another look."
+   },
+   {
+    "word": "ordinary",
+    "meaning": "평범한",
+    "example": "They realized this was no ordinary fossil."
+   },
+   {
+    "word": "mystery",
+    "meaning": "수수께끼",
+    "example": "“It is a real mystery that this fossil was overlooked for so long,” Morrison said in a press release."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "It has been in a museum since 1924.",
+    "focus": "has been"
+   },
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "The dinosaur is called Invictibellatrix amberina.",
+    "focus": "is called"
+   },
+   {
+    "title": "과거시제",
+    "explanation": "이미 끝난 과거의 일을 말할 때 동사의 과거형을 써요. 규칙 동사는 -ed를 붙이고, 불규칙 동사는 형태가 바뀌어요.",
+    "example": "It was introduced in an October 14 study.",
+    "focus": "It was"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-20",
+  "terms": [
+   {
+    "term": "fossil",
+    "ko": "화석",
+    "note": "아주 오래전 생물의 몸이나 흔적이 돌 속에 남은 것이에요."
+   },
+   {
+    "term": "species",
+    "ko": "종",
+    "note": "생물을 나누는 기본 단위예요. 같은 종끼리는 서로 짝을 지어 새끼를 낳을 수 있어요."
+   }
+  ],
+  "created_at": "2026-11-20T03:04:27.952Z"
+ },
+ {
+  "id": "rss-08278fbb0637",
+  "title": "Star Power: Oceane Qian-Feuillat",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g34/service-stars-star-power-oceane-qian-feuillat/",
+  "published_at": "2026-11-06",
+  "category": "생활",
+  "level": "LEVEL 2",
+  "cover_color": "peach",
+  "reading_minutes": 3,
+  "excerpt": "Meet Service Star Oceane Qian-Feuillat, 16. As Miss New Jersey Teen USA, Oceane started a program called Girls Leading Our World (GLOW).",
+  "content": "Meet Service Star Oceane Qian-Feuillat, 16. As Miss New Jersey Teen USA, Oceane started a program called Girls Leading Our World (GLOW). The program helps girls build confidence, practice public speaking, and take on leadership roles. TFK reader Sonali Vadada spoke with Oceane about her efforts. What first inspired you to start GLOW? Growing up mixed-heritage, I struggled to find my own voice.\n\nI wanted to create a supportive space where young girls could discover their unique strengths, embrace their differences, and feel proud of who they were. How does GLOW help girls overcome the fear of public speaking? We make it fun and encouraging! We do interactive activities where girls can practice speaking and sharing their ideas. I always tell them that having confidence doesn’t mean you never get nervous—it just means you give it a try anyway.\n\nHow do you juggle service work, school, and other commitments? I stick to a solid schedule, prioritize what’s most important, and make sure to save time for myself. Most importantly, I remind myself that perfection isn’t necessary. You just have to do your best. Can you share a moment when you realized your work was making a difference? , a nonprofit, and one participant was really shy.\n\nShe ended up building so much confidence that she modeled in a fashion show later on. , which was incredible to see. Why is it so important for kids to be involved in the community? We are the generation inheriting the future. We don’t have to wait until we grow up to make a difference. Kids can make a real impact right now, whether that’s starting a recycling club or running a neighborhood fundraiser. This interview has been edited for length and clarity.",
+  "summary": "",
+  "words": [
+   {
+    "word": "difference",
+    "meaning": "차이",
+    "example": "I wanted to create a supportive space where young girls could discover their unique strengths, embrace their differences, and feel proud of who they were."
+   },
+   {
+    "word": "practice",
+    "meaning": "연습하다; 연습",
+    "example": "The program helps girls build confidence, practice public speaking, and take on leadership roles."
+   },
+   {
+    "word": "program",
+    "meaning": "프로그램",
+    "example": "As Miss New Jersey Teen USA, Oceane started a program called Girls Leading Our World (GLOW)."
+   },
+   {
+    "word": "public",
+    "meaning": "대중의, 공공의",
+    "example": "The program helps girls build confidence, practice public speaking, and take on leadership roles."
+   },
+   {
+    "word": "neighborhood",
+    "meaning": "동네",
+    "example": "Kids can make a real impact right now, whether that’s starting a recycling club or running a neighborhood fundraiser."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "This interview has been edited for length and clarity.",
+    "focus": "has been"
+   },
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "Why is it so important for kids to be involved in the community?",
+    "focus": "be involved"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "I wanted to create a supportive space where young girls could discover their unique strengths, embrace their differences, and feel proud of who they were.",
+    "focus": "of who they"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-20",
+  "terms": [
+   {
+    "term": "heritage",
+    "ko": "유산",
+    "note": "조상에게서 물려받은 문화·전통·역사예요."
+   },
+   {
+    "term": "nonprofit",
+    "ko": "비영리 단체",
+    "note": "돈을 벌기보다 사회를 돕는 것을 목적으로 하는 단체예요."
+   }
+  ],
+  "created_at": "2026-11-20T03:04:27.952Z"
+ },
+ {
+  "id": "rss-4dd75fb9cda0",
+  "title": "Friendly Faces",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g2/friendly-faces-g2/",
+  "published_at": "2026-10-23",
+  "category": "문화",
+  "level": "LEVEL 1",
+  "cover_color": "lilac",
+  "reading_minutes": 2,
+  "excerpt": "Friendship is a theme in many books. Some teach lessons in kindness. Others remind us how nice it is to have a buddy. Here are three of TFK’s favorites.",
+  "content": "Friendship is a theme in many books. Some teach lessons in kindness. Others remind us how nice it is to have a buddy. Here are three of TFK’s favorites.\n\nEnemy Pie\n\nAuthor Derek Munson’s book teaches you how to deal with an enemy. The main character does not like Jeremy, his new neighbor. Jeremy is “Enemy Number One.” Luckily, Dad knows how to deal with enemies. He cooks up some enemy pie. This secret recipe changes everything.\n\nThe Invisible Boy\n\nHow does it feel to not be noticed? Brian knows too well. No one thinks to include him. Even the teacher seems to overlook him. Classmates don’t notice that Brian is smart, creative, and kind. Then a new kid comes to school. This book by Trudy Ludwig shows the difference an act of kindness can make. George and Martha George and Martha is a series by James Marshall. The books contain short stories about two hippos who are best friends. They remind us that life is better with a pal. Readers learn the importance of being honest with friends. They learn that anything can be fun with someone by your side.",
+  "summary": "",
+  "words": [
+   {
+    "word": "difference",
+    "meaning": "차이",
+    "example": "This book by Trudy Ludwig shows the difference an act of kindness can make."
+   },
+   {
+    "word": "importance",
+    "meaning": "중요성",
+    "example": "Readers learn the importance of being honest with friends."
+   },
+   {
+    "word": "character",
+    "meaning": "등장인물, 성격",
+    "example": "The main character does not like Jeremy, his new neighbor."
+   },
+   {
+    "word": "neighbor",
+    "meaning": "이웃",
+    "example": "The main character does not like Jeremy, his new neighbor."
+   },
+   {
+    "word": "include",
+    "meaning": "포함하다",
+    "example": "No one thinks to include him."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "How does it feel to not be noticed?",
+    "focus": "be noticed"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "The books contain short stories about two hippos who are best friends.",
+    "focus": "hippos who are"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "This book by Trudy Ludwig shows the difference an act of kindness can make.",
+    "focus": "can make"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-20",
+  "terms": [],
+  "created_at": "2026-11-20T03:04:27.952Z"
+ },
+ {
+  "id": "rss-176b2b978ef0",
+  "title": "Strong Finish",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g34/strong-finish/",
+  "published_at": "2026-11-10",
+  "category": "세상",
+  "level": "LEVEL 2",
+  "cover_color": "coral",
+  "reading_minutes": 1,
+  "excerpt": "Kenya’s Sheila Chepkirui wins the women’s race at the New York City Marathon on November 1. She ran it in two hours and 24 minutes.",
+  "content": "Strong Finish Kenya’s Sheila Chepkirui wins the women’s race at the New York City Marathon on November 1. She ran it in two hours and 24 minutes. This year marked the 50th anniversary of the course through the city’s five boroughs: Staten Island, Brooklyn, Queens, the Bronx, and Manhattan.",
+  "summary": "",
+  "words": [
+   {
+    "word": "island",
+    "meaning": "섬",
+    "example": "This year marked the 50th anniversary of the course through the city’s five boroughs: Staten Island, Brooklyn, Queens, the Bronx, and Manhattan."
+   }
+  ],
+  "grammar": [],
+  "content_kind": "rss_excerpt",
+  "collection_day": "2026-11-20",
+  "terms": [],
+  "created_at": "2026-11-20T03:04:27.952Z"
+ },
+ {
   "id": "rss-cbeb21e72e96",
   "title": "Healthy Corals Can Help Save Bleached Corals",
   "title_ko": "",
