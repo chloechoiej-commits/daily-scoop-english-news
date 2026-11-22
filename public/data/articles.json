@@ -1,5 +1,455 @@
 [
  {
+  "id": "rss-b2428782016e",
+  "title": "This teen piloted an underwater robot to study kelp forests",
+  "title_ko": "",
+  "source": "Science News Explores",
+  "source_url": "https://www.snexplores.org/article/underwater-robot-kelp-forests-jic",
+  "published_at": "2026-11-10",
+  "category": "환경",
+  "level": "LEVEL 2",
+  "cover_color": "sage",
+  "reading_minutes": 5,
+  "excerpt": "His observations offer new insight into why some kelp beds are thriving as others are declining.",
+  "content": "Linden Hunter-Pinsky, 14, lives by the ocean in Santa Cruz, Calif. There, he sees kelp beds off the coast on his way to school. California’s kelp severely declined in the 2010s due to a heat wave and other factors, Linden recently learned. But some of them near Santa Cruz have begun to bounce back. That made him wonder: Was that because the recovering beds had fewer sea urchins, which graze on kelp?\n\nTo find out, Linden looked at satellite data from a site called Kelpwatch. It helped him choose two declining, two recovering and two stable kelp beds in Santa Cruz. He then borrowed a remotely operated vehicle, or ROV, from a local nonprofit. At each kelp bed, he used a remote control to collect video as he steered the ROV underwater.\n\nNo kelp bed had many sea urchins, the footage showed. These data hint that sea urchins are likely not why only some kelp beds were recovering. Other factors, such as runoff, likely play a bigger role, Linden suspects.\n\nKelp ecosystems are home to many species, including endangered ones. Kelp forests also protect shores from erosion and trap climate-warming carbon. So learning what allows kelp to thrive is important.\n\nLinden did his research as a seventh grader at Gateway Middle School in Santa Cruz. His research earned him a finalist spot in the 2026 Thermo Fisher Scientific Junior Innovators Challenge. This program is run by Society for Science, which also publishes Science News Explores. Here, Linden shares his science fair experiences and advice.\n\nWhat was the biggest challenge of this project?\n\n“Getting to the kelp beds,” Linden says. He couldn’t take a motorboat, because its motor could get caught in the kelp. Instead, he and his dad took out his family’s rowboat, which slowed down travel time to the kelp beds. “I was being jostled around by the waves while staring at this [ROV] controller, and I got seasick,” he says.\n\nWhat was the most rewarding part?\n\nSeasickness aside, Linden says he enjoyed seeing the kelp forests from the ROV’s point of view. “I had so much fun seeing this fish swim by and another fish swim by,” he says. “I had a lot of fun just seeing the marine life down there that I never see.”\n\nWhat’s next for you?\n\n“I would love to look more into other factors that might be preventing kelp forest recovery in certain places,” Linden says. He is thinking about ways to extend the project to the kelp forests of Chile, where he is currently living abroad for a year.\n\nAny advice for research newbies?\n\n“Don’t feel constrained by what you think is a good project,” Linden says. “I’d seen so many people with AI [projects], so I was like, ‘Oh my gosh, is my project not good enough?’” What matters most is whether you like your project, Linden says, and whether you want to spend time on it.",
+  "summary": "",
+  "words": [
+   {
+    "word": "challenge",
+    "meaning": "도전; 도전하다",
+    "example": "His research earned him a finalist spot in the 2026 Thermo Fisher Scientific Junior Innovators Challenge."
+   },
+   {
+    "word": "research",
+    "meaning": "연구",
+    "example": "Linden did his research as a seventh grader at Gateway Middle School in Santa Cruz."
+   },
+   {
+    "word": "recover",
+    "meaning": "회복하다",
+    "example": "That made him wonder: Was that because the recovering beds had fewer sea urchins, which graze on kelp?"
+   },
+   {
+    "word": "science",
+    "meaning": "과학",
+    "example": "This program is run by Society for Science, which also publishes Science News Explores."
+   },
+   {
+    "word": "project",
+    "meaning": "프로젝트, 과제",
+    "example": "What was the biggest challenge of this project?"
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "But some of them near Santa Cruz have begun to bounce back.",
+    "focus": "have begun"
+   },
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "This program is run by Society for Science, which also publishes Science News Explores.",
+    "focus": "is run"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "That made him wonder: Was that because the recovering beds had fewer sea urchins, which graze on kelp?",
+    "focus": "urchins, which graze"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-22",
+  "terms": [
+   {
+    "term": "satellite",
+    "ko": "인공위성",
+    "note": "지구 주위를 돌며 사진을 찍거나 통신을 돕는 기계예요."
+   },
+   {
+    "term": "nonprofit",
+    "ko": "비영리 단체",
+    "note": "돈을 벌기보다 사회를 돕는 것을 목적으로 하는 단체예요."
+   },
+   {
+    "term": "ecosystem",
+    "ko": "생태계",
+    "note": "한 지역의 생물과 물·흙·공기 같은 환경이 서로 영향을 주고받는 하나의 체계예요."
+   },
+   {
+    "term": "species",
+    "ko": "종",
+    "note": "생물을 나누는 기본 단위예요. 같은 종끼리는 서로 짝을 지어 새끼를 낳을 수 있어요."
+   },
+   {
+    "term": "endangered",
+    "ko": "멸종 위기의",
+    "note": "수가 너무 줄어 곧 지구에서 사라질 위험이 있는 상태예요."
+   },
+   {
+    "term": "erosion",
+    "ko": "침식",
+    "note": "바람·물·얼음이 오랜 시간 땅이나 바위를 조금씩 깎아 내는 현상이에요."
+   }
+  ],
+  "created_at": "2026-11-22T02:08:32.287Z"
+ },
+ {
+  "id": "rss-c68c51e619d6",
+  "title": "Canyon Creatures",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g34/canyon-creatures-g3/",
+  "published_at": "2026-11-12",
+  "category": "과학",
+  "level": "LEVEL 1",
+  "cover_color": "blue",
+  "reading_minutes": 6,
+  "excerpt": "From a research ship off the coast of Argentina, Daniel Lauretta watched a robot sink into the ocean. The robot was named SuBastian. It was a remotely operated vehicle.",
+  "content": "From a research ship off the coast of Argentina, Daniel Lauretta watched a robot sink into the ocean. The robot was named SuBastian. It was a remotely operated vehicle. SuBastian was carrying cameras to the bottom of the Atlantic Ocean’s Mar del Plata Canyon. The underwater valley is more than twice as deep as the Grand Canyon. When SuBastian got to the seafloor, Lauretta worried.\n\n“The first thing I saw, once the cameras reached the bottom, was just soft sediment,” he told TIME for Kids. “There were very few animals.” There was no need to worry. Over 21 days in summer 2025, SuBastian dove 17 times. It found coral reefs. It found sea stars. It found animals no person had ever seen. About a year later, a team of scientists examined the mission’s findings.\n\nIn September, the team announced that it identified 57 never-seen marine species. Live From the Deep Lauretta is a researcher at the Argentine Museum of Natural Sciences. That’s in Buenos Aires. He led the expedition’s science team, which was run by the Schmidt Ocean Institute. As Lauretta watched SuBastian explore, the cameras streamed live video online. Millions of people tuned in.\n\nSuddenly, an orange sea star came into view. Viewers thought it looked like a character from SpongeBob SquarePants. “The chat exploded with comments about its resemblance to Patrick Star,” Lauretta says. The sea star became famous. It was not a new species. The scientists left it where it was. But the team collected other animals from the canyon and took them to the lab.\n\nThat’s where the real discoveries began. Species Detectives In July 2026, 20 taxonomists and other researchers gathered in Buenos Aires for two weeks to study the animals from the canyon. They would figure out which ones were new to science. “It’s like being a detective,” says Francisco Solís-Marín. He’s a sea cucumber expert. To learn whether an animal is a new discovery, he compares its shape and body parts to those of every known species.\n\nOne newly discovered sea cucumber is about four inches long. It’s almost transparent. It has bumps that look like horns. The team called it Loki. ”). “Sea cucumbers are some of the ocean’s little superheroes,” Solís-Marín says. “Some can swim, glow, or defend themselves in amazing ways.” The smallest discoveries came from mud: Copepods are crustaceans. They’re smaller than a grain of rice.\n\nScientists examined only a 10th of the copepod samples. Each was a new species. “There is still a whole new world to discover,” says Emanuel Pereira, a copepod scientist. Lauretta’s team is heading back in early 2027. They’ll explore a different canyon. “I hope to find many new species,” he says. What’s in a Name? Loki is a nickname. But every newly discovered species needs an official scientific name.\n\nTo choose it, scientists write a report. They describe how the animal is different from known species. It can take months or years to complete this process. But there’s a reward: “As the scientists studying this new species, we get to choose its official name,” Solís-Marín says. Until then, Loki officially goes by Peniagone sp. The sp. means the species hasn’t yet been named.",
+  "summary": "",
+  "words": [
+   {
+    "word": "researcher",
+    "meaning": "연구원",
+    "example": "Live From the Deep Lauretta is a researcher at the Argentine Museum of Natural Sciences."
+   },
+   {
+    "word": "scientist",
+    "meaning": "과학자",
+    "example": "About a year later, a team of scientists examined the mission’s findings."
+   },
+   {
+    "word": "discovery",
+    "meaning": "발견",
+    "example": "That’s where the real discoveries began."
+   },
+   {
+    "word": "discover",
+    "meaning": "발견하다",
+    "example": "One newly discovered sea cucumber is about four inches long."
+   },
+   {
+    "word": "official",
+    "meaning": "공무원; 공식적인",
+    "example": "But every newly discovered species needs an official scientific name."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "The robot was named SuBastian.",
+    "focus": "was named"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "He led the expedition’s science team, which was run by the Schmidt Ocean Institute.",
+    "focus": "team, which was"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "“Some can swim, glow, or defend themselves in amazing ways.”",
+    "focus": "can swim"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-22",
+  "terms": [
+   {
+    "term": "sediment",
+    "ko": "퇴적물",
+    "note": "물이나 바람에 실려 와 바닥에 쌓인 모래·흙·진흙이에요."
+   },
+   {
+    "term": "coral reef",
+    "ko": "산호초",
+    "note": "산호가 오랜 세월 쌓여 만든 바닷속 지형이에요. 많은 바다 생물의 집이에요."
+   },
+   {
+    "term": "species",
+    "ko": "종",
+    "note": "생물을 나누는 기본 단위예요. 같은 종끼리는 서로 짝을 지어 새끼를 낳을 수 있어요."
+   }
+  ],
+  "created_at": "2026-11-22T02:08:32.287Z"
+ },
+ {
+  "id": "rss-46cede23b93b",
+  "title": "Analyze This: Microbes can make valuable chemicals more sustainably",
+  "title_ko": "",
+  "source": "Science News Explores",
+  "source_url": "https://www.snexplores.org/article/microbes-make-green-chemicals",
+  "published_at": "2026-11-04",
+  "category": "생활",
+  "level": "LEVEL 2",
+  "cover_color": "peach",
+  "reading_minutes": 7,
+  "excerpt": "Food waste-fed bacteria may someday make chemical ingredients for medicines, cosmetics and more.",
+  "content": "The secret to making some household products more eco-friendly may lurk in our own guts.\n\nMany medicines, cosmetics and cleaning products are made with medium-chain carboxylic acids, or MCCAs. These chemical ingredients usually come from palm and coconut oil. But growing those crops has downsides for the environment. It often requires chopping down trees to clear land for farming. That destroys the homes of many wildlife species, leading to biodiversity loss.\n\nScientists Say: Biodiversity\n\n“The major problem right now is how unsustainable the production of these chemicals are,” says Ian Gois. He’s a microbiologist at the University of Toronto in Canada. But some bacteria that dwell in the guts of humans and other animals produce MCCAs, Gois notes. They could be harnessed to make these chemicals in a greener way.\n\nOne group of handy microbes are chain-elongating bacteria. These microbes can munch on small molecules and spit out bigger ones. But they don’t always spit out compounds big enough to be MCCAs. Those molecules all feature strings of six to eight carbon atoms.\n\nThe compounds that the bacteria pump out depend on what foods the microbes consume. And the ratio, or relative amounts, of different foods can impact the lengths of the molecules they create, Gois says. The exact conditions to coax bacteria into making MCCA-length molecules haven’t been clear.\n\nGois’ team set out to investigate this. They fed microbes different ratios of foods. Then, they tracked what molecules the microbes made. The two foods the team focused on were acetate and lactate. These small molecules form when organic, or carbon-based, materials break down. They can come from plant or animal matter that gets tossed in the trash.\n\nScientists Say: Organic\n\nWith lower amounts of acetate, some bacteria made longer molecules, including MCCAs. The team watched how the process played out in cells. They made some acetate with carbon atoms that are heavier than usual. That allowed them to track where the acetate went. It showed that one type of chain-elongating bacteria grabbed less acetate from the environment. This microbe could use lactate to make acetate, Gois says. When it did, this microbe made more MCCAs.\n\nThe scientists shared their findings in the June issue of Nature Microbiology.\n\nThis knowledge could help people put chain-elongating bacteria to work, Gois says. It could also help engineers tweak the genes of microbes to make them even better at making useful molecules.\n\nExplainer: Where fossil fuels come from\n\nIn this study, the researchers fed their bacteria specific amounts of certain molecules. But others on Gois’ team are now studying how microbes could make valuable chemicals from food waste. These waste-fed microbes might not only be able to make MCCAs typically drawn from palm and coconut oil. They might also be used to make chemicals that normally come from fossil fuels, Gois says. That could help reduce the use of fossil fuels that contribute to climate change.\n\nMicrobes are “cool and versatile,” Gois says — and we’re going to need them as our allies in dealing with climate change.\n\nBusy bacteria\n\nPseudoramibacter alactolyticus bacteria can use small molecules — such as acetate and lactate — to make larger molecules. Butyrate has four carbons. Hexanoate has six. Octanoate has eight. That makes hexanoate and octanoate MCCAs, which are valuable ingredients for making household products. Researchers fed P. alactolyticus different amounts of acetate and lactate. On the graph, the lowest amount of acetate is on the left and increases along the x-axis. The y-axis shows the concentration of carbon contributed by each compound produced by bacteria (in millimoles of carbon).\n\nData Dive:\n\n1. At what acetate-to-lactate ratio is the most hexanoate made?\n\n2. As the ratio increases, what happens to the concentration of butyrate?\n\n3. As the ratio increases, what happens to the concentration of octanoate?\n\n4. If researchers wanted to get the most octanoate and hexanoate, what ratio of microbe foods should they use?",
+  "summary": "",
+  "words": [
+   {
+    "word": "environment",
+    "meaning": "환경",
+    "example": "But growing those crops has downsides for the environment."
+   },
+   {
+    "word": "ingredient",
+    "meaning": "재료",
+    "example": "These chemical ingredients usually come from palm and coconut oil."
+   },
+   {
+    "word": "researcher",
+    "meaning": "연구원",
+    "example": "In this study, the researchers fed their bacteria specific amounts of certain molecules."
+   },
+   {
+    "word": "contribute",
+    "meaning": "기여하다",
+    "example": "That could help reduce the use of fossil fuels that contribute to climate change."
+   },
+   {
+    "word": "scientist",
+    "meaning": "과학자",
+    "example": "The scientists shared their findings in the June issue of Nature Microbiology."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "Many medicines, cosmetics and cleaning products are made with medium-chain carboxylic acids, or MCCAs.",
+    "focus": "are made"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "That makes hexanoate and octanoate MCCAs, which are valuable ingredients for making household products.",
+    "focus": "MCCAs, which are"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "The secret to making some household products more eco-friendly may lurk in our own guts.",
+    "focus": "may lurk"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-22",
+  "terms": [
+   {
+    "term": "species",
+    "ko": "종",
+    "note": "생물을 나누는 기본 단위예요. 같은 종끼리는 서로 짝을 지어 새끼를 낳을 수 있어요."
+   },
+   {
+    "term": "biodiversity",
+    "ko": "생물 다양성",
+    "note": "한 지역에 얼마나 많은 종류의 생물이 사는지를 뜻해요. 높을수록 자연이 건강해요."
+   },
+   {
+    "term": "bacteria",
+    "ko": "세균(박테리아)",
+    "note": "아주 작은 단세포 생물이에요. 병을 일으키는 것도 있지만 우리 몸에 이로운 것도 많아요."
+   },
+   {
+    "term": "microbe",
+    "ko": "미생물",
+    "note": "현미경으로만 보이는 아주 작은 생물(세균, 곰팡이 등)을 통틀어 부르는 말이에요."
+   },
+   {
+    "term": "molecule",
+    "ko": "분자",
+    "note": "물질의 성질을 가진 가장 작은 알갱이예요. 원자 여러 개가 모여 만들어져요."
+   },
+   {
+    "term": "atom",
+    "ko": "원자",
+    "note": "모든 물질을 이루는 아주 작은 기본 알갱이예요."
+   },
+   {
+    "term": "gene",
+    "ko": "유전자",
+    "note": "부모에게서 자식에게 전해지는 특징 정보의 단위예요."
+   },
+   {
+    "term": "fossil fuel",
+    "ko": "화석 연료",
+    "note": "석탄·석유·천연가스처럼 오래전 생물이 땅속에서 변해 만들어진 연료예요."
+   },
+   {
+    "term": "climate change",
+    "ko": "기후 변화",
+    "note": "오랜 기간에 걸쳐 지구의 평균 기온과 날씨 패턴이 바뀌는 현상이에요."
+   }
+  ],
+  "created_at": "2026-11-22T02:08:32.287Z"
+ },
+ {
+  "id": "rss-9d377499ad17",
+  "title": "Some video games offer mental-health benefits",
+  "title_ko": "",
+  "source": "Science News Explores",
+  "source_url": "https://www.snexplores.org/article/video-games-help-mental-health",
+  "published_at": "2026-11-11",
+  "category": "문화",
+  "level": "LEVEL 2",
+  "cover_color": "lilac",
+  "reading_minutes": 10,
+  "excerpt": "The PlaySmart video game lowered teens’ symptoms of depression. This benefit was still there a year after they stopped playing the game.",
+  "content": "Playing some video games can be healthy, a new study finds — if they are designed to support mental well-being.\n\nConsider this scenario in PlaySmart. “Taylor was one of my best friends. We drifted away and it feels like it was my fault.”\n\nAs you play this game as Taylor’s friend, you see what pushed her away. Then you try making different choices. Along the way, you learn when and how to get Taylor some help. And as you do, the story changes. You two end up staying friends.\n\nThis game aims to give teens the tools and confidence to navigate thorny situations involving mental-health struggles or abuse of opioid drugs. Players “see what happens — the good and the bad,” says Lynn Fiellin. A doctor and behavioral scientist, Fiellin works at the Geisel School of Medicine at Dartmouth, in Hanover, N.H.\n\nThe game was developed, she says, in hopes of lowering a teen’s risk of drug addiction or suffering a real mental-health crisis.\n\nBut can a video game really do that?\n\nFiellin was part of a team that put PlaySmart (and other video games) to the test with human volunteers. And they did it in much the same way scientists check whether medicines or other treatments work. PlaySmart indeed helps boost teens’ mental health, the results now suggest.\n\nThese researchers shared their findings August 17 in JAMA Network Open.\n\nSerious fun\n\nTeens who played PlaySmart had fewer depression symptoms a full year later than teens who played a different video game during the trial. “That’s very promising,” says Linda Charmaraman. She directs the Youth, Media & Wellbeing research lab at Wellesley College in Massachusetts. She did not help develop the game.\n\nMany researchers are working on what they call “serious” video games, or ones that benefit society, Charmaraman says. But it’s rare, she notes, for this type of intervention to show an effect that lasts a year or more.\n\nFor the trial, Fiellin’s group brought games (and snacks — lots of snacks) to 15 high schools around Connecticut. Students were randomly assigned to either play PlaySmart or to choose a different game. The other games (such as The Sims) hadn’t been designed to teach healthy skills. All recruits played once or twice a week for six weeks.\n\nBy the end, kids who’d played PlaySmart knew more about opioid drugs and saw them as more dangerous than those who had played other games. That’s one thing Fiellin says her group had hoped to see. After all, you’re less likely to try something that you see as dangerous. Three months later, the health-gaming group remembered a lot of facts they had learned. But their sense of danger from opioids was fading.\n\nThe PlaySmart group’s views on getting help from a therapist or counselor didn’t fade, though. They were more likely to view seeking help as a good thing than were teens who had played another game. And this effect stayed fairly constant throughout the study. This might help explain how playing this game could have reduced teens’ symptoms of depression, the researchers think.\n\nSays Fiellin, just knowing that there are “opportunities and options for help” may have made a difference.\n\nAdds Charmaraman, knowing how and when to seek help is hugely important in depression intervention and prevention. A lot of teens, she says, “feel like they need to wait for something very extreme to happen.” But that’s not true. It’s better to ask for help early than wait for a crisis, she explains.\n\nFor kids already interested in gaming, she thinks it makes sense to choose a game that could boost social skills and mental health.\n\nMeeting teens where they are\n\nPlaySmart is one of five games, and counting, created by the play2PREVENT Lab. Fiellin launched this lab in 2009 after noticing how engrossed her own kids were in gaming. “I thought this was a way we could deliver healthy information and skill-building to kids,” she recalls.\n\nShe wanted to meet kids where they already are — on screens.\n\nCaroline Barry, a behavioral health scientist, joined the lab because she was excited about leveraging screen time for good. Depression, anxiety, addiction and other issues are widespread among today’s teens, she notes. Traditional prevention strategies rely mainly on in-person programs at schools and community centers. Putting the same kind of teaching into games, Barry says, could “have more reach and potentially broader impact.”\n\nShe, Fiellin and other experts in health and education teamed up with video-game designers to make each game. They also have been inviting teens to give feedback on early versions of each. In the past, Fiellin points out, these teen critics have said things like, “No one would ever wear that.” They’ve also pointed out when the slang being used was out of date.\n\nWhen each game is ready, the company Playbl helps get it into the hands of teens. They don’t post the games on app stores. Instead, teachers or school administrators can reach out to get a program started at their school.\n\nPlaySmart is a relatively new game. Another one, Smokescreen, focuses on preventing kids from vaping and smoking. It has almost 10,000 active players right now, says Kirby Salerno, who runs Playbl.\n\nWhat’s next? Fiellin’s team is now working on two new games. One is for kids with autism and their families. It focuses on identifying strengths of neurodivergent people. Another game will focus on social media and mental health.\n\n“The idea,” says Fiellin, “will be to help kids and their parents know how to navigate social media and make better choices.”",
+  "summary": "",
+  "words": [
+   {
+    "word": "researcher",
+    "meaning": "연구원",
+    "example": "These researchers shared their findings August 17 in JAMA Network Open."
+   },
+   {
+    "word": "scientist",
+    "meaning": "과학자",
+    "example": "A doctor and behavioral scientist, Fiellin works at the Geisel School of Medicine at Dartmouth, in Hanover, N."
+   },
+   {
+    "word": "dangerous",
+    "meaning": "위험한",
+    "example": "By the end, kids who’d played PlaySmart knew more about opioid drugs and saw them as more dangerous than those who had played other games."
+   },
+   {
+    "word": "medicine",
+    "meaning": "약, 의학",
+    "example": "A doctor and behavioral scientist, Fiellin works at the Geisel School of Medicine at Dartmouth, in Hanover, N."
+   },
+   {
+    "word": "healthy",
+    "meaning": "건강한",
+    "example": "Playing some video games can be healthy, a new study finds — if they are designed to support mental well-being."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "This might help explain how playing this game could have reduced teens’ symptoms of depression, the researchers think.",
+    "focus": "have reduced"
+   },
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "Playing some video games can be healthy, a new study finds — if they are designed to support mental well-being.",
+    "focus": "are designed"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "Teens who played PlaySmart had fewer depression symptoms a full year later than teens who played a different video game during the trial.",
+    "focus": "Teens who played"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-22",
+  "terms": [
+   {
+    "term": "mental health",
+    "ko": "정신 건강",
+    "note": "마음과 감정이 건강한 상태를 말해요."
+   }
+  ],
+  "created_at": "2026-11-22T02:08:32.287Z"
+ },
+ {
+  "id": "rss-82d5e7c81fea",
+  "title": "Four T. rex footprints hint at how fast it traveled",
+  "title_ko": "",
+  "source": "Science News Explores",
+  "source_url": "https://www.snexplores.org/article/footprints-how-fast-t-rex-walked",
+  "published_at": "2026-11-10",
+  "category": "세상",
+  "level": "LEVEL 2",
+  "cover_color": "coral",
+  "reading_minutes": 5,
+  "excerpt": "Though poorly preserved, the prints suggest the dino ambled at 1.6 meters per second, roughly the speed of a human walking briskly.",
+  "content": "Four fossilized footprints are helping scientists step into a dinosaur’s shoes. The prints form the first known set of tracks likely left by an adult Tyrannosaurus rex.\n\nA trackway is three or more consecutive footprints left by some animal. The one for this T. rex spans 7 meters (10 feet). The track spacing suggests the ancient predator had been ambling along at about 1.6 meters (5.2 feet) per second, which would be a quick walking pace for us.\n\nA few single adult T. rex footprints have been recorded. So have trackways from what might be T. rex juveniles or another related species, says Peter Falkingham. He’s a paleontologist at Liverpool John Moores University in England.\n\nLet’s learn about trace fossils\n\n“Finding an adult trackway is cool,” he says. “It’s unique. It brings something new.”\n\nThe reason: “An individual [footprint] doesn’t tell you a lot,” Falkingham explains. “A trackway tells you more about foot placement as the animal’s moving along.” And younger and older dinosaurs likely walked differently, just as human toddlers and adults do.\n\nKent Hups teaches at Northglenn High School, outside Denver, Colo. (A paleontologist, he also works at the Denver Museum of Nature and Science.) Hups stumbled on the trackway while fossil hunting in North Dakota last year. It stuck up out of the ground along a steep incline in the Hell Creek Formation. Sediment had filled in the originally muddy footprints and fossilized. It then eroded away more slowly than the surrounding rock.\n\nThe first print that he found was three-toed and enormous. It measured 80 centimeters (31.5 inches) across. He recalls immediately thinking: “This has to be a T. rex.”\n\nSlender toe impressions and fossils unearthed in the area signal the trackway had been left behind roughly 66.5 million years ago. “There’s always the possibility that we haven’t found the skeletons of some species that we don’t know about,” Falkingham says. “But as far as our knowledge goes, T. rex is about the only track-maker that could have made these.”\n\nHe and Hups were part of a team that used stride length and body size to gauge the dinosaur’s speed. Unfortunately, the footprints aren’t well-preserved. And estimating speed from tracks is tricky. So the T. rex may have been walking slightly faster or slower than what they reported September 8 in the Journal of Vertebrate Paleontology.\n\nBetter tracks could have revealed whether the foot landed flat or toe-to-heel — or even how its foot pads supported the dino’s weight.\n\nMore tracks are sure to follow. In fact, a fifth step may be concealed in the hill. But the team is waiting for Mother Nature to wear away the surrounding rock, Hups says. “I can’t wait to get back out there and keep looking for more.”",
+  "summary": "",
+  "words": [
+   {
+    "word": "dinosaur",
+    "meaning": "공룡",
+    "example": "Four fossilized footprints are helping scientists step into a dinosaur’s shoes."
+   },
+   {
+    "word": "nature",
+    "meaning": "자연",
+    "example": "(A paleontologist, he also works at the Denver Museum of Nature and Science.)"
+   },
+   {
+    "word": "adult",
+    "meaning": "어른, 성인",
+    "example": "The prints form the first known set of tracks likely left by an adult Tyrannosaurus rex."
+   },
+   {
+    "word": "immediately",
+    "meaning": "즉시",
+    "example": "He recalls immediately thinking: “This has to be a T."
+   },
+   {
+    "word": "individual",
+    "meaning": "개인; 개인의",
+    "example": "The reason: “An individual [footprint] doesn’t tell you a lot,” Falkingham explains."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "rex footprints have been recorded.",
+    "focus": "have been"
+   },
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "Slender toe impressions and fossils unearthed in the area signal the trackway had been left behind roughly 66.",
+    "focus": "been left"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "2 feet) per second, which would be a quick walking pace for us.",
+    "focus": "second, which would"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-22",
+  "terms": [
+   {
+    "term": "species",
+    "ko": "종",
+    "note": "생물을 나누는 기본 단위예요. 같은 종끼리는 서로 짝을 지어 새끼를 낳을 수 있어요."
+   },
+   {
+    "term": "fossil",
+    "ko": "화석",
+    "note": "아주 오래전 생물의 몸이나 흔적이 돌 속에 남은 것이에요."
+   },
+   {
+    "term": "sediment",
+    "ko": "퇴적물",
+    "note": "물이나 바람에 실려 와 바닥에 쌓인 모래·흙·진흙이에요."
+   },
+   {
+    "term": "journal",
+    "ko": "학술지",
+    "note": "연구 결과를 싣는 전문 잡지예요. 다른 과학자들의 검토를 거쳐 실려요."
+   }
+  ],
+  "created_at": "2026-11-22T02:08:32.287Z"
+ },
+ {
   "id": "rss-776e6026b4f1",
   "title": "Meet Swiftiephylus, a group of insects named after Taylor Swift",
   "title_ko": "",
