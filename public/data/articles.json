@@ -1,5 +1,363 @@
 [
  {
+  "id": "rss-8927e876cc17",
+  "title": "Seals long ago evolved to hear above the water — and below",
+  "title_ko": "",
+  "source": "Science News Explores",
+  "source_url": "https://www.snexplores.org/article/seal-ears-hearing-air-underwater",
+  "published_at": "2026-11-09",
+  "category": "환경",
+  "level": "LEVEL 2",
+  "cover_color": "sage",
+  "reading_minutes": 7,
+  "excerpt": "Spongy tissue that fills with blood makes this possible, show X-ray scans of hundreds of ears from seals and other animals.",
+  "content": "On land, a mother seal can pick out her pup’s cry on a noisy beach. Underwater, seals listen for songs of potential mates or calls warning of predators. This ability to hear well both in and out of the water is unique among mammals. And some marine mammals evolved it nearly 26.7 million years ago, a new study finds.\n\nSeals, sea lions and walruses are known as pinnipeds. They have amphibious hearing — or ears adapted to work well on land and in water. This is “something of a superpower,” says paleontologist James Rule. “They are the only mammals which can do this.” Rule works at Monash University in Melbourne, Australia.\n\nThe human ear has an inner chamber filled with air. It conducts sound well when we’re on land but not when we’re underwater. “Water is over 800 times more dense than air,” Rule points out. So sound waves don’t travel to our ears as effectively as they would in air. In fact, less than one percent of underwater sound gets through, he says.\n\nPinnipeds have spongy tissue inside their ears. It fills with blood when they dive into water. That helps to keep the pressure the same inside and outside their ears. Blood’s density is much closer to that of water. So sound waves moving through water can travel well through that blood, too.\n\nThis allows the creatures to hear sounds clearly underwater. They also can filter out background noise. It allows them to better hear useful sounds, Rule says, and to tell what direction they come from.\n\nSwimmers’ ears\n\nIt wasn’t clear how pinnipeds developed that trait. So Rule’s team used X-rays to scan 217 ear specimens from museums around the world. The samples included 119 mammal species.\n\nKnown as micro-CTs, these scans provided detailed 3-D images of the animals’ ears. It’s “like the scan you would get at the doctor, but much more powerful,” Rule explains — “and for very small objects.”\n\nThe scans included specimens from all 34 modern pinniped species. They also scanned ears of other mammals. These included dogs, weasels, otters, raccoons and fossils of their extinct relatives. Among those early ancestors was a creature called Puijila. It spent a lot of time in water but could hear only in air. They also studied animals known as Enaliarctos. Scientists think these were the first fully sea-dwelling pinnipeds.\n\nThe team created a family tree of these ancient creatures. Then they looked at how their ears changed over time.\n\nThat revealed when animals developed this special tissue that can be filled with blood. And that allowed the researchers to work out when pinnipeds evolved amphibious hearing. The researchers shared their findings July 15 in Proceedings of the Royal Society B: Biological Sciences.\n\nSteven Benjamins was surprised at how early underwater hearing emerged. Though not involved in the new study, he is a marine ecologist. He works at the Scottish Association for Marine Science in Oban.\n\nThat underwater hearing developed early — in pinniped ancestors — suggests this trait likely aids the animals’ survival. Some of the oldest fossils scanned had ears more like those of otters, Benjamins says. These creatures had lived in shallow waters where underwater hearing wasn’t essential.\n\nAccurate underwater hearing likely became key, he says, as pinnipeds moved into deeper seas.\n\nThe ability of the blood-filled tissue to conduct sound began as an accident, the new data suggest. At first, it likely made underwater sounds too loud. But pinniped ears evolved again to adjust to that sound level.\n\nThis means they are also incredibly sensitive to sounds, including noise pollution, notes Rule. These animals rely on sound to communicate. Loud sounds, such as from boats, can alter pinniped behaviors, including how they care for their young.\n\nThis unique hearing has also endowed many pinnipeds with great rhythm. Like parrots, they can mimic speaking and singing. Says Rule, “The evolution of amphibious hearing has made pinnipeds the masters of sound.”",
+  "summary": "",
+  "words": [
+   {
+    "word": "researcher",
+    "meaning": "연구원",
+    "example": "And that allowed the researchers to work out when pinnipeds evolved amphibious hearing."
+   },
+   {
+    "word": "creature",
+    "meaning": "생물",
+    "example": "This allows the creatures to hear sounds clearly underwater."
+   },
+   {
+    "word": "ancestor",
+    "meaning": "조상",
+    "example": "Among those early ancestors was a creature called Puijila."
+   },
+   {
+    "word": "ability",
+    "meaning": "능력",
+    "example": "This ability to hear well both in and out of the water is unique among mammals."
+   },
+   {
+    "word": "conduct",
+    "meaning": "수행하다",
+    "example": "It conducts sound well when we’re on land but not when we’re underwater."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "This unique hearing has also endowed many pinnipeds with great rhythm.",
+    "focus": "has also endowed"
+   },
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "Seals, sea lions and walruses are known as pinnipeds.",
+    "focus": "are known"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "“They are the only mammals which can do this.”",
+    "focus": "mammals which can"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-23",
+  "terms": [
+   {
+    "term": "species",
+    "ko": "종",
+    "note": "생물을 나누는 기본 단위예요. 같은 종끼리는 서로 짝을 지어 새끼를 낳을 수 있어요."
+   },
+   {
+    "term": "fossil",
+    "ko": "화석",
+    "note": "아주 오래전 생물의 몸이나 흔적이 돌 속에 남은 것이에요."
+   },
+   {
+    "term": "extinct",
+    "ko": "멸종한",
+    "note": "한 종의 생물이 지구에서 완전히 사라진 상태예요."
+   }
+  ],
+  "created_at": "2026-11-23T02:38:07.853Z"
+ },
+ {
+  "id": "rss-831ce295e357",
+  "title": "The Real Starry Night?",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g34/the-real-starry-night/",
+  "published_at": "2026-11-10",
+  "category": "과학",
+  "level": "LEVEL 2",
+  "cover_color": "blue",
+  "reading_minutes": 1,
+  "excerpt": "Astronomers have traced Vincent van Gogh’s painting The Starry Night to a real night sky, according to an October 22 study. It suggests that the artwork shows the sky as it was on July 22, 1889.",
+  "content": "Astronomers have traced Vincent van Gogh’s painting The Starry Night to a real night sky, according to an October 22 study. It suggests that the artwork shows the sky as it was on July 22, 1889. Clues include the shape of the moon. Elijah Jeong-hyun Kim led the study. “No two skies are the same,” he told the AP. “I believe Vincent noticed those changes and put them into the painting.”",
+  "summary": "",
+  "words": [
+   {
+    "word": "suggest",
+    "meaning": "제안하다",
+    "example": "It suggests that the artwork shows the sky as it was on July 22, 1889."
+   },
+   {
+    "word": "include",
+    "meaning": "포함하다",
+    "example": "Clues include the shape of the moon."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "Astronomers have traced Vincent van Gogh’s painting The Starry Night to a real night sky, according to an October 22 study.",
+    "focus": "have traced"
+   },
+   {
+    "title": "과거시제",
+    "explanation": "이미 끝난 과거의 일을 말할 때 동사의 과거형을 써요. 규칙 동사는 -ed를 붙이고, 불규칙 동사는 형태가 바뀌어요.",
+    "example": "It suggests that the artwork shows the sky as it was on July 22, 1889.",
+    "focus": "it was"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-23",
+  "terms": [],
+  "created_at": "2026-11-23T02:38:07.853Z"
+ },
+ {
+  "id": "rss-58b47fcb730b",
+  "title": "Protests Continue, Spread Across Europe",
+  "title_ko": "",
+  "source": "NewsForKids.net",
+  "source_url": "https://newsforkids.net/articles/2026/11/03/protests-continue-spread-across-europe/",
+  "published_at": "2026-11-03",
+  "category": "생활",
+  "level": "LEVEL 2",
+  "cover_color": "peach",
+  "reading_minutes": 1,
+  "excerpt": "Thousands of people across Europe protested in the streets this past Saturday. While many protesters were students, others included workers and families.",
+  "content": "Thousands of people across Europe protested in the streets this past Saturday. While many protesters were students, others included workers and families. Most shared similar goals: they want better schools, lower prices for food and rent, and more support from their governments.",
+  "summary": "",
+  "words": [
+   {
+    "word": "government",
+    "meaning": "정부",
+    "example": "Most shared similar goals: they want better schools, lower prices for food and rent, and more support from their governments."
+   },
+   {
+    "word": "protest",
+    "meaning": "시위; 항의하다",
+    "example": "Thousands of people across Europe protested in the streets this past Saturday."
+   },
+   {
+    "word": "include",
+    "meaning": "포함하다",
+    "example": "While many protesters were students, others included workers and families."
+   },
+   {
+    "word": "similar",
+    "meaning": "비슷한",
+    "example": "Most shared similar goals: they want better schools, lower prices for food and rent, and more support from their governments."
+   },
+   {
+    "word": "support",
+    "meaning": "지지하다; 지원",
+    "example": "Most shared similar goals: they want better schools, lower prices for food and rent, and more support from their governments."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "과거시제",
+    "explanation": "이미 끝난 과거의 일을 말할 때 동사의 과거형을 써요. 규칙 동사는 -ed를 붙이고, 불규칙 동사는 형태가 바뀌어요.",
+    "example": "Thousands of people across Europe protested in the streets this past Saturday.",
+    "focus": "Europe protested"
+   }
+  ],
+  "content_kind": "rss_excerpt",
+  "collection_day": "2026-11-23",
+  "terms": [],
+  "created_at": "2026-11-23T02:38:07.853Z"
+ },
+ {
+  "id": "rss-c9e2f25e7bea",
+  "title": "Paraguay Crisis: Bank Fails, President Impeached",
+  "title_ko": "",
+  "source": "NewsForKids.net",
+  "source_url": "https://newsforkids.net/articles/2026/11/10/paraguay-crisis-bank-fails-president-impeached/",
+  "published_at": "2026-11-10",
+  "category": "세상",
+  "level": "LEVEL 2",
+  "cover_color": "coral",
+  "reading_minutes": 1,
+  "excerpt": "Paraguay is facing a major crisis after a large bank with ties to the country's president, Santiago Peña, suddenly failed. Mr. Peña has been removed as president and arrested.",
+  "content": "Paraguay is facing a major crisis after a large bank with ties to the country's president, Santiago Peña, suddenly failed. Mr. Peña has been removed as president and arrested. The bank's failure has left millions of people in the South American country with no way to take out the money they had saved.",
+  "summary": "",
+  "words": [
+   {
+    "word": "president",
+    "meaning": "대통령",
+    "example": "Paraguay is facing a major crisis after a large bank with ties to the country's president, Santiago Peña, suddenly failed."
+   },
+   {
+    "word": "failure",
+    "meaning": "실패",
+    "example": "The bank's failure has left millions of people in the South American country with no way to take out the money they had saved."
+   },
+   {
+    "word": "million",
+    "meaning": "100만",
+    "example": "The bank's failure has left millions of people in the South American country with no way to take out the money they had saved."
+   },
+   {
+    "word": "crisis",
+    "meaning": "위기",
+    "example": "Paraguay is facing a major crisis after a large bank with ties to the country's president, Santiago Peña, suddenly failed."
+   },
+   {
+    "word": "remove",
+    "meaning": "제거하다",
+    "example": "Peña has been removed as president and arrested."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "Peña has been removed as president and arrested.",
+    "focus": "has been"
+   },
+   {
+    "title": "과거시제",
+    "explanation": "이미 끝난 과거의 일을 말할 때 동사의 과거형을 써요. 규칙 동사는 -ed를 붙이고, 불규칙 동사는 형태가 바뀌어요.",
+    "example": "The bank's failure has left millions of people in the South American country with no way to take out the money they had saved.",
+    "focus": "they had"
+   }
+  ],
+  "content_kind": "rss_excerpt",
+  "collection_day": "2026-11-23",
+  "terms": [],
+  "created_at": "2026-11-23T02:38:07.853Z"
+ },
+ {
+  "id": "rss-6907ccb71dd9",
+  "title": "A New National Park",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g56/a-new-national-park-g5/",
+  "published_at": "2026-11-09",
+  "category": "세상",
+  "level": "LEVEL 2",
+  "cover_color": "coral",
+  "reading_minutes": 2,
+  "excerpt": "The United States has a new national park. Chiricahua National Monument is located in southeastern Arizona. On October 20, the Chiricahua National Park Act redesignated the land as a national park.",
+  "content": "The United States has a new national park. Chiricahua National Monument is located in southeastern Arizona. On October 20, the Chiricahua National Park Act redesignated the land as a national park. The area is the homeland of the Chiricahua Apache Native Americans. The stunning landscape was formed after a massive volcanic eruption 27 million years ago. The volcanic ash cooled and hardened into rock.\n\nOver time, erosion shaped the rock into formations called hoodoos. Visitors to the park can hike among these tall pillars. The park contains miles of trails through thousands of acres of varied ecosystems, from desert to forest and grassland. Many animals call the park home, including bears, birds, and mountain lions. Chiricahua was first protected as a national monument in 1924.\n\nNow it has been upgraded to a national park. Its new title recognizes the site’s importance. S. Secretary of the Interior. In a statement, Burgum called Chiricahua “one of America’s most extraordinary landscapes” due to its “towering rock spires, rich Apache heritage, and remarkable biodiversity.” Stop and Think! WHY does this news story include historical information? How might this be useful to readers?",
+  "summary": "",
+  "words": [
+   {
+    "word": "landscape",
+    "meaning": "풍경",
+    "example": "The stunning landscape was formed after a massive volcanic eruption 27 million years ago."
+   },
+   {
+    "word": "include",
+    "meaning": "포함하다",
+    "example": "Many animals call the park home, including bears, birds, and mountain lions."
+   },
+   {
+    "word": "extraordinary",
+    "meaning": "놀라운, 특별한",
+    "example": "In a statement, Burgum called Chiricahua “one of America’s most extraordinary landscapes” due to its “towering rock spires, rich Apache heritage, and remarkable biodiversity.”"
+   },
+   {
+    "word": "information",
+    "meaning": "정보",
+    "example": "WHY does this news story include historical information?"
+   },
+   {
+    "word": "importance",
+    "meaning": "중요성",
+    "example": "Its new title recognizes the site’s importance."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "Now it has been upgraded to a national park.",
+    "focus": "has been"
+   },
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "Chiricahua National Monument is located in southeastern Arizona.",
+    "focus": "is located"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "Visitors to the park can hike among these tall pillars.",
+    "focus": "can hike"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-23",
+  "terms": [
+   {
+    "term": "national park",
+    "ko": "국립공원",
+    "note": "자연과 역사를 보호하기 위해 나라에서 지정해 관리하는 공원이에요."
+   },
+   {
+    "term": "national monument",
+    "ko": "국가 기념물",
+    "note": "역사적·자연적 가치가 있어 나라가 보호하도록 지정한 장소예요. 국립공원보다 지정이 간단해요."
+   },
+   {
+    "term": "homeland",
+    "ko": "고향 땅",
+    "note": "한 민족이나 집단이 대대로 살아온 땅이에요."
+   },
+   {
+    "term": "Apache",
+    "ko": "아파치족",
+    "note": "미국 남서부에 사는 아메리카 원주민 부족이에요."
+   },
+   {
+    "term": "Native American",
+    "ko": "아메리카 원주민",
+    "note": "유럽인이 오기 전부터 아메리카 대륙에 살던 사람들과 그 후손이에요."
+   },
+   {
+    "term": "volcanic ash",
+    "ko": "화산재",
+    "note": "화산이 폭발할 때 뿜어져 나오는 아주 고운 돌가루예요."
+   },
+   {
+    "term": "erosion",
+    "ko": "침식",
+    "note": "바람·물·얼음이 오랜 시간 땅이나 바위를 조금씩 깎아 내는 현상이에요."
+   },
+   {
+    "term": "hoodoo",
+    "ko": "후두(돌기둥 지형)",
+    "note": "침식으로 깎여 만들어진, 위가 버섯처럼 생긴 가늘고 높은 바위 기둥이에요."
+   },
+   {
+    "term": "ecosystem",
+    "ko": "생태계",
+    "note": "한 지역의 생물과 물·흙·공기 같은 환경이 서로 영향을 주고받는 하나의 체계예요."
+   },
+   {
+    "term": "Secretary of the Interior",
+    "ko": "미국 내무부 장관",
+    "note": "국립공원·자연 자원·원주민 관련 일을 맡는 미국 정부 부처의 장관이에요."
+   }
+  ],
+  "created_at": "2026-11-23T02:38:07.853Z"
+ },
+ {
   "id": "rss-b2428782016e",
   "title": "This teen piloted an underwater robot to study kelp forests",
   "title_ko": "",
