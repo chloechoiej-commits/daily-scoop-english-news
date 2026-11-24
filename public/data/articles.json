@@ -1,5 +1,368 @@
 [
  {
+  "id": "rss-5026575c12d1",
+  "title": "Weather Beat",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g34/your-hot-job-weather-beat/",
+  "published_at": "2026-11-23",
+  "category": "환경",
+  "level": "LEVEL 1",
+  "cover_color": "sage",
+  "reading_minutes": 1,
+  "excerpt": "When Ethan Pilson was in fifth grade, in 2012, Hurricane Sandy hit the Caribbean and eastern U.S. One place that felt the effects was New Rochelle, New York. That’s where Pilson grew up.",
+  "content": "When Ethan Pilson was in fifth grade, in 2012, Hurricane Sandy hit the Caribbean and eastern U.S. One place that felt the effects was New Rochelle, New York. That’s where Pilson grew up. “I was fascinated by how powerful Mother Nature could be,” Pilson, now 24, recalls. “But also terrified, seeing the strong winds move rain sideways. It made me want to understand why this was happening.”",
+  "summary": "",
+  "words": [
+   {
+    "word": "powerful",
+    "meaning": "강력한",
+    "example": "“I was fascinated by how powerful Mother Nature could be,” Pilson, now 24, recalls."
+   },
+   {
+    "word": "effect",
+    "meaning": "효과, 영향",
+    "example": "One place that felt the effects was New Rochelle, New York."
+   },
+   {
+    "word": "nature",
+    "meaning": "자연",
+    "example": "“I was fascinated by how powerful Mother Nature could be,” Pilson, now 24, recalls."
+   },
+   {
+    "word": "wind",
+    "meaning": "바람",
+    "example": "“But also terrified, seeing the strong winds move rain sideways."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "“I was fascinated by how powerful Mother Nature could be,” Pilson, now 24, recalls.",
+    "focus": "was fascinated"
+   },
+   {
+    "title": "to부정사 (동사 + to + 동사원형)",
+    "explanation": "want, need, hope, plan, try 같은 동사 뒤에 to + 동사원형이 와서 \"~하기를, ~하는 것을\"이라는 뜻이 돼요.",
+    "example": "It made me want to understand why this was happening.”",
+    "focus": "want to understand"
+   },
+   {
+    "title": "접속사 because / when / if",
+    "explanation": "because는 이유(~ 때문에), when은 때(~할 때), if는 조건(만약 ~라면)을 나타내며 두 문장을 이어 줘요.",
+    "example": "When Ethan Pilson was in fifth grade, in 2012, Hurricane Sandy hit the Caribbean and eastern U.",
+    "focus": "When Ethan"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-24",
+  "terms": [
+   {
+    "term": "hurricane",
+    "ko": "허리케인",
+    "note": "대서양 등에서 생기는 강한 열대 폭풍이에요. 태풍과 같은 종류예요."
+   }
+  ],
+  "created_at": "2026-11-24T05:57:17.370Z"
+ },
+ {
+  "id": "rss-54fcee9b04a8",
+  "title": "Scientists Say: Noise",
+  "title_ko": "",
+  "source": "Science News Explores",
+  "source_url": "https://www.snexplores.org/article/scientists-say-noise-definition-pronunciation",
+  "published_at": "2026-11-23",
+  "category": "과학",
+  "level": "LEVEL 2",
+  "cover_color": "blue",
+  "reading_minutes": 4,
+  "excerpt": "To analyze a messy set of data, scientists must distinguish real information from background “noise.”",
+  "content": "Noise (noun, “NOYZ”)\n\nWhen talking about data, noise refers to unwanted junk data or interference. To make sense of those data, you must account for or weed out that noise.\n\nYou can think of noise like static. Listening to a radio station with a lot of static makes it harder to understand what is being said. Television static makes it hard to see what is happening. Sometimes, noise in data can make it hard to tell what’s really happening.\n\nNoise can enter data in several ways. Very sensitive sensors may make mistakes and seem to detect things that are not really there. Or they might register a small signal as larger than it really is. People may also input wrong information into a dataset, creating noise.\n\nData can also become corrupted. Corruption happens when something accidentally alters some data after they’re collected. Digital data might get distorted when converted from one file type to another. Errors might also develop during storage of certain digital data. For instance, compressing and storing data in a certain format may require numbers get rounded. That rounding might introduce errors. These types of events can introduce noise into data.\n\nAstronomers must often deal with noisy data. For example, a telescope might measure a tiny dip in a star’s brightness. With such a faint signal, this dip could be noise. However, if a star’s light dims at regular intervals, that could point to a distant planet orbiting that star. The brightness dip would come from the oh-so-slight shadow cast by the planet passing in front of the star. This highlights how understanding noise is crucial to making accurate scientific observations.\n\nIn a sentence\n\nRadio data that scientists once misread as “noise” turned out to be real data indicating dense clumps of mysterious intergalactic gas.\n\nCheck out the full list of Scientists Say.",
+  "summary": "",
+  "words": [
+   {
+    "word": "scientist",
+    "meaning": "과학자",
+    "example": "Radio data that scientists once misread as “noise” turned out to be real data indicating dense clumps of mysterious intergalactic gas."
+   },
+   {
+    "word": "signal",
+    "meaning": "신호",
+    "example": "Or they might register a small signal as larger than it really is."
+   },
+   {
+    "word": "planet",
+    "meaning": "행성",
+    "example": "However, if a star’s light dims at regular intervals, that could point to a distant planet orbiting that star."
+   },
+   {
+    "word": "data",
+    "meaning": "자료, 데이터",
+    "example": "When talking about data, noise refers to unwanted junk data or interference."
+   },
+   {
+    "word": "information",
+    "meaning": "정보",
+    "example": "People may also input wrong information into a dataset, creating noise."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "Listening to a radio station with a lot of static makes it harder to understand what is being said.",
+    "focus": "being said"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "To make sense of those data, you must account for or weed out that noise.",
+    "focus": "must account"
+   },
+   {
+    "title": "비교급 (-er / more + than)",
+    "explanation": "두 대상을 비교할 때 \"~보다 더 …한\"이라는 뜻이에요. 짧은 형용사는 -er, 긴 형용사는 more를 붙이고 than 뒤에 비교 대상이 와요.",
+    "example": "Or they might register a small signal as larger than it really is.",
+    "focus": "larger than"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-24",
+  "terms": [
+   {
+    "term": "telescope",
+    "ko": "망원경",
+    "note": "멀리 있는 것을 크게 보여 주는 도구예요."
+   }
+  ],
+  "created_at": "2026-11-24T05:57:17.370Z"
+ },
+ {
+  "id": "rss-0e3124efc0f1",
+  "title": "Bright Futures Ahead",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g34/your-hot-job-bright-futures-ahead/",
+  "published_at": "2026-11-23",
+  "category": "생활",
+  "level": "LEVEL 1",
+  "cover_color": "peach",
+  "reading_minutes": 1,
+  "excerpt": "Do you know what you want your career to be? Or are you open to possibilities?",
+  "content": "Do you know what you want your career to be? Or are you open to possibilities? We asked our team of TFK Kid Reporters what they want most in a career: what they need their job to include, and how their goals have changed over time. Here are some of their responses. What’s yours? Send it to us at tfkeditors@time.com for a chance to be published online or in a future issue.",
+  "summary": "",
+  "words": [
+   {
+    "word": "include",
+    "meaning": "포함하다",
+    "example": "We asked our team of TFK Kid Reporters what they want most in a career: what they need their job to include, and how their goals have changed over time."
+   },
+   {
+    "word": "publish",
+    "meaning": "출판하다",
+    "example": "com for a chance to be published online or in a future issue."
+   },
+   {
+    "word": "issue",
+    "meaning": "문제, 쟁점",
+    "example": "com for a chance to be published online or in a future issue."
+   },
+   {
+    "word": "goal",
+    "meaning": "목표",
+    "example": "We asked our team of TFK Kid Reporters what they want most in a career: what they need their job to include, and how their goals have changed over time."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "We asked our team of TFK Kid Reporters what they want most in a career: what they need their job to include, and how their goals have changed over time.",
+    "focus": "have changed"
+   },
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "com for a chance to be published online or in a future issue.",
+    "focus": "be published"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-24",
+  "terms": [],
+  "created_at": "2026-11-24T05:57:17.370Z"
+ },
+ {
+  "id": "rss-1b7c65741377",
+  "title": "Americans Vote in Midterms",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g34/americans-vote-in-midterms-g3-2/",
+  "published_at": "2026-11-06",
+  "category": "세상",
+  "level": "LEVEL 1",
+  "cover_color": "coral",
+  "reading_minutes": 2,
+  "excerpt": "On November 3, Americans voted in the midterm elections. These decide which party will control the House of Representatives and the Senate. They’re now controlled by Republicans.",
+  "content": "On November 3, Americans voted in the midterm elections. These decide which party will control the House of Representatives and the Senate. They’re now controlled by Republicans. On election night, Democrats won a majority in both. Elected lawmakers will begin their terms on January 3. President Donald Trump, a Republican, will then have a Congress led by the opposing party.\n\nAt press time, some ballots are still being counted. But candidates have already broken barriers. One is Georgia’s Keisha Lance Bottoms. She will be the first Black female governor of a state. Another is Michigan’s Abdul El-Sayed. He will be the first Muslim U.S. senator. “I’m not running to be the first Muslim anything,” El-Sayed told CNN in August. “I just want to be a really, really great senator for my state.”",
+  "summary": "",
+  "words": [
+   {
+    "word": "control",
+    "meaning": "통제하다; 통제",
+    "example": "These decide which party will control the House of Representatives and the Senate."
+   },
+   {
+    "word": "president",
+    "meaning": "대통령",
+    "example": "President Donald Trump, a Republican, will then have a Congress led by the opposing party."
+   },
+   {
+    "word": "lawmaker",
+    "meaning": "입법자, 국회의원",
+    "example": "Elected lawmakers will begin their terms on January 3."
+   },
+   {
+    "word": "decide",
+    "meaning": "결정하다",
+    "example": "These decide which party will control the House of Representatives and the Senate."
+   },
+   {
+    "word": "vote",
+    "meaning": "투표하다; 투표",
+    "example": "On November 3, Americans voted in the midterm elections."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "But candidates have already broken barriers.",
+    "focus": "have already broken"
+   },
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "At press time, some ballots are still being counted.",
+    "focus": "being counted"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "These decide which party will control the House of Representatives and the Senate.",
+    "focus": "decide which party"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-24",
+  "terms": [
+   {
+    "term": "election",
+    "ko": "선거",
+    "note": "투표로 대표자를 뽑는 일이에요."
+   },
+   {
+    "term": "House of Representatives",
+    "ko": "하원",
+    "note": "미국 의회의 두 기관 중 하나로, 인구에 비례해 뽑힌 의원으로 이루어져요."
+   },
+   {
+    "term": "Senate",
+    "ko": "상원",
+    "note": "미국 의회의 두 기관 중 하나로, 각 주에서 2명씩 뽑힌 의원으로 이루어져요."
+   },
+   {
+    "term": "Congress",
+    "ko": "미국 의회",
+    "note": "미국의 법을 만드는 기관이에요. 상원과 하원으로 나뉘어요."
+   },
+   {
+    "term": "ballot",
+    "ko": "투표용지",
+    "note": "투표할 때 선택을 표시하는 종이예요."
+   },
+   {
+    "term": "governor",
+    "ko": "주지사",
+    "note": "미국에서 각 주를 이끄는 최고 책임자예요."
+   }
+  ],
+  "created_at": "2026-11-24T05:57:17.370Z"
+ },
+ {
+  "id": "rss-fc96821678a1",
+  "title": "Analyze This: Color might explain baboon’s link to Egyptian god",
+  "title_ko": "",
+  "source": "Science News Explores",
+  "source_url": "https://www.snexplores.org/article/baboon-color-egyptian-moon-god",
+  "published_at": "2026-11-23",
+  "category": "환경",
+  "level": "LEVEL 2",
+  "cover_color": "sage",
+  "reading_minutes": 9,
+  "excerpt": "Ancient Egyptians might have linked hamadryas baboons with the moon god Thoth due to their silvery fur.",
+  "content": "One monkey’s moonlike color might explain its link to an ancient Egyptian god.\n\nIn ancient Egypt, Thoth was the god of wisdom, magic and the moon. He took two animal forms. One was a black-and-white bird called the African sacred ibis. The other was the silvery hamadryas baboon. But why ancient Egyptians chose these species — especially the baboon — has been a bit of a mystery.\n\nA new study has now revealed that the color of hamadryas baboon fur closely matches that of the moon. The striking resemblance could explain why these monkeys were chosen to embody a lunar deity, the researchers say. They shared their findings in Time and Mind on July 14.\n\nIt’s cool to see someone use physics to investigate this historical question, says Julien Cooper. He’s an Egyptologist at Macquarie University in Australia who did not take part in the work. “If we pay close attention to animal characteristics and behavior … we may explain many [still] mysterious aspects of ancient Egyptian religion and magic.”\n\nA curious choice\n\nNathaniel Dominy got curious about the “baboonification” of Thoth while studying primates in Africa. “There’s just so many puzzling aspects about it,” says Dominy. He’s a primatologist at Dartmouth College in Hanover, N.H.\n\nFor one, baboons are not well liked in many parts of Africa, Dominy notes. The monkeys feast on farmers’ crops and sometimes destroy crops without even eating them. “It just drives people bananas,” Dominy says. Why ancient Egyptians chose to represent a god with animals so widely seen today as menaces “boggles the mind.”\n\nEven stranger, baboons are not native to Egypt. Ancient Egyptians imported them as exotic pets. “A lot of gods had animal representations,” such as hippos, crocodiles and falcons, Dominy says. All of those animals lived in ancient Egypt — except the baboon.\n\nTo top it off, skeletons and mummified remains of two baboon species have turned up in Egyptian temples and tombs: hamadryas and olive baboons. Yet Thoth only took the form of a hamadryas baboon. That all made Dominy wonder what made this species so special.\n\nInspiration struck a couple of years ago when Cooper looked into the origin of Thoth’s name. He traced it to an Egyptian root that meant “bright” and “white” — words describing moonlight. This hinted that the ibis might have been picked for such a god because of its bright white feathers.\n\nDominy and fellow primatologist Cat Hobaiter set out to see if color might likewise link baboons to Thoth. Hobaiter works at the University of St Andrews in Scotland.\n\nMeasuring color\n\nComparing moon and baboon hues was easier said than done. “The problem with colors is that everyone has a different kind of perspective of color,” Dominy says. “The words I use to describe colors may be very different than the words you use.”\n\nTo get around that problem, the team used a tool called a spectrometer. The researchers measured how much light of different wavelengths — or colors — reflected off the moon and baboon fur. This set of wavelength data is called a spectral profile. It gives an “unbiased, totally objective” read on an object’s overall color, Dominy explains.\n\nDominy took a spectrometer to the American Museum of Natural History in New York City. There, he measured the wavelengths of light that bounced off hairs from a dozen olive and hamadryas baboon specimens in the museum’s collection. The spectral profile of the hamadryas species looked just like that of moonlight.\n\n“I almost cried a little bit! It was just so perfect. It was really a satisfying result,” Dominy says. “The spectral profile is really flat between certain wavelengths. And that flatness is what we perceive as silver or white.”\n\nWhat’s more, the spectral profile of hamadryas baboons was about 65 percent brighter than that of olive baboons. In fact, the especially bright silver-white of hairs on male hamadryas baboons’ cheeks and chests is “brighter than all of the other monkeys that the Egyptians might have known about,” Dominy says. That boosts his and Hobaiter’s suspicion that hamadryas baboons embodied Thoth because they reminded ancient Egyptians of moonlight.\n\n“In this research, we can ‘join the dots,’ so to speak, and get a glimpse into how Egyptians … used their environment to build their pantheon,” Cooper says. (A pantheon is the set of gods in a culture’s mythology.)\n\nOf course, “we can never actually know what people thought” thousands of years ago, Dominy cautions. “But it sure is fun to think about.”\n\nData Dive\n\n1. What range of wavelengths did the team measure for moonlight and baboon fur?\n\n2. Search the internet to find the range of wavelengths that human eyes can see. How does this compare to the wavelengths measured?\n\n3. At what wavelengths does the moon reflect the most light? What about P. hamadryas baboons? What about P. anubis baboons?\n\n4. Which baboon species reflects more light overall?\n\n5. Which species’ overall pattern of reflected light more closely matches moonlight?",
+  "summary": "",
+  "words": [
+   {
+    "word": "especially",
+    "meaning": "특히",
+    "example": "But why ancient Egyptians chose these species — especially the baboon — has been a bit of a mystery."
+   },
+   {
+    "word": "researcher",
+    "meaning": "연구원",
+    "example": "The striking resemblance could explain why these monkeys were chosen to embody a lunar deity, the researchers say."
+   },
+   {
+    "word": "describe",
+    "meaning": "묘사하다",
+    "example": "He traced it to an Egyptian root that meant “bright” and “white” — words describing moonlight."
+   },
+   {
+    "word": "explain",
+    "meaning": "설명하다",
+    "example": "One monkey’s moonlike color might explain its link to an ancient Egyptian god."
+   },
+   {
+    "word": "ancient",
+    "meaning": "고대의",
+    "example": "One monkey’s moonlike color might explain its link to an ancient Egyptian god."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "But why ancient Egyptians chose these species — especially the baboon — has been a bit of a mystery.",
+    "focus": "has been"
+   },
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "The striking resemblance could explain why these monkeys were chosen to embody a lunar deity, the researchers say.",
+    "focus": "were chosen"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "He’s an Egyptologist at Macquarie University in Australia who did not take part in the work.",
+    "focus": "Australia who did"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-24",
+  "terms": [
+   {
+    "term": "species",
+    "ko": "종",
+    "note": "생물을 나누는 기본 단위예요. 같은 종끼리는 서로 짝을 지어 새끼를 낳을 수 있어요."
+   }
+  ],
+  "created_at": "2026-11-24T05:57:17.370Z"
+ },
+ {
   "id": "rss-8927e876cc17",
   "title": "Seals long ago evolved to hear above the water — and below",
   "title_ko": "",
