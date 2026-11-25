@@ -5,7 +5,7 @@ import type { LucideIcon } from 'lucide-react'
 import { Article, demoArticles, type Term, type Word } from './data'
 import { fetchAuthBox, readTeacherArticles, REPO, saveAuthBox, savePublicJson, verifyTeacher, writeTeacherArticles } from './github'
 import { AUTH_FILE, MIN_PASSWORD, lockToken, unlockToken, type TokenBox } from './teacher-auth.mjs'
-import { fetchAll, fetchFeedbackConfig, fetchMine, isWebAppUrl, loadStudent, newTeacherKey, pingTeacher, saveComment, saveStudent, submitSummary, CONFIG_FILE, type FeedbackConfig, type Student, type Submission } from './summaries'
+import { fetchAll, fetchFeedbackConfig, fetchMine, isWebAppUrl, loadStudent, newTeacherKey, pingTeacher, saveComment, saveStudent, submitSummary, CONFIG_FILE, SHEET_URL, type FeedbackConfig, type Student, type Submission } from './summaries'
 import scriptSource from '../apps-script/Code.gs?raw'
 import { translationParagraphs } from './translation.mjs'
 import { extractGrammar, extractWords, withLearning, wordPattern } from './learning.mjs'
@@ -573,7 +573,7 @@ function StudentSummaries({ token }: { token: string }) {
     <h2><MessageSquare size={20}/> {config ? '요약 저장소 다시 연결하기' : '처음 한 번만: 학생 요약 저장소 연결'}</h2>
     <p className="hint">학생 요약은 선생님의 구글 스프레드시트에 저장돼요. 아래 순서대로 한 번만 연결하면 돼요. (약 5분)</p>
     <ol className="setup-steps">
-      <li>구글 드라이브에서 <a href="https://sheets.new" target="_blank" rel="noopener noreferrer">새 스프레드시트 <ArrowUpRight size={12}/></a>를 만들고 이름을 정해요. (예: Daily Scoop 요약)</li>
+      <li><a href={SHEET_URL} target="_blank" rel="noopener noreferrer">연결할 구글 스프레드시트 열기 <ArrowUpRight size={12}/></a> (Daily Scoop 요약 시트). 공유 설정은 <b>제한됨</b>으로 두세요. 링크가 있는 모든 사용자에게 공개하면 학생 요약이 누구에게나 보여요.</li>
       <li>메뉴 <b>확장 프로그램 → Apps Script</b>를 열어요.</li>
       <li>편집기의 코드를 모두 지우고, 아래 코드를 복사해 붙여 넣은 뒤 저장(💾)해요. <b>선생님 키가 이미 들어 있으니 고치지 마세요.</b>
         <div className="code-box"><button type="button" className="chip" onClick={copyScript}><Copy size={14}/> {copied ? '복사했어요!' : '코드 복사'}</button><textarea readOnly value={script} rows={6} aria-label="Apps Script 코드"/></div></li>
@@ -606,7 +606,7 @@ function StudentSummaries({ token }: { token: string }) {
           <textarea id={`c-${item.id}`} className="note-area comment-area" maxLength={2000} placeholder="잘한 점과 고칠 점을 학생에게 남겨 주세요." value={draft} onChange={e => setDrafts(prev => ({ ...prev, [item.id]: e.target.value }))}/>
           <button className="primary-button" disabled={!dirty || saving === item.id} onClick={() => comment(item)}><Send size={16}/> {saving === item.id ? '저장 중...' : item.feedback ? '댓글 수정' : '댓글 달기'}</button></div>
       </li> })}</ul>}
-    <p className="hint">학생 요약은 연결된 구글 스프레드시트에서도 볼 수 있어요. <button className="logout-link" onClick={() => setSetup(true)}>저장소 다시 연결하기</button></p>
+    <p className="hint">학생 요약은 <a href={SHEET_URL} target="_blank" rel="noopener noreferrer">연결된 구글 스프레드시트</a>에서도 볼 수 있어요. <button className="logout-link" onClick={() => setSetup(true)}>저장소 다시 연결하기</button></p>
   </div>
 }
 

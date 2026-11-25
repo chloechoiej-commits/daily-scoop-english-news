@@ -10,6 +10,8 @@ export type Submission = {
 export type FeedbackConfig = { v: 1; url: string; keyBox?: import('./teacher-auth.mjs').TokenBox }
 
 export const CONFIG_FILE = 'public/data/feedback-config.json'
+// The teacher's spreadsheet that stores submissions (Apps Script is attached to it).
+export const SHEET_URL = 'https://docs.google.com/spreadsheets/d/10gYddznRb84X4WYdwNJ1ylVnn43mWd2ZLYY3fkc0XFw/edit'
 const STUDENT_KEY = 'scoop-student'
 
 export type Student = { id: string; name: string; className: string }
