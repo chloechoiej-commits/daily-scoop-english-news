@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { Send, MessageSquare, RefreshCw, Copy, ArrowLeft, ArrowRight, ArrowUpRight, Bookmark, Check, CheckCircle2, Clock3, FlaskConical, Globe, GraduationCap, Leaf, LogIn, LogOut, Palette, Plus, School, Search, Sparkles, X } from 'lucide-react'
+import { Highlighter, Send, MessageSquare, RefreshCw, Copy, ArrowLeft, ArrowRight, ArrowUpRight, Bookmark, Check, CheckCircle2, Clock3, FlaskConical, Globe, GraduationCap, Leaf, LogIn, LogOut, Palette, Plus, School, Search, Sparkles, X } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { Article, demoArticles, type Term, type Word } from './data'
 import { fetchAuthBox, readTeacherArticles, REPO, saveAuthBox, savePublicJson, verifyTeacher, writeTeacherArticles } from './github'
@@ -8,7 +8,7 @@ import { AUTH_FILE, MIN_PASSWORD, lockToken, unlockToken, type TokenBox } from '
 import { fetchAll, fetchFeedbackConfig, fetchMine, isWebAppUrl, loadStudent, newTeacherKey, pingTeacher, saveComment, saveStudent, submitSummary, CONFIG_FILE, SHEET_URL, type FeedbackConfig, type Student, type Submission } from './summaries'
 import scriptSource from '../apps-script/Code.gs?raw'
 import { translationParagraphs } from './translation.mjs'
-import { extractGrammar, extractWords, withLearning, wordPattern } from './learning.mjs'
+import { extractGrammar, extractWords, lookupWord, withLearning, wordPattern } from './learning.mjs'
 import { termPattern } from './glossary.mjs'
 import { supabase } from './supabase'
 import './style.css'
@@ -68,6 +68,9 @@ function highlight(sentence: string, phrase?: string) {
   return at < 0 ? sentence : <>{sentence.slice(0, at)}<mark>{sentence.slice(at, at + phrase!.length)}</mark>{sentence.slice(at + phrase!.length)}</>
 }
 const formatTime = (iso: string) => { const d = new Date(iso); return Number.isNaN(d.getTime()) ? '' : new Intl.DateTimeFormat('ko-KR', { month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit' }).format(d) }
+type Highlight = { word: string; memo: string; at: string }
+const WORD_SPLIT = /([A-Za-z](?:[A-Za-z’'-]*[A-Za-z])?)/
+const normWord = (token: string) => token.toLowerCase().replace(/[’']s$/, '')
 const editionDay = (a: Article) => a.collection_day || a.published_at
 const isTeacherPick = (a: Article) => a.id.startsWith('teacher-') ? 1 : 0
 // Newest paper day first; on the same day a teacher's pick leads its section.
@@ -95,6 +98,8 @@ function App() {
   const [saved, setSaved] = useState<string[]>(() => readStorage('scoop-saved', []))
   const [completed, setCompleted] = useState<string[]>(() => readStorage('scoop-completed', []))
   const [notes, setNotes] = useState<Record<string, string>>(() => readStorage('scoop-notes', {}))
+  // Words a student highlighted while reading, with an optional memo: { articleId: { word: Highlight } }.
+  const [highlights, setHighlights] = useState<Record<string, Record<string, Highlight>>>(() => readStorage('scoop-highlights', {}))
   // Summaries go to the teacher's Google Sheet (see src/summaries.ts); undefined = still checking.
   const [feedbackConfig, setFeedbackConfig] = useState<FeedbackConfig | null | undefined>(undefined)
   const [student, setStudent] = useState<Student>(loadStudent)
@@ -107,6 +112,7 @@ function App() {
   useEffect(() => { writeStorage('scoop-saved', saved) }, [saved])
   useEffect(() => { writeStorage('scoop-completed', completed) }, [completed])
   useEffect(() => { writeStorage('scoop-notes', notes) }, [notes])
+  useEffect(() => { writeStorage('scoop-highlights', highlights) }, [highlights])
   useEffect(() => {
     fetchFeedbackConfig(import.meta.env.BASE_URL).then(config => { setFeedbackConfig(config); if (config) refreshMine(config) })
   }, [])
@@ -167,6 +173,31 @@ function App() {
   }
   const updateStudent = (patch: Partial<Student>) => { const next = { ...student, ...patch }; setStudent(next); saveStudent(next) }
   const myFeedbackCount = mine.filter(m => m.feedback).length
+
+  const myMarks = (articleId: string) => highlights[articleId] || {}
+  const toggleHighlight = (articleId: string, token: string) => setHighlights(prev => {
+    const marks = { ...(prev[articleId] || {}) }; const key = normWord(token)
+    if (marks[key]) delete marks[key]; else marks[key] = { word: key, memo: '', at: new Date().toISOString() }
+    return { ...prev, [articleId]: marks }
+  })
+  const setMemo = (articleId: string, key: string, memo: string) => setHighlights(prev => {
+    const marks = prev[articleId] || {}
+    const current = marks[key] || { word: key, memo: '', at: new Date().toISOString() }
+    return { ...prev, [articleId]: { ...marks, [key]: { ...current, memo } } }
+  })
+  // One clickable word: tap to open a small card with highlight + memo (and the dictionary meaning if known).
+  const wordToken = (a: Article, token: string, id: string, meaning?: string, extraClass = '') => {
+    const key = normWord(token); const mark = myMarks(a.id)[key]; const open = openWord === id
+    const hint = meaning || lookupWord(token)?.meaning
+    return <span key={id} role="button" tabIndex={0} className={`w ${extraClass} ${mark ? 'hl' : ''} ${open ? 'open' : ''}`} aria-expanded={open} onClick={() => setOpenWord(open ? '' : id)} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpenWord(open ? '' : id) } }}>{token}{mark?.memo && <span className="memo-dot" aria-label="메모 있음">✎</span>}
+      {open && <span className="vocab-pop word-pop" role="dialog" aria-label={`${key} 형광펜과 메모`} onClick={e => e.stopPropagation()} onKeyDown={e => e.stopPropagation()}>
+        <span className="word-pop-head"><b>{key}</b>{hint && <span>{hint}</span>}<button type="button" className="word-pop-close" aria-label="닫기" onClick={() => setOpenWord('')}><X size={15}/></button></span>
+        <button type="button" className={`hl-button ${mark ? 'on' : ''}`} onClick={() => toggleHighlight(a.id, token)}><Highlighter size={15}/> {mark ? '형광펜 지우기' : '형광펜 칠하기'}</button>
+        {mark && <textarea className="memo-input" rows={2} maxLength={300} placeholder="메모: 뜻, 예문, 궁금한 점…" value={mark.memo} autoFocus onChange={e => setMemo(a.id, key, e.target.value)}/>}
+      </span>}
+    </span>
+  }
+  const plainWords = (a: Article, text: string, prefix: string) => text.split(WORD_SPLIT).map((part, t) => t % 2 === 1 ? wordToken(a, part, `${prefix}-${t}`) : part)
 
   const toggleSaved = (id: string) => setSaved(prev => prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id])
   const markDone = (id: string) => setCompleted(prev => prev.includes(id) ? prev : [...prev, id])
@@ -303,12 +334,12 @@ function App() {
       </header>
       <nav className="reader-steps" aria-label="학습 단계">{steps.map(([id, ko], i) => <button key={id} className={`${tab === id ? 'active' : ''} ${i < stepIndex ? 'past' : ''}`} aria-current={tab === id ? 'step' : undefined} onClick={() => goTab(id)}><span>{i + 1}</span>{ko}</button>)}</nav>
       <div className="reader-body">
-        {tab === 'article' && <><StepHead no={1} title="차근차근 읽어 볼까요?" help="모르는 단어가 나와도 괜찮아요. 전체 흐름을 먼저 잡아 보세요."/><p className="vocab-hint"><span className="vocab-mark-sample">밑줄 친 단어</span>를 누르면 뜻을, <span className="term-star sample">*</span> 표시를 누르면 전문 용어 풀이를 볼 수 있어요.</p>{(() => { const seen = new Set<string>(); const terms = a.terms || []; return <div className="article-copy" onClick={e => { if (!(e.target as HTMLElement).closest('.vocab-mark, .term')) setOpenWord('') }}>{a.content.split(/\n+/).filter(Boolean).map((paragraph, i) => isSubhead(paragraph) ? <h3 key={i} className="article-subhead">{paragraph}</h3> : <p key={i}>{annotate(paragraph, a.words || [], terms, seen).map((piece, k) => {
-            if (typeof piece === 'string') return piece
+        {tab === 'article' && <><StepHead no={1} title="차근차근 읽어 볼까요?" help="모르는 단어가 나와도 괜찮아요. 전체 흐름을 먼저 잡아 보세요."/><p className="vocab-hint"><span className="vocab-mark-sample">밑줄 친 단어</span>를 누르면 뜻을, <span className="term-star sample">*</span> 표시를 누르면 전문 용어 풀이를 볼 수 있어요. 모르는 단어는 눌러서 <span className="hl-sample">형광펜</span>을 칠하고 메모해 보세요.</p>{(() => { const seen = new Set<string>(); const terms = a.terms || []; return <div className="article-copy" onClick={e => { if (!(e.target as HTMLElement).closest('.w, .term')) setOpenWord('') }}>{a.content.split(/\n+/).filter(Boolean).map((paragraph, i) => isSubhead(paragraph) ? <h3 key={i} className="article-subhead">{paragraph}</h3> : <p key={i}>{annotate(paragraph, a.words || [], terms, seen).map((piece, k) => {
             const id = `${i}-${k}`
+            if (typeof piece === 'string') return <React.Fragment key={k}>{plainWords(a, piece, id)}</React.Fragment>
             if (piece.kind === 'term') return <span key={k} className={`term ${openWord === id ? 'open' : ''}`}>{piece.text.replace(/\S+$/, '')}<span className="term-tail">{piece.text.match(/\S+$/)?.[0]}<button type="button" className="term-star" aria-label={`${piece.term.term} 용어 풀이 ${piece.no}`} aria-expanded={openWord === id} onClick={() => setOpenWord(openWord === id ? '' : id)}>*{piece.no}</button></span>{openWord === id && <span className="vocab-pop term-pop" role="tooltip"><b>{piece.term.ko}</b>{piece.term.note}</span>}</span>
-            return <button key={k} type="button" className={`vocab-mark ${openWord === id ? 'open' : ''}`} aria-expanded={openWord === id} onClick={() => setOpenWord(openWord === id ? '' : id)}>{piece.text}{openWord === id && <span className="vocab-pop" role="tooltip"><b>{piece.word.word}</b> {piece.word.meaning}</span>}</button>
-          })}</p>)}</div> })()}{a.terms?.length ? <section className="term-notes" aria-label="용어 풀이"><h3>용어 풀이</h3><ol>{a.terms.map((t, i) => <li key={t.term}><span className="term-no">*{i + 1}</span><div><b>{t.term}</b> <span className="term-ko">{t.ko}</span><p>{t.note}</p></div></li>)}</ol></section> : null}{(a.words?.length || a.grammar?.length) ? <aside className="study-box"><div><h3>이 기사의 주요 단어</h3><ul className="study-words">{a.words.map(w => <li key={w.word}><b>{w.word}</b><span>{w.meaning}</span></li>)}</ul><button className="text-link" onClick={() => goTab('words')}>단어 카드로 익히기 <ArrowRight size={15}/></button></div><div><h3>문법 포인트</h3><ul className="study-grammar">{a.grammar.map(g => <li key={g.title}><b>{g.title}</b>{g.focus && <span>“{g.focus}”</span>}</li>)}</ul><button className="text-link" onClick={() => goTab('grammar')}>문법 설명 보기 <ArrowRight size={15}/></button></div></aside> : null}{a.content_kind === 'rss_excerpt' && a.source_url && <a className="source-cta" href={a.source_url} target="_blank" rel="noopener noreferrer">{a.source}에서 전체 기사 읽기 <ArrowUpRight size={16}/></a>}<NextBar text="다 읽었다면 내 말로 정리해 봐요." label="요약하기" onClick={() => goTab('summary')}/></>}
+            return wordToken(a, piece.text, id, piece.word.meaning, 'vocab-mark')
+          })}</p>)}</div> })()}{a.terms?.length ? <section className="term-notes" aria-label="용어 풀이"><h3>용어 풀이</h3><ol>{a.terms.map((t, i) => <li key={t.term}><span className="term-no">*{i + 1}</span><div><b>{t.term}</b> <span className="term-ko">{t.ko}</span><p>{t.note}</p></div></li>)}</ol></section> : null}{Object.keys(myMarks(a.id)).length > 0 && <section className="my-marks" aria-label="내 형광펜과 메모"><h3><Highlighter size={17}/> 내 형광펜·메모 <span className="nav-count">{Object.keys(myMarks(a.id)).length}</span></h3><ul>{Object.values(myMarks(a.id)).sort((x, y) => x.at.localeCompare(y.at)).map(m => <li key={m.word}><div className="mark-word"><b>{m.word}</b>{lookupWord(m.word) && <span>{lookupWord(m.word)!.meaning}</span>}</div><textarea className="memo-input" rows={1} maxLength={300} placeholder="메모를 적어 보세요" value={m.memo} onChange={e => setMemo(a.id, m.word, e.target.value)}/><button className="icon-button" aria-label={`${m.word} 형광펜 지우기`} onClick={() => toggleHighlight(a.id, m.word)}><X size={15}/></button></li>)}</ul><p className="hint">형광펜과 메모는 이 브라우저에 저장돼요.</p></section>}{(a.words?.length || a.grammar?.length) ? <aside className="study-box"><div><h3>이 기사의 주요 단어</h3><ul className="study-words">{a.words.map(w => <li key={w.word}><b>{w.word}</b><span>{w.meaning}</span></li>)}</ul><button className="text-link" onClick={() => goTab('words')}>단어 카드로 익히기 <ArrowRight size={15}/></button></div><div><h3>문법 포인트</h3><ul className="study-grammar">{a.grammar.map(g => <li key={g.title}><b>{g.title}</b>{g.focus && <span>“{g.focus}”</span>}</li>)}</ul><button className="text-link" onClick={() => goTab('grammar')}>문법 설명 보기 <ArrowRight size={15}/></button></div></aside> : null}{a.content_kind === 'rss_excerpt' && a.source_url && <a className="source-cta" href={a.source_url} target="_blank" rel="noopener noreferrer">{a.source}에서 전체 기사 읽기 <ArrowUpRight size={16}/></a>}<NextBar text="다 읽었다면 내 말로 정리해 봐요." label="요약하기" onClick={() => goTab('summary')}/></>}
         {tab === 'summary' && (() => { const sub = mine.find(m => m.articleId === a.id); const text = notes[a.id] || ''; return <><StepHead no={2} title="나만의 문장으로 요약해요" help="가장 중요한 내용을 영어 또는 한국어로 자유롭게 적고, 선생님께 제출해 피드백을 받아 보세요."/>
           <div className="form-row student-row"><label className="field-label">이름<input className="text-input" value={student.name} maxLength={40} placeholder="예: 김민지" onChange={e => updateStudent({ name: e.target.value })}/></label><label className="field-label">반·번호 <small>선택</small><input className="text-input" value={student.className} maxLength={20} placeholder="예: 2-3 15번" onChange={e => updateStudent({ className: e.target.value })}/></label></div>
           <label className="field-label" htmlFor="summary-note">내가 정리한 내용</label><textarea id="summary-note" className="note-area" maxLength={3000} placeholder="이 기사는 어떤 이야기인가요?" value={text} onChange={e => { setNotes({ ...notes, [a.id]: e.target.value }); setSubmitMsg(null) }}/>

@@ -674,3 +674,9 @@ export function withLearning(article) {
     terms,
   }
 }
+
+/** Dictionary meaning for any word form in the text (e.g. "erupted" → erupt), or null. */
+export function lookupWord(token) {
+  const base = baseForms(String(token)).find(form => VOCAB[form])
+  return base ? { base, meaning: VOCAB[base] } : null
+}

@@ -386,3 +386,34 @@ mark { background: color-mix(in srgb, var(--tone) 22%, transparent); color: inhe
 .comment-box .field-label { display: inline-flex; align-items: center; gap: 6px; margin: 0 }
 .comment-area { min-height: 90px }
 .summaries .filters .chip { display: inline-flex; align-items: center; gap: 6px }
+
+/* Student highlighter & memos */
+:root { --hl: #ffeb7a }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --hl: rgba(255, 221, 87, .38) } }
+.w { position: relative; cursor: pointer; border-radius: 3px; transition: background .12s }
+.w:hover { background: color-mix(in srgb, var(--hl) 45%, transparent) }
+.w.hl { background: var(--hl); box-shadow: 0 0 0 1px var(--hl); color: inherit }
+.w.vocab-mark.hl { background: var(--hl) }
+.w:focus-visible { outline: 2px solid var(--tone); outline-offset: 1px }
+.memo-dot { font-family: var(--sans); font-size: .55em; vertical-align: .9em; margin-left: 1px; color: var(--tone) }
+.hl-sample { background: var(--hl); padding: 0 3px; border-radius: 3px; color: var(--ink) }
+.word-pop { display: grid; gap: 8px; width: 270px; white-space: normal; text-align: left; cursor: default; padding: 12px; font-size: 14px; line-height: 1.45 }
+.word-pop-head { display: flex; align-items: baseline; gap: 8px; padding-right: 22px; position: relative }
+.word-pop-head b { font-family: var(--serif-en); font-size: 17px }
+.word-pop-head span { opacity: .85 }
+.word-pop-close { position: absolute; right: -4px; top: -4px; width: 26px; height: 26px; display: grid; place-items: center; border-radius: 50%; color: inherit; opacity: .8 }
+.word-pop-close:hover { opacity: 1; background: rgba(255,255,255,.12) }
+.hl-button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 34px; border-radius: 999px; background: var(--hl); color: #17171a; font-weight: 700; font-size: 13.5px }
+.hl-button.on { background: transparent; color: inherit; border: 1px solid rgba(255,255,255,.4) }
+.memo-input { width: 100%; resize: vertical; border-radius: 10px; border: 1px solid var(--line); padding: 8px 10px; font-family: var(--sans); font-size: 14px; line-height: 1.5; background: var(--card); color: var(--ink); outline: 0 }
+.word-pop .memo-input { border-color: transparent }
+.memo-input:focus { border-color: var(--tone) }
+.my-marks { margin-top: 26px; padding: 18px 20px; border-radius: 16px; border: 1px dashed color-mix(in srgb, #c9a100 60%, var(--line)); background: color-mix(in srgb, var(--hl) 18%, var(--card)) }
+.my-marks h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; font-size: 16px }
+.my-marks ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px }
+.my-marks li { display: grid; grid-template-columns: minmax(120px, 200px) 1fr auto; gap: 10px; align-items: center }
+.mark-word { display: grid }
+.mark-word b { font-family: var(--serif-en); font-size: 17px; background: var(--hl); justify-self: start; padding: 0 4px; border-radius: 3px; color: #17171a }
+.mark-word span { font-size: 13px; color: var(--ink-2) }
+.my-marks .hint { margin: 10px 0 0 }
+@media (max-width: 720px) { .word-pop { width: auto } .my-marks li { grid-template-columns: 1fr auto } .my-marks .memo-input { grid-column: 1 / -1; grid-row: 2 } }
