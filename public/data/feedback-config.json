@@ -1,0 +1,12 @@
+{
+ "v": 1,
+ "url": "https://script.google.com/macros/s/AKfycbw8FFS6IKLHwQcFIphnMf8_WphdYXEJVX_ieAsxXf8tj1fqfSTvfO0cuZH9nKO2iExv/exec",
+ "keyBox": {
+  "v": 1,
+  "kdf": "PBKDF2-SHA256",
+  "iterations": 20000,
+  "salt": "OzbjJRwiQxY6JL1mu+ZqcQ==",
+  "iv": "EJ3mhM1RhtwrHI3s",
+  "data": "FDe8xZ2Ap3GUHF/vdoMXJ9yPrFkoy0eKL5y/IDDkckIq3cU1i31E2Sci79kFyYHcLcaILmrThIwknNx0XN8jcw=="
+ }
+}
