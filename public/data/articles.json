@@ -1,5 +1,324 @@
 [
  {
+  "id": "rss-665a765824ea",
+  "title": "Meet the first new living cat species described in more than a century",
+  "title_ko": "",
+  "source": "Science News Explores",
+  "source_url": "https://www.snexplores.org/article/new-living-cat-species",
+  "published_at": "2026-11-24",
+  "category": "환경",
+  "level": "LEVEL 2",
+  "cover_color": "sage",
+  "reading_minutes": 5,
+  "excerpt": "Genetic tests on two of these teeny tiger cats, found in Bolivia, show they constitute a new species. They add a new branch to the feline family tree.",
+  "content": "Attention cat lovers: An adorable new branch has just been added to the feline family tree.\n\nMeet Leopardus tilcayo. These pint-size “tiger cats” have a slender body, spotted fur and a ringed tail. They weigh only about two kilograms (4.4 pounds), about as much as a four-month-old domestic kitten. Discovered in Bolivia, they appear native to the Yungas forests of the central Andes Mountains.\n\nIn a paper in the October 5 Current Biology, scientists for the first time named and described L. tilcayo. Indeed, it’s the first new living cat species noted by scientists in more than a century. The last one was the Uruguayan pampas cat (L. fasciatus), first described in 1923.\n\nFor such a tiny critter, L. tilcayo has caused quite a splash. News of its new-species status pounced into headlines around the world. “I did not at all expect attention at this scale,” says Jonas Lescroart. He’s an evolutionary biologist at the University of Antwerp in Belgium.\n\n‘House cat’ proved to be a novel species\n\nLescroart and his team never set out to discover a new cat. They were looking to narrow down how many tiger-cat species there are. Native to the American tropics, these tiny felines look a lot alike, Lescroart notes.\n\nTo see beyond these kitties’ coats, his team analyzed the genetics of 38 species in the Leopardus genus. This grouping includes tiger cats as well as some far-better known species, such as the ocelot. The researchers expected to find between two and possibly four distinct tiger-cat species. Instead, their new analyses point to five. One of these had never been described in the scientific record: L. tilcayo.\n\nData on it come from just two specimens. One is a female that was treated briefly for injuries at a sanctuary in Bolivia. (Later, it was released back into the wild.) The second, a male, still lives at the sanctuary. His name is Tigrino.\n\nLescroart’s colleague, Paola Nogales-Ascarrunz, met Tigrino at that sanctuary. She had noticed that he looked a bit different from the cats she expected to see in the area. And she has more than a little experience with such felines. She’s a cat conservationist (and National Geographic Explorer). Curious, Nogales-Ascarrunz genetically tested Tigrino. Afterward, she reached out to Lescroart’s team to share her data.\n\nThis new work suggests that there can be diversity hiding even among well-studied animals, such as cats. “I don’t know if you’ll have to wait another 100 years for a new species,” Lescroart says. Then again, his team admits it currently has no other odd kitties on its radar.",
+  "summary": "",
+  "words": [
+   {
+    "word": "attention",
+    "meaning": "주의, 관심",
+    "example": "Attention cat lovers: An adorable new branch has just been added to the feline family tree."
+   },
+   {
+    "word": "scientist",
+    "meaning": "과학자",
+    "example": "In a paper in the October 5 Current Biology, scientists for the first time named and described L."
+   },
+   {
+    "word": "discover",
+    "meaning": "발견하다",
+    "example": "Discovered in Bolivia, they appear native to the Yungas forests of the central Andes Mountains."
+   },
+   {
+    "word": "describe",
+    "meaning": "묘사하다",
+    "example": "In a paper in the October 5 Current Biology, scientists for the first time named and described L."
+   },
+   {
+    "word": "native",
+    "meaning": "토박이의, 원주민의",
+    "example": "Discovered in Bolivia, they appear native to the Yungas forests of the central Andes Mountains."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "Attention cat lovers: An adorable new branch has just been added to the feline family tree.",
+    "focus": "has just been"
+   },
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "One of these had never been described in the scientific record: L.",
+    "focus": "been described"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "This new work suggests that there can be diversity hiding even among well-studied animals, such as cats.",
+    "focus": "can be"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-25",
+  "terms": [
+   {
+    "term": "species",
+    "ko": "종",
+    "note": "생물을 나누는 기본 단위예요. 같은 종끼리는 서로 짝을 지어 새끼를 낳을 수 있어요."
+   },
+   {
+    "term": "biologist",
+    "ko": "생물학자",
+    "note": "살아 있는 생물을 연구하는 과학자예요."
+   }
+  ],
+  "created_at": "2026-11-25T04:52:02.188Z"
+ },
+ {
+  "id": "rss-f16587766a28",
+  "title": "Is Remote Work Good for Society?",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g56/is-remote-work-good-for-society-g5/",
+  "published_at": "2026-11-24",
+  "category": "과학",
+  "level": "LEVEL 2",
+  "cover_color": "blue",
+  "reading_minutes": 6,
+  "excerpt": "In August, research firm Gallup released a poll. It surveyed U.S. employees who have “remote-capable jobs,” or jobs that can be done anywhere.",
+  "content": "In August, research firm Gallup released a poll. It surveyed U.S. employees who have “remote-capable jobs,” or jobs that can be done anywhere. The poll found that 25% of these employees work only remotely. There are lots of benefits to remote work—but there are also downsides. Recent research suggests that, while many people enjoy full-time remote work, it can contribute to loneliness and a decline in social skills. So: Is remote work good for society? We asked TFK readers for their thoughts on the issue. Jisu Hong, 10\n\nUiwang-si, South Korea Remote work is good for society because it gives people more time to live their lives. It can help people have better work-life balance. They can spend more time with their family, because they don’t have to commute to work. Remote work can help people save money on transportation and even food. People who live far from a big city might have more job opportunities with remote work. And people with disabilities or family responsibilities might find remote work more accessible. It might feel lonely sometimes, but overall, remote work can be good for society. Tigran Karapetyan, 9\n\nLos Angeles, California Remote work is bad for society. A study published in Science in June 2026 suggests that remote workers are more isolated, anxious, and depressed than people who work in person. Another reason for my opinion is that remote work might lessen workers’ social skills. A 2024 survey conducted by Resume Builder found that one in four remote employees says working from home has led to a decline in their social skills.\n\nPeople who disagree might say that working from home could save money on things like gas. To that, I say yes, but humans are social creatures.\n\nElizabeth Rawley, 10\n\nFoster City, California Remote work is good for society. With remote work, you can wake up later than usual because you don’t have to worry about driving to work early in the morning. If you do wake up early, you can enjoy a nice breakfast or take a relaxing bath instead of driving to the office. Then when work starts, you will feel refreshed and ready to start your day.\n\nWith remote work, you’re not trapped inside. You can breathe fresh air. As long as you don’t slack off, remote work is good for society. You might not be working in an office, but you’re still working!\n\nOlivia Kelly, 11\n\nLenox Dale, Massachusetts Remote work is not good for society. We already have AI, phones, and computers. All of these things make for less social time with friends and coworkers. Working remotely means not being face-to-face with people. It means creating a life where people think it’s okay to not see others face-to-face. This affects the way we live. This lifestyle can affect kids’ brains, too.\n\nRemote work could be creating a bad society. This is true not only for adults, but for kids who are watching and learning. The Next Debate: Do we still need daylight saving time? Email your opinion to tfkeditors@time.com by January 15. Your response might be featured in an upcoming issue. *Submissions have been edited only for length and clarity. They are not intended to reflect the views of TIME for Kids. Ages are accurate as of the time of submission.",
+  "summary": "",
+  "words": [
+   {
+    "word": "research",
+    "meaning": "연구",
+    "example": "In August, research firm Gallup released a poll."
+   },
+   {
+    "word": "suggest",
+    "meaning": "제안하다",
+    "example": "Recent research suggests that, while many people enjoy full-time remote work, it can contribute to loneliness and a decline in social skills."
+   },
+   {
+    "word": "society",
+    "meaning": "사회",
+    "example": "So: Is remote work good for society?"
+   },
+   {
+    "word": "opinion",
+    "meaning": "의견",
+    "example": "Another reason for my opinion is that remote work might lessen workers’ social skills."
+   },
+   {
+    "word": "survey",
+    "meaning": "설문 조사",
+    "example": "A 2024 survey conducted by Resume Builder found that one in four remote employees says working from home has led to a decline in their social skills."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "A 2024 survey conducted by Resume Builder found that one in four remote employees says working from home has led to a decline in their social skills.",
+    "focus": "has led"
+   },
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "employees who have “remote-capable jobs,” or jobs that can be done anywhere.",
+    "focus": "be done"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "People who live far from a big city might have more job opportunities with remote work.",
+    "focus": "People who live"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-25",
+  "terms": [],
+  "created_at": "2026-11-25T04:52:02.188Z"
+ },
+ {
+  "id": "rss-88bdbb2c95c0",
+  "title": "Ask Angela: Bounce Back",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g34/ask-angela-bounce-back-g3/",
+  "published_at": "2026-10-28",
+  "category": "생활",
+  "level": "LEVEL 1",
+  "cover_color": "peach",
+  "reading_minutes": 4,
+  "excerpt": "Have questions? Angela Haupt connects with experts and shares their words of wisdom. Angela Haupt is a health and wellness editor at TIME. She talks with experts about problems readers are having.",
+  "content": "Have questions? Angela Haupt connects with experts and shares their words of wisdom. Angela Haupt is a health and wellness editor at TIME. She talks with experts about problems readers are having. Then she writes articles to share what she learns. Here, she writes about what to do when you make a mistake. I said something awkward at school. I’m feeling embarrassed. How can I apologize?\n\nWe all make mistakes. Sometimes, you’re making one. Sometimes, it’s someone else. I spoke with etiquette experts to learn how you can dig yourself out of an awkward situation—and when you should take a breath and let it go. Pause and consider.\n\nAfter saying something you regret, you might turn red with embarrassment. Then you might feel the urge to keep talking. People often try to defend or excuse an unfortunate remark, says Karina Schumann. She’s a psychologist. You should put aside your need to explain yourself, she says: “Think, ‘If I were on the receiving end of this, what would I need to hear?’”\n\nPause. Note the impact of what you said. Then take responsibility. Schumann suggests phrasing it like this: “I’m sorry. I shouldn’t have assumed.” Or: “I can see my joke wasn’t funny. I apologize.” Then take a breath. More words can come later. Match your apology to the mistake.\n\nCall someone by the wrong name? A quick “Sorry about that!” is enough. Hurt someone’s feelings? That might call for more. An explanation can sometimes make what happened easier to understand, Schumann says. Lead with: “I’m sorry. I shouldn’t have said that.” Then ask whether an explanation would be helpful. Resist making repeated apologies.\n\nFor a minor blunder, one sincere apology is enough. “The more you apologize, the more it’s about you,” Lizzie Post says. She’s copresident of the Emily Post Institute and a great-great-granddaughter of the famous etiquette expert. The next time you meet, act normal.\n\nWhen you see the person, say hi. Don’t bring up the mistake again. If you’ve apologized and the other person is ready to move on, follow their lead.\n\nIf you have a question you’d like Angela to answer, send it to tfkeditors@time.com.",
+  "summary": "",
+  "words": [
+   {
+    "word": "expert",
+    "meaning": "전문가",
+    "example": "Angela Haupt connects with experts and shares their words of wisdom."
+   },
+   {
+    "word": "connect",
+    "meaning": "연결하다",
+    "example": "Angela Haupt connects with experts and shares their words of wisdom."
+   },
+   {
+    "word": "explain",
+    "meaning": "설명하다",
+    "example": "You should put aside your need to explain yourself, she says: “Think, ‘If I were on the receiving end of this, what would I need to hear?’”"
+   },
+   {
+    "word": "suggest",
+    "meaning": "제안하다",
+    "example": "Schumann suggests phrasing it like this: “I’m sorry."
+   },
+   {
+    "word": "health",
+    "meaning": "건강",
+    "example": "Angela Haupt is a health and wellness editor at TIME."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "I shouldn’t have assumed.”",
+    "focus": "have assumed"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "How can I apologize?",
+    "focus": "can I"
+   },
+   {
+    "title": "to부정사 (동사 + to + 동사원형)",
+    "explanation": "want, need, hope, plan, try 같은 동사 뒤에 to + 동사원형이 와서 \"~하기를, ~하는 것을\"이라는 뜻이 돼요.",
+    "example": "People often try to defend or excuse an unfortunate remark, says Karina Schumann.",
+    "focus": "try to defend"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-25",
+  "terms": [],
+  "created_at": "2026-11-25T04:52:02.188Z"
+ },
+ {
+  "id": "rss-5d4e583752a8",
+  "title": "Mineral Detective",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g34/your-hot-job-mineral-detective/",
+  "published_at": "2026-11-24",
+  "category": "문화",
+  "level": "LEVEL 2",
+  "cover_color": "lilac",
+  "reading_minutes": 1,
+  "excerpt": "Aaron Celestian is the curator of mineral sciences at the Natural History Museum of Los Angeles County, in California. He conducts research about minerals and how they interact with living things.",
+  "content": "Mineral Detective Aaron Celestian is the curator of mineral sciences at the Natural History Museum of Los Angeles County, in California. He conducts research about minerals and how they interact with living things. TFK Kid Reporter Ian Jung talked with Celestian about his job.",
+  "summary": "",
+  "words": [
+   {
+    "word": "mineral",
+    "meaning": "광물",
+    "example": "Mineral Detective Aaron Celestian is the curator of mineral sciences at the Natural History Museum of Los Angeles County, in California."
+   },
+   {
+    "word": "research",
+    "meaning": "연구",
+    "example": "He conducts research about minerals and how they interact with living things."
+   },
+   {
+    "word": "science",
+    "meaning": "과학",
+    "example": "Mineral Detective Aaron Celestian is the curator of mineral sciences at the Natural History Museum of Los Angeles County, in California."
+   },
+   {
+    "word": "natural",
+    "meaning": "자연의",
+    "example": "Mineral Detective Aaron Celestian is the curator of mineral sciences at the Natural History Museum of Los Angeles County, in California."
+   },
+   {
+    "word": "history",
+    "meaning": "역사",
+    "example": "Mineral Detective Aaron Celestian is the curator of mineral sciences at the Natural History Museum of Los Angeles County, in California."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "과거시제",
+    "explanation": "이미 끝난 과거의 일을 말할 때 동사의 과거형을 써요. 규칙 동사는 -ed를 붙이고, 불규칙 동사는 형태가 바뀌어요.",
+    "example": "TFK Kid Reporter Ian Jung talked with Celestian about his job.",
+    "focus": "Jung talked"
+   }
+  ],
+  "content_kind": "rss_excerpt",
+  "collection_day": "2026-11-25",
+  "terms": [
+   {
+    "term": "curator",
+    "ko": "큐레이터",
+    "note": "박물관이나 미술관의 전시를 기획하고 작품을 관리하는 사람이에요."
+   }
+  ],
+  "created_at": "2026-11-25T04:52:02.188Z"
+ },
+ {
+  "id": "rss-18b978567f77",
+  "title": "In Record Time",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/k1/in-record-time-k1/",
+  "published_at": "2026-11-06",
+  "category": "세상",
+  "level": "LEVEL 1",
+  "cover_color": "coral",
+  "reading_minutes": 2,
+  "excerpt": "This page highlights four record holders. Find out what they were able to accomplish in minutes, hours, and days. Chow Down Joey Chestnut (above) holds world records for eating. One is for hot dogs.",
+  "content": "This page highlights four record holders. Find out what they were able to accomplish in minutes, hours, and days.\n\nChow Down\n\nJoey Chestnut (above) holds world records for eating. One is for hot dogs. He ate 76 in 10 minutes.\n\nSpeed Cycler\n\nSarah Ruggins is a cyclist. She rode nearly 4,000 miles. She crossed Europe in just 14 days.\n\nOut in Space\n\nFrank Rubio is an astronaut for NASA. He spent 371 days in space. That is more than a year.\n\nLightning McLeod\n\nTammy McLeod is fast. She did a 250-piece puzzle in less than 10 minutes. What a puzzle pro!",
+  "summary": "",
+  "words": [
+   {
+    "word": "record",
+    "meaning": "기록; 기록하다",
+    "example": "This page highlights four record holders."
+   },
+   {
+    "word": "accomplish",
+    "meaning": "성취하다",
+    "example": "Find out what they were able to accomplish in minutes, hours, and days."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "과거시제",
+    "explanation": "이미 끝난 과거의 일을 말할 때 동사의 과거형을 써요. 규칙 동사는 -ed를 붙이고, 불규칙 동사는 형태가 바뀌어요.",
+    "example": "Find out what they were able to accomplish in minutes, hours, and days.",
+    "focus": "they were"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-25",
+  "terms": [
+   {
+    "term": "astronaut",
+    "ko": "우주 비행사",
+    "note": "우주선을 타고 우주에서 일하는 사람이에요."
+   },
+   {
+    "term": "NASA",
+    "ko": "미국 항공우주국",
+    "note": "미국 정부의 우주 탐사 기관이에요."
+   }
+  ],
+  "created_at": "2026-11-25T04:52:02.188Z"
+ },
+ {
   "id": "rss-5026575c12d1",
   "title": "Weather Beat",
   "title_ko": "",
