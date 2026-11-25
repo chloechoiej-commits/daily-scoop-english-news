@@ -67,3 +67,9 @@ export async function saveAuthBox(token: string, path: string, box: TokenBox) {
   const { sha } = await readJson<unknown>(token, path, null)
   await writeJson(token, path, box, sha, 'Update teacher login')
 }
+
+/** Saves a small public JSON file (e.g. site settings) to the repository; the push redeploys the site. */
+export async function savePublicJson(token: string, path: string, data: unknown, message: string) {
+  const { sha } = await readJson<unknown>(token, path, null)
+  await writeJson(token, path, data, sha, message)
+}

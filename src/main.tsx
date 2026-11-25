@@ -1,11 +1,12 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ArrowLeft, ArrowRight, ArrowUpRight, Bookmark, Check, CheckCircle2, Clock3, FlaskConical, Globe, GraduationCap, Leaf, LogIn, LogOut, Palette, Plus, School, Search, Sparkles, X } from 'lucide-react'
+import { Send, MessageSquare, RefreshCw, Copy, ArrowLeft, ArrowRight, ArrowUpRight, Bookmark, Check, CheckCircle2, Clock3, FlaskConical, Globe, GraduationCap, Leaf, LogIn, LogOut, Palette, Plus, School, Search, Sparkles, X } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { Article, demoArticles, type Term, type Word } from './data'
-import { fetchAuthBox, readTeacherArticles, REPO, saveAuthBox, verifyTeacher, writeTeacherArticles } from './github'
+import { fetchAuthBox, readTeacherArticles, REPO, saveAuthBox, savePublicJson, verifyTeacher, writeTeacherArticles } from './github'
 import { AUTH_FILE, MIN_PASSWORD, lockToken, unlockToken, type TokenBox } from './teacher-auth.mjs'
-import { requestSummaryFeedback, type SummaryFeedback } from './summary-feedback'
+import { fetchAll, fetchFeedbackConfig, fetchMine, isWebAppUrl, loadStudent, newTeacherKey, pingTeacher, saveComment, saveStudent, submitSummary, CONFIG_FILE, type FeedbackConfig, type Student, type Submission } from './summaries'
+import scriptSource from '../apps-script/Code.gs?raw'
 import { translationParagraphs } from './translation.mjs'
 import { extractGrammar, extractWords, withLearning, wordPattern } from './learning.mjs'
 import { termPattern } from './glossary.mjs'
@@ -13,7 +14,7 @@ import { supabase } from './supabase'
 import './style.css'
 
 type Tab = 'article' | 'summary' | 'words' | 'grammar' | 'translation'
-type View = 'home' | 'archive' | 'saved' | 'teacher'
+type View = 'home' | 'archive' | 'saved' | 'mine' | 'teacher'
 
 // The five sections the collector fills every day, one story each.
 const sections: { name: string; en: string; tone: string; icon: LucideIcon }[] = [
@@ -66,6 +67,7 @@ function highlight(sentence: string, phrase?: string) {
   const at = phrase ? sentence.toLowerCase().indexOf(phrase.toLowerCase()) : -1
   return at < 0 ? sentence : <>{sentence.slice(0, at)}<mark>{sentence.slice(at, at + phrase!.length)}</mark>{sentence.slice(at + phrase!.length)}</>
 }
+const formatTime = (iso: string) => { const d = new Date(iso); return Number.isNaN(d.getTime()) ? '' : new Intl.DateTimeFormat('ko-KR', { month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit' }).format(d) }
 const editionDay = (a: Article) => a.collection_day || a.published_at
 const isTeacherPick = (a: Article) => a.id.startsWith('teacher-') ? 1 : 0
 // Newest paper day first; on the same day a teacher's pick leads its section.
@@ -93,17 +95,26 @@ function App() {
   const [saved, setSaved] = useState<string[]>(() => readStorage('scoop-saved', []))
   const [completed, setCompleted] = useState<string[]>(() => readStorage('scoop-completed', []))
   const [notes, setNotes] = useState<Record<string, string>>(() => readStorage('scoop-notes', {}))
-  const [summaryFeedback, setSummaryFeedback] = useState<SummaryFeedback | null>(null)
-  const [feedbackError, setFeedbackError] = useState('')
-  const [feedbackBusy, setFeedbackBusy] = useState(false)
-  const [feedbackConsent, setFeedbackConsent] = useState(false)
-  const feedbackRequest = useRef(0)
+  // Summaries go to the teacher's Google Sheet (see src/summaries.ts); undefined = still checking.
+  const [feedbackConfig, setFeedbackConfig] = useState<FeedbackConfig | null | undefined>(undefined)
+  const [student, setStudent] = useState<Student>(loadStudent)
+  const [mine, setMine] = useState<Submission[]>([])
+  const [submitBusy, setSubmitBusy] = useState(false)
+  const [submitMsg, setSubmitMsg] = useState<{ kind: 'ok' | 'error'; text: string } | null>(null)
   const [revealed, setRevealed] = useState<number[]>([])
   const [openWord, setOpenWord] = useState('')
 
   useEffect(() => { writeStorage('scoop-saved', saved) }, [saved])
   useEffect(() => { writeStorage('scoop-completed', completed) }, [completed])
   useEffect(() => { writeStorage('scoop-notes', notes) }, [notes])
+  useEffect(() => {
+    fetchFeedbackConfig(import.meta.env.BASE_URL).then(config => { setFeedbackConfig(config); if (config) refreshMine(config) })
+  }, [])
+  async function refreshMine(config = feedbackConfig) {
+    if (!config) return
+    try { setMine(await fetchMine(config.url, student.id)) } catch { /* offline: keep what we have */ }
+  }
+
   useEffect(() => {
     loadArticles()
     const onHash = () => { if (location.hash === '#teacher') { setSelected(null); setView('teacher') } else setView(v => v === 'teacher' ? 'home' : v) }
@@ -139,23 +150,24 @@ function App() {
   const filtered = useMemo(() => sorted.filter(a => (category === '전체' || a.category === category) && (level === '전체' || a.level === level) && (view !== 'saved' || saved.includes(a.id)) && `${a.title} ${a.title_ko} ${a.category} ${a.source}`.toLowerCase().includes(search.toLowerCase())), [sorted, category, level, search, view, saved])
   const grouped = useMemo(() => { const map = new Map<string, Article[]>(); for (const a of filtered) map.set(editionDay(a), [...(map.get(editionDay(a)) || []), a]); return [...map.entries()] }, [filtered])
 
-  const resetFeedback = () => { feedbackRequest.current++; setSummaryFeedback(null); setFeedbackError(''); setFeedbackBusy(false) }
+  const resetFeedback = () => setSubmitMsg(null)
   const openArticle = (article: Article, nextTab: Tab = 'article') => { resetFeedback(); setSelected(article); setTab(nextTab); setRevealed([]); window.scrollTo({ top: 0, behavior: 'smooth' }) }
   const navigate = (next: View, nextCategory = '전체') => { resetFeedback(); if (next !== 'teacher' && location.hash) history.replaceState(null, '', location.pathname + location.search); if (next === 'teacher') location.hash = 'teacher'; setView(next); setSelected(null); setCategory(nextCategory); setLevel('전체'); setSearch(''); window.scrollTo({ top: 0, behavior: 'smooth' }) }
-  async function checkSummary(article: Article) {
+  async function submitToTeacher(article: Article) {
     const text = (notes[article.id] || '').trim()
-    if (!feedbackConsent || text.length < 5 || feedbackBusy) return
-    const request = ++feedbackRequest.current
-    setFeedbackBusy(true); setFeedbackError(''); setSummaryFeedback(null)
+    if (!feedbackConfig || text.length < 5 || !student.name.trim() || submitBusy) return
+    setSubmitBusy(true); setSubmitMsg(null)
     try {
-      const result = await requestSummaryFeedback(article.id, text)
-      if (feedbackRequest.current === request) setSummaryFeedback(result)
+      await submitSummary(feedbackConfig.url, { ...student, name: student.name.trim() }, { id: article.id, title: article.title, day: editionDay(article) }, text)
+      setSubmitMsg({ kind: 'ok', text: '선생님께 제출했어요! 피드백이 오면 여기와 "내 요약"에서 볼 수 있어요.' })
+      refreshMine()
     } catch (error) {
-      if (feedbackRequest.current === request) setFeedbackError(error instanceof Error ? error.message : '피드백을 불러오지 못했어요.')
-    } finally {
-      if (feedbackRequest.current === request) setFeedbackBusy(false)
-    }
+      setSubmitMsg({ kind: 'error', text: error instanceof Error ? error.message : '제출하지 못했어요.' })
+    } finally { setSubmitBusy(false) }
   }
+  const updateStudent = (patch: Partial<Student>) => { const next = { ...student, ...patch }; setStudent(next); saveStudent(next) }
+  const myFeedbackCount = mine.filter(m => m.feedback).length
+
   const toggleSaved = (id: string) => setSaved(prev => prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id])
   const markDone = (id: string) => setCompleted(prev => prev.includes(id) ? prev : [...prev, id])
   const today = formatDay(new Date().toLocaleDateString('en-CA'), true)
@@ -176,15 +188,16 @@ function App() {
         <button className={view === 'home' && !selected ? 'active' : ''} onClick={() => navigate('home')}>오늘의 신문</button>
         {sections.map(s => <button key={s.name} className={`nav-section tone-${s.tone} ${view === 'archive' && !selected && category === s.name ? 'active' : ''}`} onClick={() => navigate('archive', s.name)}>{s.name}</button>)}
         <button className={view === 'archive' && !selected && category === '전체' ? 'active' : ''} onClick={() => navigate('archive')}>지난 기사</button>
+        <button className={view === 'mine' && !selected ? 'active' : ''} onClick={() => { navigate('mine'); refreshMine() }}>내 요약{myFeedbackCount > 0 && <span className="nav-count">{myFeedbackCount}</span>}</button>
         <button className={view === 'saved' && !selected ? 'active' : ''} onClick={() => navigate('saved')}>저장함{saved.length > 0 && <span className="nav-count">{saved.length}</span>}</button>
       </nav>
     </header>
 
     <main className="main">
-      {view === 'teacher' ? <TeacherPage published={articles.filter(a => a.id.startsWith('teacher-'))} onSaved={next => setArticles(prev => [...next.map(withLearning), ...prev.filter(a => !a.id.startsWith('teacher-'))])}/> : selected ? Reader() : view === 'home' ? Home() : Archive()}
+      {view === 'teacher' ? <TeacherPage published={articles.filter(a => a.id.startsWith('teacher-'))} onSaved={next => setArticles(prev => [...next.map(withLearning), ...prev.filter(a => !a.id.startsWith('teacher-'))])}/> : selected ? Reader() : view === 'home' ? Home() : view === 'mine' ? MySummaries() : Archive()}
     </main>
 
-    <footer className="footer"><span className="footer-mark">The Daily Scoop</span><p>기사는 공개 RSS에서 매일 수집되며 원문 저작권은 각 출처에 있어요. 학습 완료와 요약은 이 브라우저에만 저장돼요.</p></footer>
+    <footer className="footer"><span className="footer-mark">The Daily Scoop</span><p>기사는 공개 RSS에서 매일 수집되며 원문 저작권은 각 출처에 있어요. 학습 완료 표시와 작성 중인 요약은 이 브라우저에, 제출한 요약은 선생님의 구글 스프레드시트에 저장돼요.</p></footer>
   </div>
 
   function Home() {
@@ -237,6 +250,20 @@ function App() {
     </>
   }
 
+  function MySummaries() {
+    const byArticle = (id: string) => articles.find(x => x.id === id)
+    return <section className="archive">
+      <div className="page-head"><span className="kicker">MY SUMMARIES</span><h1>내 요약</h1><p>선생님께 제출한 요약과 받은 피드백을 모아 봐요.</p></div>
+      {feedbackConfig === null ? <div className="empty-state">선생님이 아직 요약 제출 기능을 연결하지 않았어요.</div> : mine.length === 0 ? <div className="empty-state">아직 제출한 요약이 없어요. 기사를 읽고 2단계 "요약"에서 제출해 보세요.</div> :
+        <ul className="row-list">{[...mine].sort((x, y) => y.submittedAt.localeCompare(x.submittedAt)).map(m => { const art = byArticle(m.articleId); return <li key={m.id} className={`my-submission row-sub ${m.feedback ? 'has-feedback' : ''}`}>
+          <div className="sub-head"><button className="row-title" disabled={!art} onClick={() => art && openArticle(art, 'summary')}>{m.articleTitle}</button><span>{formatTime(m.submittedAt)} 제출</span></div>
+          <p className="sub-text">{m.summary}</p>
+          {m.feedback ? <div className="teacher-comment"><div className="sub-head"><b><GraduationCap size={16}/> 선생님 피드백</b><span>{formatTime(m.feedbackAt)}</span></div><p>{m.feedback}</p></div> : <p className="hint waiting">선생님 피드백을 기다리고 있어요.</p>}
+        </li> })}</ul>}
+      <p className="hint">제출 기록은 이 기기·브라우저와 연결되어 있어요. 다른 기기에서는 보이지 않아요.</p>
+    </section>
+  }
+
   function Archive() {
     const isSaved = view === 'saved'
     return <section className="archive">
@@ -282,7 +309,15 @@ function App() {
             if (piece.kind === 'term') return <span key={k} className={`term ${openWord === id ? 'open' : ''}`}>{piece.text.replace(/\S+$/, '')}<span className="term-tail">{piece.text.match(/\S+$/)?.[0]}<button type="button" className="term-star" aria-label={`${piece.term.term} 용어 풀이 ${piece.no}`} aria-expanded={openWord === id} onClick={() => setOpenWord(openWord === id ? '' : id)}>*{piece.no}</button></span>{openWord === id && <span className="vocab-pop term-pop" role="tooltip"><b>{piece.term.ko}</b>{piece.term.note}</span>}</span>
             return <button key={k} type="button" className={`vocab-mark ${openWord === id ? 'open' : ''}`} aria-expanded={openWord === id} onClick={() => setOpenWord(openWord === id ? '' : id)}>{piece.text}{openWord === id && <span className="vocab-pop" role="tooltip"><b>{piece.word.word}</b> {piece.word.meaning}</span>}</button>
           })}</p>)}</div> })()}{a.terms?.length ? <section className="term-notes" aria-label="용어 풀이"><h3>용어 풀이</h3><ol>{a.terms.map((t, i) => <li key={t.term}><span className="term-no">*{i + 1}</span><div><b>{t.term}</b> <span className="term-ko">{t.ko}</span><p>{t.note}</p></div></li>)}</ol></section> : null}{(a.words?.length || a.grammar?.length) ? <aside className="study-box"><div><h3>이 기사의 주요 단어</h3><ul className="study-words">{a.words.map(w => <li key={w.word}><b>{w.word}</b><span>{w.meaning}</span></li>)}</ul><button className="text-link" onClick={() => goTab('words')}>단어 카드로 익히기 <ArrowRight size={15}/></button></div><div><h3>문법 포인트</h3><ul className="study-grammar">{a.grammar.map(g => <li key={g.title}><b>{g.title}</b>{g.focus && <span>“{g.focus}”</span>}</li>)}</ul><button className="text-link" onClick={() => goTab('grammar')}>문법 설명 보기 <ArrowRight size={15}/></button></div></aside> : null}{a.content_kind === 'rss_excerpt' && a.source_url && <a className="source-cta" href={a.source_url} target="_blank" rel="noopener noreferrer">{a.source}에서 전체 기사 읽기 <ArrowUpRight size={16}/></a>}<NextBar text="다 읽었다면 내 말로 정리해 봐요." label="요약하기" onClick={() => goTab('summary')}/></>}
-        {tab === 'summary' && <><StepHead no={2} title="나만의 문장으로 요약해요" help="가장 중요한 내용을 영어 또는 한국어로 자유롭게 적어 보세요."/><label className="field-label" htmlFor="summary-note">내가 정리한 내용</label><textarea id="summary-note" className="note-area" maxLength={3000} placeholder="이 기사는 어떤 이야기인가요?" value={notes[a.id] || ''} onChange={e => { setNotes({ ...notes, [a.id]: e.target.value }); resetFeedback() }}/><p className="hint">요약은 이 브라우저에 자동 저장돼요. 5자 이상 작성해 주세요.</p><label className="consent"><input type="checkbox" checked={feedbackConsent} onChange={e => setFeedbackConsent(e.target.checked)}/><span>AI 피드백을 위해 요약과 기사 내용이 OpenAI에 전송되는 것에 동의해요. 이름 등 개인정보는 입력하지 마세요.</span></label><button className="primary-button" disabled={!feedbackConsent || (notes[a.id] || '').trim().length < 5 || feedbackBusy} onClick={() => checkSummary(a)}><Check size={17}/> {feedbackBusy ? '피드백을 분석하고 있어요...' : '요약 확인하기'}</button>{feedbackError && <p className="form-error" role="alert">{feedbackError}</p>}{summaryFeedback && <section className="summary-feedback" aria-live="polite" aria-label="요약 피드백"><div className="feedback-heading"><Sparkles size={19}/><div><h3>나의 요약 피드백</h3><p>AI 분석 결과는 틀릴 수 있어요. 기사 원문과 함께 확인하고 필요하면 선생님께 질문해 보세요.</p></div></div><p className="feedback-overall">{summaryFeedback.overall}</p><div className="feedback-list"><FeedbackSection number="01" title="어휘의 적절성" section={summaryFeedback.vocabulary}/><FeedbackSection number="02" title="문법과 문장" section={summaryFeedback.grammar}/><FeedbackSection number="03" title="의미와 핵심 내용" section={summaryFeedback.meaning}/></div>{summaryFeedback.revised_summary && <div className="feedback-revision"><h4>이렇게 다듬어 볼 수 있어요</h4><p>{summaryFeedback.revised_summary}</p></div>}</section>}<NextBar text="핵심 단어를 익혀 볼까요?" label="단어 학습" onClick={() => goTab('words')}/></>}
+        {tab === 'summary' && (() => { const sub = mine.find(m => m.articleId === a.id); const text = notes[a.id] || ''; return <><StepHead no={2} title="나만의 문장으로 요약해요" help="가장 중요한 내용을 영어 또는 한국어로 자유롭게 적고, 선생님께 제출해 피드백을 받아 보세요."/>
+          <div className="form-row student-row"><label className="field-label">이름<input className="text-input" value={student.name} maxLength={40} placeholder="예: 김민지" onChange={e => updateStudent({ name: e.target.value })}/></label><label className="field-label">반·번호 <small>선택</small><input className="text-input" value={student.className} maxLength={20} placeholder="예: 2-3 15번" onChange={e => updateStudent({ className: e.target.value })}/></label></div>
+          <label className="field-label" htmlFor="summary-note">내가 정리한 내용</label><textarea id="summary-note" className="note-area" maxLength={3000} placeholder="이 기사는 어떤 이야기인가요?" value={text} onChange={e => { setNotes({ ...notes, [a.id]: e.target.value }); setSubmitMsg(null) }}/>
+          <p className="hint">작성 중인 요약은 이 브라우저에 자동 저장돼요. 5자 이상 쓰고 제출하면 선생님이 읽고 댓글로 피드백을 남겨 주세요.</p>
+          {feedbackConfig === null ? <p className="notice">선생님이 아직 요약 제출 기능을 연결하지 않았어요. 요약은 이 브라우저에 저장되어 있어요.</p> : <button className="primary-button" disabled={!feedbackConfig || submitBusy || text.trim().length < 5 || !student.name.trim()} onClick={() => submitToTeacher(a)}><Send size={17}/> {submitBusy ? '제출하는 중...' : sub ? '고친 요약 다시 제출하기' : '선생님께 제출하기'}</button>}
+          {!student.name.trim() && feedbackConfig && <p className="hint">제출하려면 이름을 적어 주세요.</p>}
+          {submitMsg && <p className={`teacher-message ${submitMsg.kind}`} role={submitMsg.kind === 'error' ? 'alert' : 'status'}>{submitMsg.kind === 'ok' ? <CheckCircle2 size={17}/> : <X size={17}/>} {submitMsg.text}</p>}
+          {sub && <section className="my-submission" aria-label="제출한 요약과 선생님 피드백"><div className="sub-head"><b>제출한 요약</b><span>{formatTime(sub.submittedAt)}</span></div><p className="sub-text">{sub.summary}</p>{sub.feedback ? <div className="teacher-comment"><div className="sub-head"><b><GraduationCap size={16}/> 선생님 피드백</b><span>{formatTime(sub.feedbackAt)}</span></div><p>{sub.feedback}</p></div> : <p className="hint waiting">선생님 피드백을 기다리고 있어요.</p>}</section>}
+          <NextBar text="핵심 단어를 익혀 볼까요?" label="단어 학습" onClick={() => goTab('words')}/></> })()}
         {tab === 'words' && <><StepHead no={3} title="오늘의 단어" help="카드를 눌러 뜻과 예문을 확인해 보세요."/><div className="word-grid">{a.words?.length ? a.words.map((word, i) => <button className={`word-card ${revealed.includes(i) ? 'revealed' : ''}`} key={i} aria-expanded={revealed.includes(i)} onClick={() => setRevealed(revealed.includes(i) ? revealed.filter(n => n !== i) : [...revealed, i])}><span className="word-no">{String(i + 1).padStart(2, '0')}</span><strong>{word.word}</strong>{revealed.includes(i) ? <><b>{word.meaning}</b><em>{markWords(word.example, [word], (m, _w, k) => <mark key={k}>{m}</mark>)}</em></> : <small>눌러서 뜻 보기</small>}</button>) : <p className="empty-state">아직 등록된 단어가 없어요.</p>}</div><NextBar text="문장 속 문법도 살펴봐요." label="문법 보기" onClick={() => goTab('grammar')}/></>}
         {tab === 'grammar' && <><StepHead no={4} title="문장 속 문법" help="기사에서 만난 표현을 하나씩 알아볼까요?"/><div className="grammar-list">{a.grammar?.length ? a.grammar.map((item, i) => <div className="grammar-card" key={i}><span className="grammar-number">{String(i + 1).padStart(2, '0')}</span><div><h3>{item.title}</h3><p>{item.explanation}</p><blockquote>{highlight(item.example, item.focus)}</blockquote></div></div>) : <p className="empty-state">아직 등록된 문법 설명이 없어요.</p>}</div><div className="complete-box"><div><b>{completed.includes(a.id) ? '학습을 완료했어요!' : '여기까지 왔다면 거의 끝!'}</b><span>완료 표시하면 오늘의 진행률에 반영돼요.</span></div><button className={`primary-button ${completed.includes(a.id) ? 'is-done' : ''}`} onClick={() => markDone(a.id)}><Check size={17}/> {completed.includes(a.id) ? '완료됨' : '학습 완료'}</button></div><NextBar text="마지막으로 한국어로 확인해요." label="번역 보기" onClick={() => goTab('translation')}/></>}
         {tab === 'translation' && <><StepHead no={5} title="한국어로 확인해요" help={`읽기와 학습을 마친 뒤 내용을 확인해 보세요.${a.content_kind === 'ai_generated' ? ' AI 번역은 틀릴 수 있으니 원문과 비교해 주세요.' : ''}`}/>{translationParagraphs(a.translation_ko).length ? <div className="translation-copy">{translationParagraphs(a.translation_ko).map((paragraph, i) => <p key={i}>{paragraph}</p>)}</div> : <div className="empty-state">아직 이 지문의 한국어 번역이 등록되지 않았어요.</div>}<div className="next-bar"><button className="text-link" onClick={() => goTab('article')}><ArrowLeft size={16}/> 영어 지문 다시 읽기</button><button className="primary-button" onClick={() => navigate('home')}>오늘의 신문으로 <ArrowRight size={17}/></button></div></>}
@@ -299,9 +334,6 @@ function NextBar({ text, label, onClick }: { text: string; label: string; onClic
   return <div className="next-bar"><span>{text}</span><button className="primary-button" onClick={onClick}>{label} <ArrowRight size={17}/></button></div>
 }
 
-function FeedbackSection({ number, title, section }: { number: string; title: string; section: SummaryFeedback['vocabulary'] }) {
-  return <div><span className="feedback-number">{number}</span><div><h4>{title}</h4><p>{section.comment}</p>{section.examples.map((example, i) => <div className="feedback-example" key={i}>{example.original && <p><b>작성한 표현</b> {example.original}</p>}{example.suggestion && <p><b>제안</b> {example.suggestion}</p>}{example.reason && <p><b>이유</b> {example.reason}</p>}</div>)}</div></div>
-}
 
 const TOKEN_KEY = 'scoop-teacher-token'
 const coverFor: Record<string, string> = { 환경: 'sage', 과학: 'blue', 생활: 'peach', 문화: 'lilac', 세상: 'coral' }
@@ -317,6 +349,7 @@ function TeacherPage({ published, onSaved }: { published: Article[]; onSaved: (a
   const [message, setMessage] = useState<{ kind: 'ok' | 'error'; text: string } | null>(null)
   const [busy, setBusy] = useState(false)
   const [mine, setMine] = useState<Article[]>(published)
+  const [section, setSection] = useState<'summaries' | 'articles'>('summaries')
   const formRef = useRef<HTMLFormElement>(null)
 
   useEffect(() => { fetchAuthBox(import.meta.env.BASE_URL, AUTH_FILE).then(setBox) }, [])
@@ -433,6 +466,8 @@ function TeacherPage({ published, onSaved }: { published: Article[]; onSaved: (a
       </div>
     </div>) : <>
       <div className="teacher-bar"><span><GraduationCap size={18}/> 선생님으로 로그인했어요</span><button className="text-link" onClick={logout}><LogOut size={16}/> 로그아웃</button></div>
+      <div className="teacher-tabs" role="tablist"><button role="tab" aria-selected={section === 'summaries'} className={section === 'summaries' ? 'active' : ''} onClick={() => setSection('summaries')}><MessageSquare size={16}/> 학생 요약</button><button role="tab" aria-selected={section === 'articles'} className={section === 'articles' ? 'active' : ''} onClick={() => setSection('articles')}><Plus size={16}/> 기사 올리기·관리</button></div>
+      {section === 'summaries' ? <StudentSummaries token={token}/> : <>
       <div className="teacher-grid">
         <form ref={formRef} className="modal-form teacher-card" onSubmit={submit}>
           <h2><Plus size={20}/> 새 기사 올리기</h2>
@@ -464,8 +499,115 @@ function TeacherPage({ published, onSaved }: { published: Article[]; onSaved: (a
         </form>
         </div>
       </div>
+      </>}
     </>}
   </section>
+}
+
+// Teacher view of student summaries stored in the Google Sheet, with a comment box per summary.
+function StudentSummaries({ token }: { token: string }) {
+  const [config, setConfig] = useState<FeedbackConfig | null | undefined>(undefined)
+  const [key, setKey] = useState('')
+  const [setup, setSetup] = useState(false)
+  const [items, setItems] = useState<Submission[] | null>(null)
+  const [filter, setFilter] = useState<'waiting' | 'all'>('waiting')
+  const [query, setQuery] = useState('')
+  const [drafts, setDrafts] = useState<Record<string, string>>({})
+  const [saving, setSaving] = useState('')
+  const [message, setMessage] = useState<{ kind: 'ok' | 'error'; text: string } | null>(null)
+  const [busy, setBusy] = useState(false)
+  const [newKey] = useState(newTeacherKey)
+  const [url, setUrl] = useState('')
+  const [copied, setCopied] = useState(false)
+
+  useEffect(() => {
+    fetchFeedbackConfig(import.meta.env.BASE_URL).then(async found => {
+      setConfig(found)
+      if (!found?.keyBox) return
+      // The sheet key is stored encrypted with the repo token, which only a logged-in teacher has.
+      try { const k = await unlockToken(found.keyBox, token); setKey(k); load(found, k) } catch { setSetup(true) }
+    })
+  }, [token])
+
+  async function load(c = config, k = key) {
+    if (!c || !k) return
+    setBusy(true); setMessage(null)
+    try { setItems(await fetchAll(c.url, k)) } catch (error) { setMessage({ kind: 'error', text: error instanceof Error ? error.message : '불러오지 못했어요.' }) } finally { setBusy(false) }
+  }
+
+  async function connect(e: React.FormEvent) {
+    e.preventDefault()
+    const target = url.trim()
+    if (!isWebAppUrl(target)) { setMessage({ kind: 'error', text: '웹 앱 URL은 https://script.google.com/macros/s/.../exec 형태예요.' }); return }
+    setBusy(true); setMessage(null)
+    try {
+      const pong = await pingTeacher(target, newKey).catch(() => ({ ok: false }))
+      if (!pong.ok) throw new Error('연결은 됐지만 키가 맞지 않아요. 아래 코드를 그대로 붙여 넣고 "새 배포"를 다시 했는지 확인해 주세요.')
+      const next: FeedbackConfig = { v: 1, url: target, keyBox: await lockToken(newKey, token, 20000) }
+      await savePublicJson(token, CONFIG_FILE, next, 'Connect student summaries')
+      setConfig(next); setKey(newKey); setSetup(false); setUrl('')
+      await load(next, newKey)
+      setMessage({ kind: 'ok', text: '연결했어요! 1~2분 뒤부터 학생들이 요약을 제출할 수 있어요.' })
+    } catch (error) { setMessage({ kind: 'error', text: error instanceof Error ? error.message : '연결하지 못했어요.' }) }
+    finally { setBusy(false) }
+  }
+
+  async function comment(item: Submission) {
+    if (!config) return
+    const text = (drafts[item.id] ?? item.feedback).trim()
+    setSaving(item.id); setMessage(null)
+    try {
+      const { feedbackAt } = await saveComment(config.url, key, item.id, text)
+      setItems(prev => prev && prev.map(x => x.id === item.id ? { ...x, feedback: text, feedbackAt } : x))
+      setDrafts(prev => { const next = { ...prev }; delete next[item.id]; return next })
+    } catch (error) { setMessage({ kind: 'error', text: error instanceof Error ? error.message : '저장하지 못했어요.' }) }
+    finally { setSaving('') }
+  }
+
+  const script = scriptSource.replace('__TEACHER_KEY__', newKey)
+  const copyScript = async () => { try { await navigator.clipboard.writeText(script); setCopied(true); setTimeout(() => setCopied(false), 2000) } catch { setCopied(false) } }
+
+  if (config === undefined) return <div className="empty-state">연결 상태를 확인하고 있어요...</div>
+  if (!config || setup || !key) return <div className="teacher-card summary-setup">
+    {message && <p className={`teacher-message ${message.kind}`} role="status">{message.text}</p>}
+    <h2><MessageSquare size={20}/> {config ? '요약 저장소 다시 연결하기' : '처음 한 번만: 학생 요약 저장소 연결'}</h2>
+    <p className="hint">학생 요약은 선생님의 구글 스프레드시트에 저장돼요. 아래 순서대로 한 번만 연결하면 돼요. (약 5분)</p>
+    <ol className="setup-steps">
+      <li>구글 드라이브에서 <a href="https://sheets.new" target="_blank" rel="noopener noreferrer">새 스프레드시트 <ArrowUpRight size={12}/></a>를 만들고 이름을 정해요. (예: Daily Scoop 요약)</li>
+      <li>메뉴 <b>확장 프로그램 → Apps Script</b>를 열어요.</li>
+      <li>편집기의 코드를 모두 지우고, 아래 코드를 복사해 붙여 넣은 뒤 저장(💾)해요. <b>선생님 키가 이미 들어 있으니 고치지 마세요.</b>
+        <div className="code-box"><button type="button" className="chip" onClick={copyScript}><Copy size={14}/> {copied ? '복사했어요!' : '코드 복사'}</button><textarea readOnly value={script} rows={6} aria-label="Apps Script 코드"/></div></li>
+      <li><b>배포 → 새 배포</b> → 유형 선택(⚙)에서 <b>웹 앱</b> → 실행 사용자: <b>나</b>, 액세스 권한: <b>모든 사용자</b> → 배포. 권한 확인 창이 뜨면 승인해요.</li>
+      <li>나온 <b>웹 앱 URL</b>을 복사해 아래에 붙여 넣어요.</li>
+    </ol>
+    <form className="modal-form" onSubmit={connect}>
+      <label>웹 앱 URL<input value={url} onChange={e => setUrl(e.target.value)} placeholder="https://script.google.com/macros/s/.../exec" required/></label>
+      <button className="primary-button" disabled={busy}>{busy ? '연결 확인 중...' : '연결 확인하고 저장'}</button>
+      {config && <button type="button" className="logout-link" onClick={() => setSetup(false)}>취소</button>}
+    </form>
+    <p className="hint">요약에는 학생 이름이 들어가요. 학교의 개인정보 처리 지침을 확인해 주세요. 스프레드시트를 지우면 제출 기록도 함께 지워져요.</p>
+  </div>
+
+  const all = items || []
+  const shown = all.filter(i => (filter === 'all' || !i.feedback) && `${i.name} ${i.className} ${i.articleTitle} ${i.summary}`.toLowerCase().includes(query.toLowerCase())).sort((a, b) => b.submittedAt.localeCompare(a.submittedAt))
+  const waiting = all.filter(i => !i.feedback).length
+  return <div className="summaries">
+    {message && <p className={`teacher-message ${message.kind}`} role="status">{message.text}</p>}
+    <div className="filters">
+      <div className="chip-row"><button className={`chip ${filter === 'waiting' ? 'active' : ''}`} onClick={() => setFilter('waiting')}>피드백 대기 {waiting}</button><button className={`chip ${filter === 'all' ? 'active' : ''}`} onClick={() => setFilter('all')}>전체 {all.length}</button></div>
+      <div className="filter-tools"><label className="search-box"><Search size={16}/><input aria-label="요약 검색" placeholder="이름, 기사 검색" value={query} onChange={e => setQuery(e.target.value)}/></label><button className="chip" onClick={() => load()} disabled={busy}><RefreshCw size={14}/> {busy ? '불러오는 중' : '새로고침'}</button></div>
+    </div>
+    {items === null ? <div className="empty-state">{busy ? '학생 요약을 불러오고 있어요...' : '불러오지 못했어요. 새로고침을 눌러 주세요.'}</div> : shown.length === 0 ? <div className="empty-state">{filter === 'waiting' && all.length ? '모든 요약에 피드백을 남겼어요! 👏' : '아직 제출된 요약이 없어요.'}</div> :
+      <ul className="row-list">{shown.map(item => { const draft = drafts[item.id] ?? item.feedback; const dirty = draft.trim() !== item.feedback; return <li key={item.id} className="my-submission">
+        <div className="sub-head"><b>{item.name}{item.className && <small> · {item.className}</small>}</b><span>{formatTime(item.submittedAt)}</span></div>
+        <p className="sub-article">{item.articleTitle}</p>
+        <p className="sub-text">{item.summary}</p>
+        <div className="comment-box"><label className="field-label" htmlFor={`c-${item.id}`}><MessageSquare size={15}/> 피드백 댓글{item.feedbackAt && <small> · {formatTime(item.feedbackAt)} 저장됨</small>}</label>
+          <textarea id={`c-${item.id}`} className="note-area comment-area" maxLength={2000} placeholder="잘한 점과 고칠 점을 학생에게 남겨 주세요." value={draft} onChange={e => setDrafts(prev => ({ ...prev, [item.id]: e.target.value }))}/>
+          <button className="primary-button" disabled={!dirty || saving === item.id} onClick={() => comment(item)}><Send size={16}/> {saving === item.id ? '저장 중...' : item.feedback ? '댓글 수정' : '댓글 달기'}</button></div>
+      </li> })}</ul>}
+    <p className="hint">학생 요약은 연결된 구글 스프레드시트에서도 볼 수 있어요. <button className="logout-link" onClick={() => setSetup(true)}>저장소 다시 연결하기</button></p>
+  </div>
 }
 
 
