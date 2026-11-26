@@ -1,5 +1,329 @@
 [
  {
+  "id": "rss-a73b25a7fc46",
+  "title": "COP31 Climate Meeting Ends Without a Deal",
+  "title_ko": "",
+  "source": "NewsForKids.net",
+  "source_url": "https://newsforkids.net/articles/2026/11/24/cop31-climate-meeting-ends-without-a-deal/",
+  "published_at": "2026-11-24",
+  "category": "환경",
+  "level": "LEVEL 3",
+  "cover_color": "sage",
+  "reading_minutes": 1,
+  "excerpt": "For the first time in decades, a major United Nations climate meeting has ended without any agreement. Leaders from nearly 200 countries met in Antalya, Turkey, for a summit known as COP31.",
+  "content": "For the first time in decades, a major United Nations climate meeting has ended without any agreement. Leaders from nearly 200 countries met in Antalya, Turkey, for a summit known as COP31. They spent two weeks trying to find a way to protect the planet, but in the end, they could not agree on a plan.",
+  "summary": "",
+  "words": [
+   {
+    "word": "climate",
+    "meaning": "기후",
+    "example": "For the first time in decades, a major United Nations climate meeting has ended without any agreement."
+   },
+   {
+    "word": "protect",
+    "meaning": "보호하다",
+    "example": "They spent two weeks trying to find a way to protect the planet, but in the end, they could not agree on a plan."
+   },
+   {
+    "word": "decade",
+    "meaning": "10년",
+    "example": "For the first time in decades, a major United Nations climate meeting has ended without any agreement."
+   },
+   {
+    "word": "leader",
+    "meaning": "지도자",
+    "example": "Leaders from nearly 200 countries met in Antalya, Turkey, for a summit known as COP31."
+   },
+   {
+    "word": "planet",
+    "meaning": "행성",
+    "example": "They spent two weeks trying to find a way to protect the planet, but in the end, they could not agree on a plan."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "For the first time in decades, a major United Nations climate meeting has ended without any agreement.",
+    "focus": "has ended"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "They spent two weeks trying to find a way to protect the planet, but in the end, they could not agree on a plan.",
+    "focus": "could not agree"
+   }
+  ],
+  "content_kind": "rss_excerpt",
+  "collection_day": "2026-11-26",
+  "terms": [
+   {
+    "term": "United Nations",
+    "ko": "국제연합(UN)",
+    "note": "세계 평화와 협력을 위해 190여 개 나라가 모인 국제기구예요."
+   }
+  ],
+  "created_at": "2026-11-26T04:06:40.241Z"
+ },
+ {
+  "id": "rss-feed7b1a7153",
+  "title": "Voyager 1 Spacecraft is One “Light Day” From Earth",
+  "title_ko": "",
+  "source": "NewsForKids.net",
+  "source_url": "https://newsforkids.net/articles/2026/11/25/voyager-1-spacecraft-is-one-light-day-from-earth/",
+  "published_at": "2026-11-25",
+  "category": "과학",
+  "level": "LEVEL 3",
+  "cover_color": "blue",
+  "reading_minutes": 1,
+  "excerpt": "Last Wednesday, the space probe Voyager 1 reached a milestone that sounds like something out of a science fiction movie.",
+  "content": "Last Wednesday, the space probe Voyager 1 reached a milestone that sounds like something out of a science fiction movie. It became the first human-made object to reach a distance of one \"light-day\" from Earth. Voyager 1 is now so far away that it takes light a full day to travel from Earth to the spacecraft.",
+  "summary": "",
+  "words": [
+   {
+    "word": "reach",
+    "meaning": "도달하다",
+    "example": "Last Wednesday, the space probe Voyager 1 reached a milestone that sounds like something out of a science fiction movie."
+   },
+   {
+    "word": "spacecraft",
+    "meaning": "우주선",
+    "example": "Voyager 1 is now so far away that it takes light a full day to travel from Earth to the spacecraft."
+   },
+   {
+    "word": "distance",
+    "meaning": "거리",
+    "example": "It became the first human-made object to reach a distance of one \"light-day\" from Earth."
+   },
+   {
+    "word": "science",
+    "meaning": "과학",
+    "example": "Last Wednesday, the space probe Voyager 1 reached a milestone that sounds like something out of a science fiction movie."
+   },
+   {
+    "word": "fiction",
+    "meaning": "소설, 허구",
+    "example": "Last Wednesday, the space probe Voyager 1 reached a milestone that sounds like something out of a science fiction movie."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "과거시제",
+    "explanation": "이미 끝난 과거의 일을 말할 때 동사의 과거형을 써요. 규칙 동사는 -ed를 붙이고, 불규칙 동사는 형태가 바뀌어요.",
+    "example": "It became the first human-made object to reach a distance of one \"light-day\" from Earth.",
+    "focus": "It became"
+   }
+  ],
+  "content_kind": "rss_excerpt",
+  "collection_day": "2026-11-26",
+  "terms": [],
+  "created_at": "2026-11-26T04:06:40.241Z"
+ },
+ {
+  "id": "rss-b6c44da55b57",
+  "title": "Winning Medicine",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g34/your-hot-job-winning-medicine/",
+  "published_at": "2026-11-25",
+  "category": "문화",
+  "level": "LEVEL 2",
+  "cover_color": "lilac",
+  "reading_minutes": 2,
+  "excerpt": "Of the thousands of people who attend each New York Liberty game, Dr. Ashley Austin might have the best seat in the house.",
+  "content": "Of the thousands of people who attend each New York Liberty game, Dr. Ashley Austin might have the best seat in the house. Austin is the head team physician for the Liberty, New York City’s professional women’s basketball team. She cares for players and team staff before, during, and after the season (see “A Game Day in the Life”). Though she’s close to the action during games, Austin can’t always pay attention to the score.\n\n“I am watching the ball some, but I often watch away from the ball, because that’s where stuff’s happening,” she told TIME for Kids. Players get hurt during a game. Or they show early signs of a chronic injury while playing. That’s when a sports doctor steps in.",
+  "summary": "",
+  "words": [
+   {
+    "word": "professional",
+    "meaning": "전문적인; 프로의",
+    "example": "Austin is the head team physician for the Liberty, New York City’s professional women’s basketball team."
+   },
+   {
+    "word": "attention",
+    "meaning": "주의, 관심",
+    "example": "Though she’s close to the action during games, Austin can’t always pay attention to the score."
+   },
+   {
+    "word": "attend",
+    "meaning": "참석하다",
+    "example": "Of the thousands of people who attend each New York Liberty game, Dr."
+   },
+   {
+    "word": "season",
+    "meaning": "계절",
+    "example": "She cares for players and team staff before, during, and after the season (see “A Game Day in the Life”)."
+   },
+   {
+    "word": "injury",
+    "meaning": "부상",
+    "example": "Or they show early signs of a chronic injury while playing."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "Of the thousands of people who attend each New York Liberty game, Dr.",
+    "focus": "people who attend"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "Ashley Austin might have the best seat in the house.",
+    "focus": "might have"
+   },
+   {
+    "title": "접속사 because / when / if",
+    "explanation": "because는 이유(~ 때문에), when은 때(~할 때), if는 조건(만약 ~라면)을 나타내며 두 문장을 이어 줘요.",
+    "example": "“I am watching the ball some, but I often watch away from the ball, because that’s where stuff’s happening,” she told TIME for Kids.",
+    "focus": "because that"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-26",
+  "terms": [],
+  "created_at": "2026-11-26T04:06:40.241Z"
+ },
+ {
+  "id": "rss-a0b8b6d9d739",
+  "title": "World’s Greatest Places",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g2/worlds-greatest-places-2026-g2/",
+  "published_at": "2026-11-06",
+  "category": "세상",
+  "level": "LEVEL 1",
+  "cover_color": "coral",
+  "reading_minutes": 5,
+  "excerpt": "Each year, TIME makes a list of the World’s Greatest Places. TIME for Kids picks its favorites. This year’s list is all about adventure. There are amazing things to see and explore.",
+  "content": "Each year, TIME makes a list of the World’s Greatest Places. TIME for Kids picks its favorites. This year’s list is all about adventure. There are amazing things to see and explore. Where would you go first? Grand Museum See 7,000 years of ancient history, all in one place. It’s possible at the new Grand Egyptian Museum. The museum is in Cairo, Egypt.\n\nIt’s filled with thousands of treasures. It has every item found in King Tut’s tomb. The Pyramids of Giza are nearby. Visitors can walk there from the museum. \b —By Scott Laird Catching Waves At Surf Abu Dhabi, in the United Arab Emirates, every wave is perfect. It’s the world’s biggest wave pool. The waves are made by a machine. Pro surfer Kelly Slater helped develop the pool.\n\nExperienced surfers can ride big waves. Beginners can start small. \b —By Nicola Chilton Witness the Wild What do you see when you go to the zoo? You might see lions or giraffes walking around. Not at the Art Zoo Museum. It’s in Amsterdam, in the Netherlands. It’s not really a zoo. It’s a museum full of creatures that died long ago.\n\nThey’ve been preserved, so you can get up close. Watch out for that T. Rex! —By Karen Burshtein High in the Sky The Huajiang Canyon Bridge is in China. It connects two mountains. It has the world’s highest bridge deck. Visitors can walk across the glass path, more than 2,000 feet above the ground. They can look down into the canyon below.\n\n\b —By Sucheta Rawal Trek of a Lifetime In Spanish, camino means “path.” El Camino de Costa Rica is much more than a path. It’s 174 miles long. It crosses Costa Rica, in South America. Hikers will climb mountains and go through rainforests. \b —By Laura Dannen Redman Peek into the Past Murujuga Cultural Landscape is in Western Australia. This area is known for its ancient rock carvings.\n\nSome of them date back 50,000 years. They depict animals that are extinct, or no longer exist. And they show how people lived long ago. \b —By Michelle Tchea On Two Wheels The Ratnange Trail Center was made for mountain biking. Its trails are high up in Nepal. That’s a country in Asia. The tallest mountains in the world are there.\n\n(Mount Everest is one!) There are more than 43 trails for riders to tour. \b —By Samantha Falewée Underwater Art Put on your goggles! Reefline is an underwater sculpture park and snorkel trail. It’s in Miami Beach, Florida. Visitors swim through the artworks. Sea creatures do too. Some call this place a “mermaid playground.”\n\n\b —By Nora Walsh",
+  "summary": "",
+  "words": [
+   {
+    "word": "creature",
+    "meaning": "생물",
+    "example": "It’s a museum full of creatures that died long ago."
+   },
+   {
+    "word": "mountain",
+    "meaning": "산",
+    "example": "It connects two mountains."
+   },
+   {
+    "word": "ancient",
+    "meaning": "고대의",
+    "example": "Grand Museum See 7,000 years of ancient history, all in one place."
+   },
+   {
+    "word": "museum",
+    "meaning": "박물관",
+    "example": "Grand Museum See 7,000 years of ancient history, all in one place."
+   },
+   {
+    "word": "experience",
+    "meaning": "경험",
+    "example": "Experienced surfers can ride big waves."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "The waves are made by a machine.",
+    "focus": "are made"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "Visitors can walk there from the museum.",
+    "focus": "can walk"
+   },
+   {
+    "title": "최상급 (the -est / the most)",
+    "explanation": "셋 이상 중에서 \"가장 ~한\"을 나타내요. the와 함께 -est 또는 most를 써요.",
+    "example": "The tallest mountains in the world are there.",
+    "focus": "The tallest"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-26",
+  "terms": [
+   {
+    "term": "extinct",
+    "ko": "멸종한",
+    "note": "한 종의 생물이 지구에서 완전히 사라진 상태예요."
+   }
+  ],
+  "created_at": "2026-11-26T04:06:40.241Z"
+ },
+ {
+  "id": "rss-f80557315095",
+  "title": "Hydrogels could help stop wildfires from reigniting, teens find",
+  "title_ko": "",
+  "source": "Science News Explores",
+  "source_url": "https://www.snexplores.org/article/hydrogels-stop-wildfire-reigniting-jic",
+  "published_at": "2026-11-24",
+  "category": "과학",
+  "level": "LEVEL 2",
+  "cover_color": "blue",
+  "reading_minutes": 6,
+  "excerpt": "The brothers custom built a nozzle to spray their fire-retardant hydrogels up to 60 feet.",
+  "content": "For twin brothers Jack and Henry Grover, 14, fighting wildfires is a problem close to home. They nearly lost their house to a fire. Later, they learned that the 2025 Palisades fire in their home state of California was caused by another fire that rekindled. The pair decided to see if materials called hydrogels could be sprayed onto burned areas to keep smoldering wildfires from relighting.\n\nHydrogels can absorb and release lots of water. Because they break down in the environment, they might be more eco-friendly than other fire retardants. Jack and Henry tested nine low-cost and widely available hydrogels. They measured how fast different ones dried out in the oven, how well they stuck to leaves and how fast they sopped up water.\n\nThe best of these was sodium polyacrylate (Pah-lee-AK-rih-layt). This super-absorbent gel is used to make diapers and sanitary napkins. It’s also known to have flame-resistant properties.\n\nIn a further test, Jack and Henry applied this gel to hot charcoal. They measured how long it took the charcoal to reignite, compared to burned charcoal sprayed with water. Water-sprayed charcoal relit in three minutes. The charcoal treated with hydrogel took nearly a half hour — about 10 times longer.\n\nJack and Henry did this project in eighth grade at Riverside STEM Academy in California. Their research earned them finalist spots at the 2026 Thermo Fisher Scientific Junior Innovators Challenge. That program is run by Society for Science, which also publishes Science News Explores. Jack and Henry both took home top prizes of $10,000 at the competition. Here, the two share their research experiences and advice.\n\nWhat was your reaction to seeing your charcoal test results?\n\nJack and Henry were both surprised in the moment at how well the hydrogel worked. “But when we look back on it, it wasn’t entirely surprising,” Henry says. “With water, it just rolls right off or evaporates, while hydrogels hit and will stick and release that [water] over a long period of time. So much more of the water is actually used and actually cools down the rekindling material.”\n\nWhat was the most challenging part?\n\n“Testing out the hydrogel,” Jack says. “It’s not like we could waltz up to some wildfire, wait for the firefighters to put it out and then test out our product.” Instead, the pair came up with a model to represent rekindling. “We used things like the oven and the barbecue, because those are safer than testing it with a giant fire.”\n\nWhat was the most rewarding part?\n\nJack and Henry agree that the best part of the project was 3-D printing and testing a nozzle to spray their hydrogel. “We were able to just connect it to our hose and see how far and how well it sprayed,” Henry says. The nozzle launched the gel about 18 meters (60 feet). “It was really just quite fun to see how well the device actually works,” Henry says.\n\nAny advice for picking a science fair partner?\n\n“You’ve got to work with somebody you know you work well with, and it’s gotta be somebody who’s actually going to help with the project,” Jack says. “Don’t just work with someone who you enjoy spending time with but is just going to goof off and not do any of the work. You’ve got to make sure you’re finding a partner who’s going to be responsible and do their work as well.”",
+  "summary": "",
+  "words": [
+   {
+    "word": "challenge",
+    "meaning": "도전; 도전하다",
+    "example": "Their research earned them finalist spots at the 2026 Thermo Fisher Scientific Junior Innovators Challenge."
+   },
+   {
+    "word": "wildfire",
+    "meaning": "산불",
+    "example": "For twin brothers Jack and Henry Grover, 14, fighting wildfires is a problem close to home."
+   },
+   {
+    "word": "material",
+    "meaning": "재료, 자료",
+    "example": "The pair decided to see if materials called hydrogels could be sprayed onto burned areas to keep smoldering wildfires from relighting."
+   },
+   {
+    "word": "research",
+    "meaning": "연구",
+    "example": "Their research earned them finalist spots at the 2026 Thermo Fisher Scientific Junior Innovators Challenge."
+   },
+   {
+    "word": "surprise",
+    "meaning": "놀라게 하다; 놀라움",
+    "example": "Jack and Henry were both surprised in the moment at how well the hydrogel worked."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "Later, they learned that the 2025 Palisades fire in their home state of California was caused by another fire that rekindled.",
+    "focus": "was caused"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "That program is run by Society for Science, which also publishes Science News Explores.",
+    "focus": "Science, which also"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "The pair decided to see if materials called hydrogels could be sprayed onto burned areas to keep smoldering wildfires from relighting.",
+    "focus": "could be"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-26",
+  "terms": [],
+  "created_at": "2026-11-26T04:06:40.241Z"
+ },
+ {
   "id": "rss-665a765824ea",
   "title": "Meet the first new living cat species described in more than a century",
   "title_ko": "",
