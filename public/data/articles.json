@@ -1,5 +1,345 @@
 [
  {
+  "id": "rss-ac9a98e645c0",
+  "title": "Earthshot Prize Announces 2026 Winners",
+  "title_ko": "",
+  "source": "NewsForKids.net",
+  "source_url": "https://newsforkids.net/articles/2026/11/26/earthshot-prize-announces-2026-winners/",
+  "published_at": "2026-11-26",
+  "category": "환경",
+  "level": "LEVEL 2",
+  "cover_color": "sage",
+  "reading_minutes": 1,
+  "excerpt": "England's Prince William and Princess Catherine recently visited Mumbai, India to announce the winners of the sixth Earthshot Prize.",
+  "content": "England's Prince William and Princess Catherine recently visited Mumbai, India to announce the winners of the sixth Earthshot Prize. The prize is a special award that gives money and support to people who are finding new ways to protect our planet. Five winners each received £1 million (about $1.3 million) to help their projects grow.",
+  "summary": "",
+  "words": [
+   {
+    "word": "million",
+    "meaning": "100만",
+    "example": "Five winners each received £1 million (about $1."
+   },
+   {
+    "word": "prize",
+    "meaning": "상",
+    "example": "England's Prince William and Princess Catherine recently visited Mumbai, India to announce the winners of the sixth Earthshot Prize."
+   },
+   {
+    "word": "announce",
+    "meaning": "발표하다",
+    "example": "England's Prince William and Princess Catherine recently visited Mumbai, India to announce the winners of the sixth Earthshot Prize."
+   },
+   {
+    "word": "support",
+    "meaning": "지지하다; 지원",
+    "example": "The prize is a special award that gives money and support to people who are finding new ways to protect our planet."
+   },
+   {
+    "word": "protect",
+    "meaning": "보호하다",
+    "example": "The prize is a special award that gives money and support to people who are finding new ways to protect our planet."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "The prize is a special award that gives money and support to people who are finding new ways to protect our planet.",
+    "focus": "people who are"
+   }
+  ],
+  "content_kind": "rss_excerpt",
+  "collection_day": "2026-11-27",
+  "terms": [],
+  "created_at": "2026-11-27T04:10:20.763Z"
+ },
+ {
+  "id": "rss-4425ce1af1b8",
+  "title": "Scientists Say: Occultation",
+  "title_ko": "",
+  "source": "Science News Explores",
+  "source_url": "https://www.snexplores.org/article/scientists-say-occultation-definition-pronunciation",
+  "published_at": "2026-11-09",
+  "category": "과학",
+  "level": "LEVEL 2",
+  "cover_color": "blue",
+  "reading_minutes": 4,
+  "excerpt": "Thanks to one of these events in 1977, astronomers discovered Uranus's rings.",
+  "content": "Occultation (noun, “uh-kuhl-TAY-shion”)\n\nAn occultation is when one celestial object passes in front of another that looks smaller in the sky. For instance, the moon or an asteroid might block the light from a distant star.\n\nOccultations occur pretty much every night. As the moon wanders across the night sky, it passes in front of stars and planets. These are called lunar occultations.\n\nLess common are planetary occultations. This is when a planet blocks a distant object from view. These events give astronomers a chance to learn new things about the planet, such as features of its atmosphere.\n\nOccultations sometimes lead to discoveries. In 1977, Uranus passed in front of a distant star. Astronomers noticed the star’s light dimmed five times before Uranus completely blocked it. The star also flickered five times after the occultation.\n\nAstronomers realized that Uranus must have rings like Saturn. Uranus’s rings do not glow brightly like Saturn’s. That made them harder to detect. But each time the star dimmed, one of Uranus’s five rings was blocking its light.\n\nOccultations have helped scientists learn about our moon, too. Watching how starlight flickers as it passes behind the moon can reveal mountains and valleys. Timing how long stars disappear behind asteroids can help scientists measure the sizes of these space rocks.\n\nThe word occultation is similar to two other terms in astronomy: eclipse and transit. When the moon passes in front of and blocks out the sun, for example, we get a total solar eclipse.\n\nA transit happens when one smaller-looking object passes in front of a larger one. This is what happens when an exoplanet passes in front of the distant star it’s orbiting.\n\nIn a sentence\n\nOccultations can grant astronomers a rare opportunity to analyze a world’s atmosphere.\n\nCheck out the full list of Scientists Say.",
+  "summary": "",
+  "words": [
+   {
+    "word": "atmosphere",
+    "meaning": "대기, 분위기",
+    "example": "These events give astronomers a chance to learn new things about the planet, such as features of its atmosphere."
+   },
+   {
+    "word": "scientist",
+    "meaning": "과학자",
+    "example": "Occultations have helped scientists learn about our moon, too."
+   },
+   {
+    "word": "planet",
+    "meaning": "행성",
+    "example": "As the moon wanders across the night sky, it passes in front of stars and planets."
+   },
+   {
+    "word": "opportunity",
+    "meaning": "기회",
+    "example": "Occultations can grant astronomers a rare opportunity to analyze a world’s atmosphere."
+   },
+   {
+    "word": "discovery",
+    "meaning": "발견",
+    "example": "Occultations sometimes lead to discoveries."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "Occultations have helped scientists learn about our moon, too.",
+    "focus": "have helped"
+   },
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "These are called lunar occultations.",
+    "focus": "are called"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "For instance, the moon or an asteroid might block the light from a distant star.",
+    "focus": "might block"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-27",
+  "terms": [
+   {
+    "term": "asteroid",
+    "ko": "소행성",
+    "note": "태양 주위를 도는 작은 바위 천체예요."
+   }
+  ],
+  "created_at": "2026-11-27T04:10:20.763Z"
+ },
+ {
+  "id": "rss-9d4c7f3c7f38",
+  "title": "Democrats Take House & Senate in US Vote",
+  "title_ko": "",
+  "source": "NewsForKids.net",
+  "source_url": "https://newsforkids.net/articles/2026/11/04/democrats-take-house-senate-in-us-vote/",
+  "published_at": "2026-11-04",
+  "category": "세상",
+  "level": "LEVEL 3",
+  "cover_color": "coral",
+  "reading_minutes": 1,
+  "excerpt": "On Tuesday, voters across the United States sent a strong message to Washington.",
+  "content": "On Tuesday, voters across the United States sent a strong message to Washington. In a major shift of power, Democrats did well in elections across the country, taking control of both the Senate and the House of Representatives. Democrats were expected to do well, but the strength of their victory surprised even experts.",
+  "summary": "",
+  "words": [
+   {
+    "word": "strength",
+    "meaning": "힘",
+    "example": "Democrats were expected to do well, but the strength of their victory surprised even experts."
+   },
+   {
+    "word": "surprise",
+    "meaning": "놀라게 하다; 놀라움",
+    "example": "Democrats were expected to do well, but the strength of their victory surprised even experts."
+   },
+   {
+    "word": "message",
+    "meaning": "메시지",
+    "example": "On Tuesday, voters across the United States sent a strong message to Washington."
+   },
+   {
+    "word": "control",
+    "meaning": "통제하다; 통제",
+    "example": "In a major shift of power, Democrats did well in elections across the country, taking control of both the Senate and the House of Representatives."
+   },
+   {
+    "word": "victory",
+    "meaning": "승리",
+    "example": "Democrats were expected to do well, but the strength of their victory surprised even experts."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "Democrats were expected to do well, but the strength of their victory surprised even experts.",
+    "focus": "were expected"
+   }
+  ],
+  "content_kind": "rss_excerpt",
+  "collection_day": "2026-11-27",
+  "terms": [
+   {
+    "term": "election",
+    "ko": "선거",
+    "note": "투표로 대표자를 뽑는 일이에요."
+   },
+   {
+    "term": "Senate",
+    "ko": "상원",
+    "note": "미국 의회의 두 기관 중 하나로, 각 주에서 2명씩 뽑힌 의원으로 이루어져요."
+   },
+   {
+    "term": "House of Representatives",
+    "ko": "하원",
+    "note": "미국 의회의 두 기관 중 하나로, 인구에 비례해 뽑힌 의원으로 이루어져요."
+   }
+  ],
+  "created_at": "2026-11-27T04:10:20.763Z"
+ },
+ {
+  "id": "rss-ecc46f12d4e2",
+  "title": "Mystery solved? Why ‘sleeping’ ants suddenly explode with activity",
+  "title_ko": "",
+  "source": "Science News Explores",
+  "source_url": "https://www.snexplores.org/article/ants-sudden-activity-bursts",
+  "published_at": "2026-11-06",
+  "category": "환경",
+  "level": "LEVEL 2",
+  "cover_color": "sage",
+  "reading_minutes": 9,
+  "excerpt": "For decades, scientists have puzzled over what triggers some colonies of ants to burst from rest into community-wide action. Math may now explain this.",
+  "content": "A behavior seen among colonies of some ants has mystified scientists for more than 30 years. It’s their ability to suddenly burst into action, despite no leader telling the others when to start. What triggers this community call to action has remained a mystery — until now.\n\nColonies of acorn ants often spend long stretches resting quietly. It’s like everyone’s asleep. Then, points out a trio of researchers, “like a cascade of dominoes, a massive spike of activity sweeps through the nest.” It’s one example of what’s known as collective behavior. That trio — a biologist and two engineers — teamed up to explore what might serve as the alarm that tells everyone to wake up and get to work.\n\nSince they couldn’t tap into the ants’ thinking, the researchers decided to model what they were observing. And to do this, they turned to math.\n\nTheir new computer model confirms that a single ant is all it takes to get things moving. Its motion kick-starts activity in the ants it meets, who in turn do the same to every ant they meet. But — and this is important — the model finds that the initial ant can spark activity throughout the rest of its colony only when three conditions line up.\n\nMichael Napoli and Maurizio Porfiri are engineers at New York University in New York City. Biologist Simon Garnier works at the New Jersey Institute of Technology in Newark. They shared their new findings August 5 in PRX Life.\n\nHow one ant wakes a colony\n\nTheir model starts with a colony of quiet ants. Then, it lets any member start moving. Who it is can be quite random. As a moving ant bumps a neighbor, it sets that second ant into action. But once an ant stops moving, the model found, it would need to rest for a while before it can become active again.\n\nThree conditions seem to limit whether an individual can spark everyone else into action. The first is how quickly activity can travel through the colony. Think of a game of tag. You tag more people if you run fast — or if the playground is packed and someone’s always within reach. Ants work the same way. Activity spreads when ants move fast enough to keep bumping into nestmates or when the nest is crowded. In a really packed nest, the first ant (and all the rest) barely need to move before others are being jostled.\n\nCondition two is how easily ants respond to being bumped. When a moving ant reaches a still one, that neighbor has to be likely to start moving, too. If ants are hard to stir, the spark fizzles. One ant wanders the nest but wakes nobody; everyone else stays asleep.\n\nThe last condition is the trickiest. The whole colony has to switch off — go into rest mode — before the next spark. This, it turns out, is a balancing act. If ants settle down too slowly, the colony never fully settles down. But if they settle too quickly, the early motions die out before they can spread to many others.\n\nIn the model, colonies that met all three conditions burst. Those that fell short of any one of those conditions didn’t. Scientists call this kind of flip — from a colony that never bursts to one that does — a phase transition. Physicists use this term for “drastic shifts, like liquid water freezing into solid ice,” the team explains.\n\nHow well does the model match real ants?\n\nThe team built its model using measurements that others had made on real acorn ants. These included how fast they walk and how long they walk before stopping. A few features, such as the resting period, had to be estimated from the behavior of whole colonies.\n\nKirsten Prior expected a more biological explanation, such as a chemical signal or some form of decision-making. “Instead, this study suggests bursts come down to simply speed and contact rate,” she says. “That’s a bit humbling to me as an ant biologist.”\n\nPrior, who works at Binghamton University in New York, studies how ants shape forests by carrying seeds around. She had no role in the new work.\n\n“Since this paper relies on computer [models], experiments with real colonies will be necessary to test the predictions of the model,” says Grant Navid Doering. A biologist at Bilkent University in Ankara, Turkey, he studies how ant colonies coordinate their behaviors. Napoli, Garnier and Porfiri used measurements from Doering’s earlier work to set some of the numbers in their new model.\n\nElva Robinson wants to know what purpose the bursts serve. The model, she says, has opened a “black box” on one behavior — how bursts happen. But it does not explore what a colony gains from them. And that is of particular interest to Robinson, who tracks individual ants inside colonies. An ecologist, she works at the University of York in England.\n\nAnts may not be the only creatures that work this way, the new study’s authors point out. They suspect the same conditions could apply anywhere individuals set each other off. Take a 2015 study of grazing sheep, for instance. There, one animal moving close to its neighbor started a chain reaction that caused the whole herd to pack tightly together. As with the ants, no one gave an order. But once action starts, it spreads to the whole group.",
+  "summary": "",
+  "words": [
+   {
+    "word": "researcher",
+    "meaning": "연구원",
+    "example": "Then, points out a trio of researchers, “like a cascade of dominoes, a massive spike of activity sweeps through the nest.”"
+   },
+   {
+    "word": "individual",
+    "meaning": "개인; 개인의",
+    "example": "Three conditions seem to limit whether an individual can spark everyone else into action."
+   },
+   {
+    "word": "scientist",
+    "meaning": "과학자",
+    "example": "A behavior seen among colonies of some ants has mystified scientists for more than 30 years."
+   },
+   {
+    "word": "condition",
+    "meaning": "상태, 조건",
+    "example": "But — and this is important — the model finds that the initial ant can spark activity throughout the rest of its colony only when three conditions line up."
+   },
+   {
+    "word": "behavior",
+    "meaning": "행동",
+    "example": "A behavior seen among colonies of some ants has mystified scientists for more than 30 years."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "A behavior seen among colonies of some ants has mystified scientists for more than 30 years.",
+    "focus": "has mystified"
+   },
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "You tag more people if you run fast — or if the playground is packed and someone’s always within reach.",
+    "focus": "is packed"
+   },
+   {
+    "title": "관계대명사 who / which",
+    "explanation": "앞의 명사(선행사)를 뒤에서 꾸며 줘요. 사람이면 who, 사물·동물이면 which를 쓰고 \"~하는 (명사)\"로 해석해요.",
+    "example": "Its motion kick-starts activity in the ants it meets, who in turn do the same to every ant they meet.",
+    "focus": "meets, who in"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-27",
+  "terms": [
+   {
+    "term": "biologist",
+    "ko": "생물학자",
+    "note": "살아 있는 생물을 연구하는 과학자예요."
+   }
+  ],
+  "created_at": "2026-11-27T04:10:20.763Z"
+ },
+ {
+  "id": "rss-294355cc7855",
+  "title": "Historic Route",
+  "title_ko": "",
+  "source": "TIME for Kids",
+  "source_url": "https://www.timeforkids.com/g2/historic-route-g2/",
+  "published_at": "2026-10-30",
+  "category": "세상",
+  "level": "LEVEL 1",
+  "cover_color": "coral",
+  "reading_minutes": 3,
+  "excerpt": "Picture this: You’re driving on the open road. Windows down. Singing along with the radio. You’re watching hills, mountains, and deserts pass by. Road-trippers can experience this on Route 66.",
+  "content": "Picture this: You’re driving on the open road. Windows down. Singing along with the radio. You’re watching hills, mountains, and deserts pass by. Road-trippers can experience this on Route 66. It’s a famous road in the United States. It spans 2,400 miles. The road turns 100 years old this year. Route 66 was created in 1926. Cars were fairly new then.\n\nMost roads in America were made of dirt. Many were not connected. Route 66 connected a lot of roads. Many were originally Native American trails. The entire route was paved. See the map above? It shows the original Route 66, which passed through eight states. Lots to See By the 1950s, driving on Route 66 was very popular. Families used it for sightseeing.\n\nThey could stop at gas stations, shops, and motels. They could check out attractions along the way. You can read about some of these here. Today, Route 66 is a historic road, not an official highway. But you can still drive on much of it. Celebrate History The 100th birthday of Route 66 has been celebrated all year. Cities along the route hosted parties and held festivals.\n\nIn May, a parade of old cars drove its length. It was the largest classic car parade in history. S. Route 66 Centennial Commission. He wants people to remember the road’s history. “This road is everybody’s road,” he told TIME for Kids. “It has connected all of us.”",
+  "summary": "",
+  "words": [
+   {
+    "word": "celebrate",
+    "meaning": "축하하다",
+    "example": "Celebrate History The 100th birthday of Route 66 has been celebrated all year."
+   },
+   {
+    "word": "connect",
+    "meaning": "연결하다",
+    "example": "Many were not connected."
+   },
+   {
+    "word": "history",
+    "meaning": "역사",
+    "example": "Celebrate History The 100th birthday of Route 66 has been celebrated all year."
+   },
+   {
+    "word": "experience",
+    "meaning": "경험",
+    "example": "Road-trippers can experience this on Route 66."
+   },
+   {
+    "word": "mountain",
+    "meaning": "산",
+    "example": "You’re watching hills, mountains, and deserts pass by."
+   }
+  ],
+  "grammar": [
+   {
+    "title": "현재완료 (have/has + 과거분사)",
+    "explanation": "과거에 시작된 일이 지금까지 이어지거나, 과거의 일이 현재와 관련 있을 때 써요. \"~해 왔다, ~했다\"로 해석해요.",
+    "example": "Celebrate History The 100th birthday of Route 66 has been celebrated all year.",
+    "focus": "has been"
+   },
+   {
+    "title": "수동태 (be동사 + 과거분사)",
+    "explanation": "주어가 동작을 \"당하는\" 입장일 때 써요. \"~되다, ~받다\"로 해석하고, 행위자는 by 뒤에 나와요.",
+    "example": "Route 66 was created in 1926.",
+    "focus": "was created"
+   },
+   {
+    "title": "조동사 can / might / should / must",
+    "explanation": "동사 앞에서 가능(can), 추측(might, may), 충고(should), 의무(must) 같은 뜻을 더해요. 조동사 뒤에는 항상 동사원형이 와요.",
+    "example": "Road-trippers can experience this on Route 66.",
+    "focus": "can experience"
+   }
+  ],
+  "content_kind": "rss_full",
+  "collection_day": "2026-11-27",
+  "terms": [
+   {
+    "term": "Native American",
+    "ko": "아메리카 원주민",
+    "note": "유럽인이 오기 전부터 아메리카 대륙에 살던 사람들과 그 후손이에요."
+   }
+  ],
+  "created_at": "2026-11-27T04:10:20.763Z"
+ },
+ {
   "id": "rss-a73b25a7fc46",
   "title": "COP31 Climate Meeting Ends Without a Deal",
   "title_ko": "",
